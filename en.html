@@ -13,7 +13,7 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#364323">
+  <meta name="theme-color" content="#000000">
 
   <!-- OpenGraph Protocol -->
   <meta property="og:type" content="website">
@@ -74,25 +74,25 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..900;1,9..40,300..900&family=JetBrains+Mono:wght@400;600;700;800&family=Manrope:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      /* Tactical Military & Olive Corporate Palette */
-      --mil-night: #060a07;
-      --mil-deep: #080d09;
-      --mil-bg: #0c140e;
-      --mil-surface: #111c13;
-      --mil-surface-elevated: #16241a;
-      --mil-card: rgba(17, 28, 20, 0.90);
-      --mil-card-border: rgba(132, 204, 22, 0.20);
-      --mil-card-border-brass: rgba(197, 160, 89, 0.28);
+      /* Tactical Military & Stealth Corporate Palette (Zero White Background) */
+      --mil-night: #050806;
+      --mil-deep: #070c08;
+      --mil-bg: #090f0b;
+      --mil-surface: #0e1711;
+      --mil-surface-elevated: #132017;
+      --mil-card: rgba(14, 23, 17, 0.95);
+      --mil-card-border: rgba(77, 93, 54, 0.35);
+      --mil-card-border-brass: rgba(197, 160, 89, 0.35);
 
-      --ink: #070c08;
-      --ink-soft: #2e3e31;
-      --ink-muted: #5e7062;
-      --paper: #ffffff;
-      --canvas: #f2f4ec;        /* Military field canvas / light khaki-ivory */
-      --canvas-surface: #e7ebd9;
-      --canvas-subtle: #edf0e6;
-      --line: #c5d0c2;
-      --line-subtle: #dbe4d8;
+      --ink: #f1f5f2;           /* Light text for dark theme */
+      --ink-soft: #cbd5ce;      /* Muted light text */
+      --ink-muted: #8f9f7a;     /* Sage muted text */
+      --paper: #070c08;         /* Replaced white with dark stealth */
+      --canvas: #0a120c;        /* Replaced light ivory with dark canvas */
+      --canvas-surface: #0e1a12;
+      --canvas-subtle: #121d15;
+      --line: rgba(77, 93, 54, 0.35);
+      --line-subtle: rgba(77, 93, 54, 0.20);
 
       /* Tactical Olive Drab & Ranger Greens */
       --olive-drab: #4d5d36;
@@ -101,11 +101,16 @@
       --olive-sage: #8f9f7a;
       --olive-slate: #586b5b;
 
-      /* Technology & Cyber Accent: Tactical Radar Phosphor Green */
-      --phosphor: #84cc16;
-      --phosphor-bright: #a3e635;
-      --phosphor-dark: #3f6212;
-      --phosphor-glow: rgba(163, 230, 53, 0.38);
+      /* Technology & Cyber Accent: High-Visibility Tactical Electric Blue (replacing lime for text) */
+      --tech-blue: #38bdf8;
+      --tech-blue-bright: #60a5fa;
+      --tech-blue-deep: #0284c7;
+      --tech-blue-glow: rgba(56, 189, 248, 0.45);
+
+      --phosphor: #38bdf8;
+      --phosphor-bright: #38bdf8;
+      --phosphor-dark: #0284c7;
+      --phosphor-glow: rgba(56, 189, 248, 0.45);
 
       /* Advisory & Capital Accent: Military Command Brass / Khaki Gold */
       --brass: #c5a059;
@@ -130,7 +135,7 @@
     }
     body {
       margin: 0;
-      background: var(--paper);
+      background: #070c08;
       color: var(--ink);
       font-family: var(--font-sans);
       -webkit-font-smoothing: antialiased;
@@ -261,15 +266,16 @@
       box-shadow: 0 8px 30px rgba(197, 160, 89, 0.55);
     }
     .btn-phosphor {
-      background: var(--phosphor-bright);
-      color: #060a07;
-      box-shadow: 0 4px 20px var(--phosphor-glow);
-      border: 1px solid var(--phosphor-bright);
+      background: #0284c7;
+      color: #ffffff;
+      box-shadow: 0 4px 20px var(--tech-blue-glow);
+      border: 1px solid var(--tech-blue);
     }
     .btn-phosphor:hover {
-      background: #bbf246;
+      background: var(--tech-blue);
+      color: #04080a;
       transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(163, 230, 53, 0.6);
+      box-shadow: 0 8px 30px rgba(56, 189, 248, 0.65);
     }
     .btn-glass {
       background: rgba(255, 255, 255, 0.06);
@@ -293,11 +299,11 @@
     }
     .btn-outline-phosphor {
       background: transparent;
-      color: var(--phosphor-bright);
-      border: 1px solid var(--phosphor);
+      color: var(--tech-blue);
+      border: 1px solid var(--tech-blue);
     }
     .btn-outline-phosphor:hover {
-      background: rgba(132, 204, 22, 0.15);
+      background: rgba(56, 189, 248, 0.18);
       transform: translateY(-2px);
     }
 
@@ -326,7 +332,7 @@
       left: 8px;
       font-family: var(--font-mono);
       font-size: 11px;
-      color: rgba(132, 204, 22, 0.4);
+      color: rgba(56, 189, 248, 0.4);
       pointer-events: none;
     }
     .crosshair-corner::after {
@@ -336,7 +342,7 @@
       right: 8px;
       font-family: var(--font-mono);
       font-size: 11px;
-      color: rgba(132, 204, 22, 0.4);
+      color: rgba(56, 189, 248, 0.4);
       pointer-events: none;
     }
 
@@ -345,7 +351,7 @@
        ======================================================== */
     .top-command-ribbon {
       background: #040705;
-      border-bottom: 1px solid rgba(132, 204, 22, 0.18);
+      border-bottom: 1px solid rgba(56, 189, 248, 0.18);
       padding: 7px 0;
       font-family: var(--font-mono);
       font-size: 10.5px;
@@ -377,16 +383,16 @@
       border: 1px solid rgba(197, 160, 89, 0.45);
     }
     .kicker-tech {
-      background: rgba(132, 204, 22, 0.14);
-      color: var(--phosphor-bright);
-      border: 1px solid rgba(132, 204, 22, 0.45);
+      background: rgba(56, 189, 248, 0.14);
+      color: var(--tech-blue);
+      border: 1px solid rgba(56, 189, 248, 0.45);
     }
     .ribbon-desc {
       color: #cbd5ce;
       font-weight: 700;
     }
     .ribbon-sep {
-      color: rgba(132, 204, 22, 0.35);
+      color: rgba(56, 189, 248, 0.35);
       font-size: 11px;
     }
     .ribbon-hubs {
@@ -406,7 +412,7 @@
       display: inline-flex;
       align-items: center;
       background: rgba(4, 8, 5, 0.92);
-      border: 1px solid rgba(132, 204, 22, 0.28);
+      border: 1px solid rgba(56, 189, 248, 0.28);
       border-radius: 6px;
       padding: 2px 4px;
       gap: 3px;
@@ -428,10 +434,10 @@
       background: rgba(255, 255, 255, 0.08);
     }
     .lang-btn.active {
-      background: rgba(132, 204, 22, 0.22);
-      color: var(--phosphor-bright);
-      border: 1px solid rgba(132, 204, 22, 0.5);
-      box-shadow: 0 0 10px rgba(163, 230, 53, 0.22);
+      background: rgba(56, 189, 248, 0.22);
+      color: var(--tech-blue);
+      border: 1px solid rgba(56, 189, 248, 0.5);
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.25);
     }
 
     /* ========================================================
@@ -443,7 +449,7 @@
       z-index: 100;
       background: rgba(6, 10, 7, 0.95);
       backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(132, 204, 22, 0.15);
+      border-bottom: 1px solid rgba(56, 189, 248, 0.15);
     }
     .header-inner {
       display: flex;
@@ -494,20 +500,12 @@
       margin-top: 4px;
     }
     .brand-location-tag {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      color: var(--phosphor-bright);
-      padding: 4px 10px;
-      background: rgba(132, 204, 22, 0.08);
-      border-radius: 4px;
-      border: 1px solid rgba(132, 204, 22, 0.25);
+      display: none;
     }
     .header-nav {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 20px;
     }
     .nav-link {
       font-size: 13.5px;
@@ -517,7 +515,7 @@
     }
     .nav-link:hover { color: #ffffff; }
     .nav-link.nav-advisory:hover { color: var(--brass-light); }
-    .nav-link.nav-tech:hover { color: var(--phosphor-bright); }
+    .nav-link.nav-tech:hover { color: var(--tech-blue); }
 
     .header-dual-cta {
       display: flex;
@@ -544,15 +542,15 @@
       border-radius: 6px;
       font-size: 11.5px;
       font-weight: 800;
-      background: rgba(132, 204, 22, 0.14);
-      color: var(--phosphor-bright);
-      border: 1px solid var(--phosphor);
+      background: rgba(56, 189, 248, 0.14);
+      color: var(--tech-blue);
+      border: 1px solid rgba(56, 189, 248, 0.45);
       transition: all 0.2s;
       letter-spacing: 0.04em;
     }
     .header-cta-tech:hover {
-      background: var(--phosphor-bright);
-      color: #060a07;
+      background: var(--tech-blue);
+      color: #04080a;
     }
     .mobile-nav { display: none; }
 
@@ -565,21 +563,21 @@
       color: white;
       padding: 70px 0 90px;
       overflow: hidden;
-      border-bottom: 1px solid rgba(132, 204, 22, 0.16);
+      border-bottom: 1px solid rgba(56, 189, 248, 0.16);
     }
     .hero-halo {
       position: absolute;
       inset: 0;
       background: radial-gradient(ellipse at 85% 50%, rgba(197, 160, 89, 0.14), transparent 60%),
-                  radial-gradient(ellipse at 18% 85%, rgba(132, 204, 22, 0.16), transparent 55%),
+                  radial-gradient(ellipse at 18% 85%, rgba(56, 189, 248, 0.16), transparent 55%),
                   radial-gradient(circle at 50% 20%, rgba(77, 93, 54, 0.25), transparent 70%);
       pointer-events: none;
     }
     .hero-grid-pattern {
       position: absolute;
       inset: 0;
-      background-image: linear-gradient(rgba(132, 204, 22, 0.04) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(132, 204, 22, 0.04) 1px, transparent 1px);
+      background-image: linear-gradient(rgba(56, 189, 248, 0.04) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
       background-size: 44px 44px;
       mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.95) 0%, transparent 80%);
       pointer-events: none;
@@ -620,8 +618,8 @@
     }
     .hero-pill-tech {
       color: var(--phosphor-bright);
-      border-color: rgba(132, 204, 22, 0.4);
-      background: rgba(132, 204, 22, 0.08);
+      border-color: rgba(56, 189, 248, 0.4);
+      background: rgba(56, 189, 248, 0.08);
     }
     .hero-pill-london {
       color: #cbd5ce;
@@ -657,7 +655,7 @@
       gap: 16px;
       padding: 20px;
       background: rgba(14, 24, 16, 0.85);
-      border: 1px solid rgba(132, 204, 22, 0.18);
+      border: 1px solid rgba(56, 189, 248, 0.18);
       border-radius: 12px;
       backdrop-filter: blur(14px);
     }
@@ -705,7 +703,7 @@
        ======================================================== */
     .execution-visual-box {
       background: var(--mil-bg);
-      border: 1px solid rgba(132, 204, 22, 0.25);
+      border: 1px solid rgba(56, 189, 248, 0.25);
       border-radius: 18px;
       overflow: hidden;
       box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
@@ -717,7 +715,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid rgba(132, 204, 22, 0.15);
+      border-bottom: 1px solid rgba(56, 189, 248, 0.15);
       font-size: 11px;
       font-weight: 800;
       letter-spacing: 0.12em;
@@ -730,7 +728,7 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       background: #040805;
-      border-bottom: 1px solid rgba(132, 204, 22, 0.12);
+      border-bottom: 1px solid rgba(56, 189, 248, 0.12);
       padding: 6px;
       gap: 6px;
     }
@@ -756,7 +754,7 @@
     }
     .visual-mode-tab.tab-tech.active {
       color: var(--phosphor-bright);
-      border-color: rgba(132, 204, 22, 0.5);
+      border-color: rgba(56, 189, 248, 0.5);
     }
 
     .visual-svg-wrap {
@@ -776,7 +774,7 @@
       align-items: center;
       gap: 12px;
       background: rgba(11, 19, 13, 0.94);
-      border: 1px solid rgba(132, 204, 22, 0.25);
+      border: 1px solid rgba(56, 189, 248, 0.25);
       border-radius: 8px;
       padding: 12px 18px;
       backdrop-filter: blur(14px);
@@ -792,7 +790,7 @@
       place-items: center;
       flex-shrink: 0;
       font-size: 15px;
-      border: 1px solid rgba(132, 204, 22, 0.2);
+      border: 1px solid rgba(56, 189, 248, 0.2);
     }
     .diag-badge strong { display: block; font-size: 13px; color: white; }
     .diag-badge span { display: block; font-size: 11px; color: #9cb0a0; }
@@ -802,7 +800,7 @@
     .visual-footer-bar {
       background: #040805;
       padding: 12px 20px;
-      border-top: 1px solid rgba(132, 204, 22, 0.15);
+      border-top: 1px solid rgba(56, 189, 248, 0.15);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -825,7 +823,7 @@
        CONVICTION STRIP: TACTICAL DEFENSE & VALUATION
        ======================================================== */
     .belief-strip {
-      background: var(--canvas);
+      background: #09100b;
       border-bottom: 1px solid var(--line);
       padding: 38px 0;
     }
@@ -842,14 +840,14 @@
       font-size: 11px;
       font-weight: 800;
       letter-spacing: 0.14em;
-      color: var(--olive-drab);
+      color: var(--olive-sage);
       margin-bottom: 6px;
       font-family: var(--font-mono);
     }
     .belief-headline p {
       font-size: 20px;
       line-height: 1.4;
-      color: var(--mil-night);
+      color: #f1f5f2;
       margin: 0;
       font-weight: 800;
     }
@@ -868,7 +866,7 @@
       width: 30px;
       height: 30px;
       border-radius: 6px;
-      background: var(--mil-night);
+      background: var(--mil-surface);
       color: var(--brass-light);
       display: grid;
       place-items: center;
@@ -879,10 +877,10 @@
       border: 1px solid rgba(197, 160, 89, 0.4);
     }
     .badge-glyph-tech {
-      color: var(--phosphor-bright);
-      border-color: rgba(132, 204, 22, 0.4);
+      color: var(--tech-blue);
+      border-color: rgba(56, 189, 248, 0.4);
     }
-    .belief-badge-item strong { display: block; font-size: 15px; color: var(--mil-night); font-weight: 800; }
+    .belief-badge-item strong { display: block; font-size: 15px; color: #f1f5f2; font-weight: 800; }
     .belief-badge-item span { display: block; font-size: 12.5px; color: var(--ink-soft); }
 
     /* ========================================================
@@ -893,7 +891,7 @@
       position: relative;
     }
     .divisions-section {
-      background: #ffffff;
+      background: #070c08;
       border-bottom: 1px solid var(--line);
     }
     .section-head {
@@ -948,7 +946,7 @@
     }
     .card-tech:hover {
       border-color: var(--phosphor-bright);
-      box-shadow: 0 24px 60px rgba(132, 204, 22, 0.22);
+      box-shadow: 0 24px 60px rgba(56, 189, 248, 0.22);
     }
     .card-tech h3 { color: #ffffff; }
 
@@ -971,7 +969,7 @@
       border: 1px solid var(--brass);
     }
     .badge-phosphor {
-      background: rgba(132, 204, 22, 0.16);
+      background: rgba(56, 189, 248, 0.16);
       color: var(--phosphor-bright);
       border: 1px solid var(--phosphor);
     }
@@ -1022,7 +1020,7 @@
       border: 1px solid var(--brass);
     }
     .card-tech .pillar-bullet {
-      background: rgba(132, 204, 22, 0.2);
+      background: rgba(56, 189, 248, 0.2);
       color: var(--phosphor-bright);
       border: 1px solid var(--phosphor);
     }
@@ -1062,7 +1060,7 @@
     .bridge-section {
       background: var(--mil-night);
       color: white;
-      border-bottom: 1px solid rgba(132, 204, 22, 0.15);
+      border-bottom: 1px solid rgba(56, 189, 248, 0.15);
     }
     .bridge-cards-grid {
       display: grid;
@@ -1072,7 +1070,7 @@
     }
     .bridge-step-card {
       background: rgba(17, 28, 20, 0.85);
-      border: 1px solid rgba(132, 204, 22, 0.18);
+      border: 1px solid rgba(56, 189, 248, 0.18);
       border-radius: 14px;
       padding: 34px;
       display: flex;
@@ -1117,7 +1115,7 @@
        STEM-BASED INDUSTRIES (LONDON, PARIS, BENELUX FOCUS)
        ======================================================== */
     .industry-section {
-      background: var(--paper);
+      background: #09100b;
       border-bottom: 1px solid var(--line);
     }
     .stem-grid {
@@ -1126,8 +1124,8 @@
       gap: 24px;
     }
     .stem-card {
-      background: var(--canvas);
-      border: 1px solid var(--line);
+      background: #0d160f;
+      border: 1px solid rgba(77, 93, 54, 0.35);
       border-radius: 14px;
       padding: 28px;
       display: flex;
@@ -1137,8 +1135,8 @@
     }
     .stem-card:hover {
       transform: translateY(-4px);
-      border-color: var(--olive-drab);
-      box-shadow: 0 16px 36px rgba(7, 12, 8, 0.12);
+      border-color: var(--tech-blue);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
     }
     .stem-badge-row {
       display: flex;
@@ -1150,20 +1148,21 @@
       font-family: var(--font-mono);
       font-size: 11px;
       font-weight: 900;
-      color: var(--mil-night);
+      color: #f1f5f2;
       padding: 3px 8px;
-      background: white;
-      border: 1px solid var(--line);
+      background: #132016;
+      border: 1px solid rgba(77, 93, 54, 0.4);
       border-radius: 4px;
     }
     .stem-trigger {
       font-size: 10px;
       font-family: var(--font-mono);
       font-weight: 800;
-      color: var(--olive-deep);
+      color: var(--tech-blue);
     }
     .stem-card h3 {
       font-size: 19px;
+      color: #f1f5f2;
       margin-bottom: 8px;
     }
     .stem-card p {
@@ -1181,14 +1180,14 @@
       flex-direction: column;
       gap: 4px;
     }
-    .mandate-adv { color: var(--brass-deep); font-weight: 750; }
-    .mandate-tech { color: var(--olive-deep); font-weight: 750; }
+    .mandate-adv { color: var(--brass-light); font-weight: 750; }
+    .mandate-tech { color: var(--tech-blue); font-weight: 750; }
 
     /* ========================================================
        COMMERCIAL PACKAGES (ENTRY OFFERS)
        ======================================================== */
     .packages-section {
-      background: var(--canvas-subtle);
+      background: #070c08;
       border-bottom: 1px solid var(--line);
     }
     .package-tabs {
@@ -1203,21 +1202,21 @@
       font-size: 13px;
       font-weight: 800;
       color: var(--ink-soft);
-      background: white;
-      border: 1px solid var(--line);
+      background: #0d160f;
+      border: 1px solid rgba(77, 93, 54, 0.35);
       transition: all 0.2s;
       font-family: var(--font-mono);
       text-transform: uppercase;
     }
-    .pkg-tab-btn:hover { background: #e0e5d6; color: var(--ink); }
+    .pkg-tab-btn:hover { background: #152319; color: #ffffff; }
     .pkg-tab-btn.active {
-      background: var(--mil-night);
+      background: var(--mil-surface-elevated);
       color: white;
-      border-color: var(--mil-night);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      border-color: rgba(77, 93, 54, 0.6);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
     }
     .pkg-tab-btn.active.tab-pkg-adv { color: var(--brass-light); }
-    .pkg-tab-btn.active.tab-pkg-tech { color: var(--phosphor-bright); }
+    .pkg-tab-btn.active.tab-pkg-tech { color: var(--tech-blue); }
 
     .packages-grid {
       display: grid;
@@ -1225,8 +1224,8 @@
       gap: 24px;
     }
     .package-card {
-      background: white;
-      border: 1px solid var(--line);
+      background: #0d160f;
+      border: 1px solid rgba(77, 93, 54, 0.35);
       border-radius: 14px;
       padding: 30px;
       display: flex;
@@ -1236,8 +1235,8 @@
     }
     .package-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 16px 36px rgba(7, 12, 8, 0.12);
-      border-color: var(--olive-drab);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+      border-color: var(--tech-blue);
     }
     .pkg-top {
       display: flex;
@@ -1255,14 +1254,15 @@
       font-family: var(--font-mono);
       font-size: 11.5px;
       font-weight: 800;
-      color: var(--mil-night);
+      color: #f1f5f2;
       padding: 3px 8px;
       border-radius: 4px;
-      background: var(--canvas);
-      border: 1px solid var(--line);
+      background: #132016;
+      border: 1px solid rgba(77, 93, 54, 0.4);
     }
     .package-card h3 {
       font-size: 20px;
+      color: #f1f5f2;
       margin-bottom: 8px;
     }
     .package-card p {
@@ -1301,11 +1301,11 @@
     .aude-section {
       background: var(--mil-night);
       color: white;
-      border-bottom: 1px solid rgba(132, 204, 22, 0.15);
+      border-bottom: 1px solid rgba(56, 189, 248, 0.15);
     }
     .aude-console-card {
       background: #09110b;
-      border: 1px solid rgba(132, 204, 22, 0.22);
+      border: 1px solid rgba(56, 189, 248, 0.22);
       border-radius: 18px;
       overflow: hidden;
       box-shadow: 0 30px 80px rgba(0, 0, 0, 0.75);
@@ -1316,7 +1316,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid rgba(132, 204, 22, 0.15);
+      border-bottom: 1px solid rgba(56, 189, 248, 0.15);
     }
     .console-title {
       display: flex;
@@ -1341,7 +1341,7 @@
     }
     .console-controls-col {
       padding: 32px;
-      border-right: 1px solid rgba(132, 204, 22, 0.12);
+      border-right: 1px solid rgba(56, 189, 248, 0.12);
     }
     .control-picker {
       display: flex;
@@ -1358,7 +1358,7 @@
       color: white;
       transition: all 0.2s;
     }
-    .control-choice-btn:hover { background: rgba(255, 255, 255, 0.06); border-color: rgba(132, 204, 22, 0.3); }
+    .control-choice-btn:hover { background: rgba(255, 255, 255, 0.06); border-color: rgba(56, 189, 248, 0.3); }
     .control-choice-btn.active {
       background: rgba(22, 36, 25, 0.95);
       border-color: var(--brass);
@@ -1392,8 +1392,8 @@
     .terminal-highlight { color: var(--phosphor-bright); }
     .terminal-success { color: var(--phosphor-bright); font-weight: 700; }
     .terminal-json {
-      background: rgba(132, 204, 22, 0.04);
-      border: 1px solid rgba(132, 204, 22, 0.15);
+      background: rgba(56, 189, 248, 0.04);
+      border: 1px solid rgba(56, 189, 248, 0.15);
       border-radius: 6px;
       padding: 14px;
       color: #cbd5ce;
@@ -1412,7 +1412,7 @@
     }
     .product-card {
       background: rgba(22, 36, 25, 0.7);
-      border: 1px solid rgba(132, 204, 22, 0.16);
+      border: 1px solid rgba(56, 189, 248, 0.16);
       border-radius: 14px;
       padding: 26px;
     }
@@ -1442,15 +1442,15 @@
        EXECUTIVE SCOPER: DUAL-PATHWAY CONSULTATION PLANNER
        ======================================================== */
     .scoper-section {
-      background: var(--canvas);
+      background: #09100b;
       border-bottom: 1px solid var(--line);
     }
     .scoper-box {
-      background: white;
-      border: 1px solid var(--line);
+      background: #0c140e;
+      border: 1px solid rgba(77, 93, 54, 0.4);
       border-radius: 18px;
       padding: 44px;
-      box-shadow: 0 16px 40px rgba(7, 12, 8, 0.08);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
     }
     .scoper-step {
       margin-bottom: 32px;
@@ -1459,7 +1459,7 @@
       font-family: var(--font-mono);
       font-size: 11.5px;
       font-weight: 800;
-      color: var(--mil-night);
+      color: #f1f5f2;
       letter-spacing: 0.14em;
       margin-bottom: 14px;
       display: block;
@@ -1470,28 +1470,28 @@
       gap: 14px;
     }
     .scoper-btn {
-      background: var(--canvas-subtle);
-      border: 1px solid var(--line);
+      background: #111c14;
+      border: 1px solid rgba(77, 93, 54, 0.3);
       border-radius: 8px;
       padding: 16px;
       text-align: left;
       transition: all 0.2s;
     }
-    .scoper-btn:hover { border-color: var(--olive-drab); background: #e3e8dc; }
+    .scoper-btn:hover { border-color: var(--tech-blue); background: #18281c; }
     .scoper-btn.active {
-      background: var(--mil-night);
+      background: var(--mil-surface-elevated);
       color: white;
-      border-color: var(--mil-night);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+      border-color: rgba(77, 93, 54, 0.6);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
     }
-    .scoper-btn strong { display: block; font-size: 14.5px; margin-bottom: 4px; }
+    .scoper-btn strong { display: block; font-size: 14.5px; margin-bottom: 4px; color: #f1f5f2; }
     .scoper-btn.active strong { color: var(--brass-light); }
     .scoper-btn span { display: block; font-size: 12px; color: var(--ink-muted); line-height: 1.4; }
     .scoper-btn.active span { color: #cbd5ce; }
 
     .scoper-summary-tray {
-      background: var(--canvas-subtle);
-      border: 1px solid var(--line);
+      background: #111c14;
+      border: 1px solid rgba(77, 93, 54, 0.35);
       border-radius: 12px;
       padding: 24px;
       display: flex;
@@ -1501,14 +1501,14 @@
       flex-wrap: wrap;
       margin-top: 36px;
     }
-    .summary-text-block strong { display: block; font-size: 16px; color: var(--mil-night); }
+    .summary-text-block strong { display: block; font-size: 16px; color: #f1f5f2; }
     .summary-text-block p { font-size: 13px; color: var(--ink-soft); margin: 4px 0 0; }
 
     /* ========================================================
        SERIOUS BOARD-LEVEL FAQ
        ======================================================== */
     .faq-section {
-      background: #ffffff;
+      background: #070c08;
       border-bottom: 1px solid var(--line);
     }
     .faq-grid {
@@ -1517,15 +1517,15 @@
       gap: 28px;
     }
     .faq-card {
-      background: var(--canvas);
-      border: 1px solid var(--line);
+      background: #0d160f;
+      border: 1px solid rgba(77, 93, 54, 0.35);
       border-radius: 12px;
       padding: 30px;
     }
     .faq-card h4 {
       font-size: 18px;
       margin-bottom: 12px;
-      color: var(--mil-night);
+      color: #f1f5f2;
     }
     .faq-card p {
       font-size: 15px;
@@ -1541,7 +1541,7 @@
       background: linear-gradient(135deg, #111e14 0%, var(--mil-night) 100%);
       color: white;
       padding: 80px 0;
-      border-bottom: 1px solid rgba(132, 204, 22, 0.15);
+      border-bottom: 1px solid rgba(56, 189, 248, 0.15);
     }
     .contact-band-inner {
       display: flex;
@@ -1589,7 +1589,7 @@
     .footer-links a { color: #cbd5ce; transition: color 0.2s; }
     .footer-links a:hover { color: var(--phosphor-bright); }
     .footer-bottom-strip {
-      border-top: 1px solid rgba(132, 204, 22, 0.12);
+      border-top: 1px solid rgba(56, 189, 248, 0.12);
       padding-top: 30px;
       display: flex;
       justify-content: space-between;
@@ -1653,7 +1653,7 @@
         list-style: none;
         cursor: pointer;
         color: white;
-        border: 1px solid rgba(132, 204, 22, 0.3);
+        border: 1px solid rgba(56, 189, 248, 0.3);
         border-radius: 6px;
         padding: 8px 12px;
         font-size: 13px;
@@ -1669,12 +1669,12 @@
         display: grid;
         gap: 6px;
         background: #060a07;
-        border: 1px solid rgba(132, 204, 22, 0.25);
+        border: 1px solid rgba(56, 189, 248, 0.25);
         border-radius: 8px;
         box-shadow: 0 18px 42px rgba(0, 0, 0, 0.8);
       }
       .mobile-nav-panel a { color: #cbd5ce; padding: 8px 10px; border-radius: 4px; font-weight: 700; font-size: 13.5px; }
-      .mobile-nav-panel a:hover { background: rgba(132, 204, 22, 0.12); color: var(--phosphor-bright); }
+      .mobile-nav-panel a:hover { background: rgba(56, 189, 248, 0.12); color: var(--phosphor-bright); }
     }
   </style>
 </head>
@@ -1716,43 +1716,16 @@
     <div class="container header-inner">
       <div class="brand-wrap">
         <a href="#" class="brand-logo" aria-label="Auban Home">
-          <!-- The Two-Sided Coin AU Monogram: Yellow A & Lime U with Olive Background -->
+          <!-- The Unified 1-Symbol AU Monogram: Bright Yellow A Touching Entire Lime U, Black Background, White Outer Box Line -->
           <svg class="au-monogram-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <!-- Tactical Olive Background Gradient -->
-              <linearGradient id="auOliveBg" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#46572E"/>
-                <stop offset="100%" stop-color="#2D3A1D"/>
-              </linearGradient>
-              <!-- Tactical Coin Border: Yellow to Olive to Lime -->
-              <linearGradient id="tacticalCoinBorder" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#FACC15"/>
-                <stop offset="50%" stop-color="#657A44"/>
-                <stop offset="100%" stop-color="#A3E635"/>
-              </linearGradient>
-              <!-- Upper A: Tactical Command Yellow -->
-              <linearGradient id="yellowAGrad" x1="26" y1="18" x2="74" y2="54" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#FEF08A"/>
-                <stop offset="45%" stop-color="#FACC15"/>
-                <stop offset="100%" stop-color="#EAB308"/>
-              </linearGradient>
-              <!-- Lower U: Tactical Radar Lime Green -->
-              <linearGradient id="limeUGrad" x1="32" y1="64" x2="68" y2="90" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#D9F99D"/>
-                <stop offset="50%" stop-color="#A3E635"/>
-                <stop offset="100%" stop-color="#65A30D"/>
-              </linearGradient>
-            </defs>
-            <!-- Tactical Olive Drab Coin Body -->
-            <rect x="3" y="3" width="94" height="94" rx="20" stroke="url(#tacticalCoinBorder)" stroke-width="3.5" fill="url(#auOliveBg)"/>
-            <!-- Inner Hairline Border -->
-            <rect x="7" y="7" width="86" height="86" rx="16" stroke="rgba(217, 249, 157, 0.25)" stroke-width="1" fill="none"/>
-            <!-- Upper A-Structure: Vibrant Yellow -->
-            <path d="M 50 18 L 74 54 L 62 54 L 50 34 L 38 54 L 26 54 Z" fill="url(#yellowAGrad)"/>
-            <!-- Tactical Center Separation Line: Deep Olive -->
-            <line x1="22" y1="58" x2="78" y2="58" stroke="#1C2412" stroke-width="3" stroke-linecap="round"/>
-            <!-- Lower U-Foundation: Electric Radar Lime -->
-            <path d="M 32 64 L 41 64 L 41 74 C 41 79 45 82 50 82 C 55 82 59 79 59 74 L 59 64 L 68 64 L 68 74 C 68 84 60 90 50 90 C 40 90 32 84 32 74 Z" fill="url(#limeUGrad)"/>
+            <!-- Solid Black Background with Clean White Outer Box Line -->
+            <rect x="3" y="3" width="94" height="94" rx="20" fill="#000000" stroke="#FFFFFF" stroke-width="3.5"/>
+            <rect x="7" y="7" width="86" height="86" rx="16" fill="none" stroke="rgba(255, 255, 255, 0.22)" stroke-width="1"/>
+            <!-- 1 UNIFIED SYMBOL: Bright Yellow A Touching Entire Lime U Seamlessly -->
+            <!-- Upper A: Bright Yellow -->
+            <path d="M 50 16 L 74 54 L 62 54 L 50 34 L 38 54 L 26 54 Z" fill="#FFE600"/>
+            <!-- Lower U: Entire Lime Green, touching the lower A at Y=54 -->
+            <path d="M 26 54 L 38 54 L 38 72 C 38 78 43 81.5 50 81.5 C 57 81.5 62 78 62 72 L 62 54 L 74 54 L 74 72 C 74 84 64 91 50 91 C 36 91 26 84 26 72 Z" fill="#A3E635"/>
           </svg>
 
           <div class="brand-text-block">
@@ -1760,33 +1733,26 @@
             <span class="brand-text-sub">ADVISORY &amp; TECHNOLOGY</span>
           </div>
         </a>
-        <span class="brand-location-tag">LONDON // PARIS // AMSTERDAM // BRUXELLES // LILLE</span>
       </div>
 
       <nav class="header-nav" aria-label="Main navigation">
-        <a href="#divisions" class="nav-link nav-advisory" onclick="setScoperDivision('advisory')">Auban Advisory (M&amp;A)</a>
-        <a href="#divisions" class="nav-link nav-tech" onclick="setScoperDivision('tech')">Auban Technology (Cyber / Ops)</a>
+        <a href="#divisions" class="nav-link nav-advisory" onclick="setScoperDivision('advisory')">Auban Advisory</a>
+        <a href="#divisions" class="nav-link nav-tech" onclick="setScoperDivision('tech')">Auban Technology</a>
         <a href="#bridge" class="nav-link">Operational Bridge</a>
         <a href="#secteurs" class="nav-link">STEM Sectors</a>
         <a href="#packages" class="nav-link">Turnkey Packages</a>
         <a href="#aude" class="nav-link">Aude Platform</a>
-        <a href="#cadrage" class="nav-link">Contact</a>
       </nav>
 
       <div class="header-dual-cta">
-        <div class="lang-switcher" aria-label="Language Selector">
-          <a href="index.html" class="lang-btn" title="Français">FR</a>
-          <a href="en.html" class="lang-btn active" title="English">EN</a>
-          <a href="nl.html" class="lang-btn" title="Nederlands">NL</a>
-        </div>
-        <a href="#cadrage" class="header-cta-advisory" onclick="setScoperDivision('advisory')">Advisory Mandates (M&amp;A)</a>
-        <a href="#cadrage" class="header-cta-tech" onclick="setScoperDivision('tech')">Tech &amp; Cyber Squads</a>
+        <a href="#cadrage" class="header-cta-advisory" onclick="setScoperDivision('advisory')">Advisory Mandates</a>
+        <a href="#cadrage" class="header-cta-tech" onclick="setScoperDivision('tech')">Tech Squads</a>
       </div>
 
       <details class="mobile-nav">
         <summary>Menu</summary>
         <nav class="mobile-nav-panel" aria-label="Mobile navigation">
-          <div style="padding: 8px 10px; border-bottom: 1px solid rgba(132,204,22,0.18); margin-bottom: 8px; display: flex; gap: 8px; align-items: center;">
+          <div style="padding: 8px 10px; border-bottom: 1px solid rgba(56, 189, 248,0.18); margin-bottom: 8px; display: flex; gap: 8px; align-items: center;">
             <span style="font-family: var(--font-mono); font-size: 11px; color: #8f9f7a; font-weight: 700;">LANGUAGE :</span>
             <div class="lang-switcher">
               <a href="index.html" class="lang-btn">FR</a>
@@ -1797,7 +1763,7 @@
           <a href="#divisions">AUBAN ADVISORY : M&amp;A · TRANSACTIONS · CORPORATE FINANCE</a>
           <a href="#divisions">AUBAN TECHNOLOGY : CYBER DEFENCE · CLOUD · DATA &amp; IA · OPS</a>
           <a href="#bridge">Operational Bridge</a>
-          <a href="#secteurs">Industries STEM</a>
+          <a href="#secteurs">STEM Sectors</a>
           <a href="#packages">Turnkey Packages</a>
           <a href="#aude">Aude Software Platform</a>
           <a href="#cadrage">Scope an Engagement</a>
@@ -1898,8 +1864,8 @@
                 <stop offset="100%" stop-color="#C5A059" />
               </linearGradient>
               <linearGradient id="visPhosphor" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#A3E635" />
-                <stop offset="100%" stop-color="#4D5D36" />
+                <stop offset="0%" stop-color="#38BDF8" />
+                <stop offset="100%" stop-color="#0284C7" />
               </linearGradient>
               <filter id="glowMil" x="-20%" y="-20%" width="140%" height="140%">
                 <feGaussianBlur stdDeviation="6" result="blur" />
@@ -1919,7 +1885,7 @@
             </g>
 
             <!-- Tactical Crosshair Markings -->
-            <g stroke="#84CC16" stroke-opacity="0.4" stroke-width="1.5">
+            <g stroke="#38BDF8" stroke-opacity="0.5" stroke-width="1.5">
               <line x1="360" y1="250" x2="380" y2="250" />
               <line x1="370" y1="240" x2="370" y2="260" />
             </g>
@@ -1928,16 +1894,15 @@
             <path id="busAdv1" d="M 150 110 L 250 110 L 310 200 L 370 200" stroke="#C5A059" stroke-width="2.5" fill="none" stroke-linecap="round" />
             <path id="busAdv2" d="M 590 110 L 490 110 L 430 200 L 370 200" stroke="#4D5D36" stroke-width="1.5" fill="none" stroke-linecap="round" />
             <path id="busTech1" d="M 150 390 L 250 390 L 310 300 L 370 300" stroke="#4D5D36" stroke-width="1.5" fill="none" stroke-linecap="round" />
-            <path id="busTech2" d="M 590 390 L 490 390 L 430 300 L 370 300" stroke="#84CC16" stroke-width="2.5" fill="none" stroke-linecap="round" />
+            <path id="busTech2" d="M 590 390 L 490 390 L 430 300 L 370 300" stroke="#38BDF8" stroke-width="2.5" fill="none" stroke-linecap="round" />
 
-            <!-- Tactical Hub: Two-Sided Military Coin (Yellow A & Lime U with Olive Background) -->
+            <!-- Tactical Hub: Unified 1-Symbol Coin (Yellow A & Lime U touching, Black Background, White Border) -->
             <g transform="translate(370, 250)">
-              <circle cx="0" cy="0" r="68" fill="url(#visOliveBg)" stroke="#FACC15" stroke-width="2.5" filter="url(#glowMil)" />
-              <circle cx="0" cy="0" r="54" stroke="#A3E635" stroke-width="1.5" stroke-dasharray="4 4" />
-              <!-- Upper A (Command Yellow) & Lower U (Radar Lime) with Olive Background -->
-              <path d="M 0 -36 L 18 -6 L 8 -6 L 0 -22 L -8 -6 L -18 -6 Z" fill="url(#visYellowA)" />
-              <line x1="-22" y1="-2" x2="22" y2="-2" stroke="#1C2412" stroke-width="2.5"/>
-              <path d="M -14 6 L -6 6 L -6 20 C -6 24 -2 27 0 27 C 2 27 6 24 6 20 L 6 6 L 14 6 L 14 20 C 14 30 6 34 0 34 C -6 34 -14 30 -14 20 Z" fill="url(#visLimeU)" />
+              <circle cx="0" cy="0" r="68" fill="#000000" stroke="#FFFFFF" stroke-width="2.5" filter="url(#glowMil)" />
+              <circle cx="0" cy="0" r="54" stroke="rgba(255, 255, 255, 0.3)" stroke-width="1.5" stroke-dasharray="4 4" />
+              <!-- Upper A (Bright Yellow) touching Lower U (Lime) to make 1 symbol -->
+              <path d="M 0 -38 L 22 0 L 11 0 L 0 -19 L -11 0 L -22 0 Z" fill="#FFE600" />
+              <path d="M -22 0 L -11 0 L -11 16 C -11 21 -6 24 0 24 C 6 24 11 21 11 16 L 11 0 L 22 0 L 22 16 C 22 27 13 33 0 33 C -13 33 -22 27 -22 16 Z" fill="#A3E635" />
             </g>
 
             <!-- Node 1: M&A / Transaction Services -->
@@ -1958,18 +1923,18 @@
 
             <!-- Node 3: Zero Trust & Cyber Core -->
             <g transform="translate(70, 365)">
-              <rect x="0" y="0" width="180" height="52" rx="6" fill="#0B150E" stroke="rgba(132, 204, 22, 0.4)" stroke-width="1" />
-              <circle cx="16" cy="26" r="5" fill="#84CC16" />
+              <rect x="0" y="0" width="180" height="52" rx="6" fill="#0B150E" stroke="rgba(56, 189, 248, 0.45)" stroke-width="1" />
+              <circle cx="16" cy="26" r="5" fill="#38BDF8" />
               <text x="32" y="24" fill="#E2E8F0" font-size="11" font-weight="700" font-family="monospace">ZERO_TRUST_CORE</text>
-              <text x="32" y="40" fill="#8F9F7A" font-size="9" font-family="monospace">AIRGAP_IMMUTABLE_PRA</text>
+              <text x="32" y="40" fill="#38BDF8" font-size="9" font-family="monospace">AIRGAP_IMMUTABLE_PRA</text>
             </g>
 
             <!-- Node 4: Aude Evidence Telemetry -->
             <g transform="translate(490, 365)">
-              <rect x="0" y="0" width="180" height="52" rx="6" fill="#0B150E" stroke="#84CC16" stroke-width="2" />
-              <circle cx="16" cy="26" r="5" fill="#84CC16" />
+              <rect x="0" y="0" width="180" height="52" rx="6" fill="#0B150E" stroke="#38BDF8" stroke-width="2" />
+              <circle cx="16" cy="26" r="5" fill="#38BDF8" />
               <text x="32" y="24" fill="#E2E8F0" font-size="11" font-weight="700" font-family="monospace">AUDE_TELEMETRY</text>
-              <text x="32" y="40" fill="#A3E635" font-size="9" font-family="monospace">SHA-256 PROOF ENGINE</text>
+              <text x="32" y="40" fill="#38BDF8" font-size="9" font-family="monospace">SHA-256 PROOF ENGINE</text>
             </g>
           </svg>
         </div>
@@ -2937,7 +2902,7 @@
     const visualModes = {
       dual: {
         busAdv: '#C5A059',
-        busTech: '#84CC16',
+        busTech: '#38BDF8',
         code: 'auban.deploy({ advisory: "mna_transactions_corporate_finance", technology: "cyber_defence_cloud_ia_ops", hubs: "LONDON_PARIS_AMSTERDAM_BRUXELLES_LILLE" });',
         status: "TACTICAL READINESS : ACTIVE",
         topTitle: "Auban Advisory : M&A · Transactions · Corporate Finance",
@@ -2957,7 +2922,7 @@
       },
       technology: {
         busAdv: '#4D5D36',
-        busTech: '#A3E635',
+        busTech: '#38BDF8',
         code: 'technology.hardenCore({ zeroTrust: true, fido2: true, airgapBackup: "verified", natoCompliant: true });',
         status: "DIGITAL CORE & CYBER DEFENSE",
         topTitle: "Architecture Zero Trust",
@@ -2967,7 +2932,7 @@
       },
       evidence: {
         busAdv: '#C5A059',
-        busTech: '#84CC16',
+        busTech: '#38BDF8',
         code: 'aude.chainEvidence({ sha256: "8a4c01f92e...", standard: "CISA_SCUBA_RECYF_MIL" });',
         status: "AUDE CONTINUOUS EVIDENCE VAULT",
         topTitle: "Aude Control Engine",

@@ -1,28 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <defs>
-    <linearGradient id="auOliveBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#46572E"/>
-      <stop offset="100%" stop-color="#2D3A1D"/>
-    </linearGradient>
-    <linearGradient id="tacticalCoinBorder" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FACC15"/>
-      <stop offset="50%" stop-color="#657A44"/>
-      <stop offset="100%" stop-color="#A3E635"/>
-    </linearGradient>
-    <linearGradient id="yellowAGrad" x1="26" y1="18" x2="74" y2="54" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#FEF08A"/>
-      <stop offset="45%" stop-color="#FACC15"/>
-      <stop offset="100%" stop-color="#EAB308"/>
-    </linearGradient>
-    <linearGradient id="limeUGrad" x1="32" y1="64" x2="68" y2="90" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#D9F99D"/>
-      <stop offset="50%" stop-color="#A3E635"/>
-      <stop offset="100%" stop-color="#65A30D"/>
-    </linearGradient>
-  </defs>
-  <rect x="3" y="3" width="94" height="94" rx="20" stroke="url(#tacticalCoinBorder)" stroke-width="4" fill="url(#auOliveBg)"/>
-  <rect x="7" y="7" width="86" height="86" rx="16" stroke="rgba(217, 249, 157, 0.25)" stroke-width="1" fill="none"/>
-  <path d="M 50 18 L 74 54 L 62 54 L 50 34 L 38 54 L 26 54 Z" fill="url(#yellowAGrad)"/>
-  <line x1="22" y1="58" x2="78" y2="58" stroke="#1C2412" stroke-width="3" stroke-linecap="round"/>
-  <path d="M 32 64 L 41 64 L 41 74 C 41 79 45 82 50 82 C 55 82 59 79 59 74 L 59 64 L 68 64 L 68 74 C 68 84 60 90 50 90 C 40 90 32 84 32 74 Z" fill="url(#limeUGrad)"/>
+  <!-- Solid Black Background with Clean White Outer Box Line -->
+  <rect x="3" y="3" width="94" height="94" rx="20" fill="#000000" stroke="#FFFFFF" stroke-width="4"/>
+  <rect x="7" y="7" width="86" height="86" rx="16" fill="none" stroke="rgba(255, 255, 255, 0.22)" stroke-width="1"/>
+  <!-- 1 UNIFIED SYMBOL: Bright Yellow A Touching Entire Lime U Seamlessly -->
+  <!-- Upper A: Bright Yellow -->
+  <path d="M 50 16 L 74 54 L 62 54 L 50 34 L 38 54 L 26 54 Z" fill="#FFE600"/>
+  <!-- Lower U: Entire Lime Green, touching the lower A at Y=54 -->
+  <path d="M 26 54 L 38 54 L 38 72 C 38 78 43 81.5 50 81.5 C 57 81.5 62 78 62 72 L 62 54 L 74 54 L 74 72 C 74 84 64 91 50 91 C 36 91 26 84 26 72 Z" fill="#A3E635"/>
 </svg>
