@@ -2327,39 +2327,6 @@
     @media(max-width:900px) { .field-stories-head { display:block; } .field-stories-head p { margin-top:18px; } .evidence-track { grid-template-columns:repeat(2,minmax(0,1fr)); row-gap:28px; } .evidence-track::before { display:none; } }
     @media(max-width:700px) { .field-story-grid,.evidence-track { grid-template-columns:1fr; } .field-stories-head h2 { overflow-wrap:anywhere; } .field-story figcaption { padding:20px; } .evidence-flow { padding:22px 18px; } .evidence-step { padding:0; display:grid; grid-template-columns:44px minmax(0,1fr); column-gap:16px; } .evidence-step .flow-dot { grid-row:span 2; margin-bottom:0; } .evidence-step h4 { align-self:end; } }
 
-
-    /* Second editorial spread and a distinct, readable evidence timeline */
-    .field-stories-section { background:#09110d; border-top:1px solid rgba(147,197,253,.12); border-bottom:1px solid rgba(147,197,253,.12); }
-    .field-stories-head { display:flex; justify-content:space-between; align-items:end; gap:36px; margin-bottom:36px; }
-    .field-stories-head > div { max-width:740px; }
-    .field-stories-head .field-kicker { color:#93c5fd; font:800 11px var(--font-mono); letter-spacing:.12em; text-transform:uppercase; }
-    .field-stories-head h2 { color:white; font-size:clamp(30px,3.5vw,50px); line-height:1.14; margin:14px 0 0; }
-    .field-stories-head p { color:var(--ink-soft); font-size:17px; line-height:1.65; max-width:520px; margin:0; }
-    .field-story-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; }
-    .field-story { margin:0; min-width:0; background:#101a14; border:1px solid rgba(147,197,253,.22); border-radius:14px; overflow:hidden; }
-    .field-story img { width:100%; height:auto; aspect-ratio:16/9; display:block; object-fit:cover; }
-    .field-story figcaption { padding:24px 28px 28px; }
-    .field-story .field-index { display:block; color:#93c5fd; font:800 11px var(--font-mono); letter-spacing:.11em; text-transform:uppercase; margin-bottom:10px; }
-    .field-story h3 { color:white; font-size:22px; line-height:1.25; margin:0 0 8px; }
-    .field-story p { color:var(--ink-soft); font-size:15.5px; line-height:1.6; margin:0; }
-    .field-stories-note { color:var(--ink-muted); font-size:12px; margin:16px 0 0; }
-    .evidence-flow { margin:0 0 40px; padding:32px; background:rgba(4,10,8,.72); border:1px solid rgba(56,189,248,.26); border-radius:16px; }
-    .evidence-flow figcaption { max-width:780px; margin-bottom:30px; }
-    .evidence-flow .flow-kicker { color:#7dd3fc; font:800 11px var(--font-mono); letter-spacing:.12em; text-transform:uppercase; }
-    .evidence-flow h3 { color:white; font-size:clamp(25px,2.6vw,35px); line-height:1.2; margin:11px 0 10px; }
-    .evidence-flow figcaption p { color:#cbd5ce; font-size:16px; line-height:1.6; margin:0; }
-    .evidence-track { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:24px; position:relative; }
-    .evidence-track::before { content:""; position:absolute; top:22px; left:5%; right:5%; height:2px; background:linear-gradient(90deg,#93c5fd,#38bdf8,#a3e635); }
-    .evidence-step { position:relative; z-index:1; min-width:0; padding:0 10px; }
-    .evidence-step .flow-dot { display:grid; place-items:center; width:44px; height:44px; border-radius:50%; background:#0c1712; border:2px solid #93c5fd; color:#bfdbfe; font:800 13px var(--font-mono); margin-bottom:18px; }
-    .evidence-step:nth-child(2) .flow-dot { border-color:#7dd3fc; }
-    .evidence-step:nth-child(3) .flow-dot { border-color:#38bdf8; }
-    .evidence-step:nth-child(4) .flow-dot { border-color:#a3e635; color:#d9f99d; }
-    .evidence-step h4 { color:white; font-size:18px; margin:0 0 8px; }
-    .evidence-step p { color:#cbd5ce; font-size:14px; line-height:1.55; margin:0; }
-    @media(max-width:900px) { .field-stories-head { display:block; } .field-stories-head p { margin-top:18px; } .evidence-track { grid-template-columns:repeat(2,minmax(0,1fr)); row-gap:28px; } .evidence-track::before { display:none; } }
-    @media(max-width:700px) { .field-story-grid,.evidence-track { grid-template-columns:1fr; } .field-stories-head h2 { overflow-wrap:anywhere; } .field-story figcaption { padding:20px; } .evidence-flow { padding:22px 18px; } .evidence-step { padding:0; display:grid; grid-template-columns:44px minmax(0,1fr); column-gap:16px; } .evidence-step .flow-dot { grid-row:span 2; margin-bottom:0; } .evidence-step h4 { align-self:end; } }
-
   </style>
 </head>
 <body>
@@ -3262,24 +3229,6 @@
     </div>
   </section>
 
-
-  <section class="section-pad field-stories-section">
-    <div class="container">
-      <div class="field-stories-head"><div><span class="field-kicker">DANS LES SYSTÈMES RÉELS</span><h2>Des décisions qui touchent chaque environnement.</h2></div><p>De la plateforme de données au laboratoire, une architecture fiable rend les choix stratégiques possibles.</p></div>
-      <div class="field-story-grid">
-        <figure class="field-story">
-          <img src="assets/data-collaboration.webp" width="1672" height="941" alt="Équipe de spécialistes des données travaillant ensemble dans un bureau." loading="lazy" decoding="async">
-          <figcaption><span class="field-index">03 / DATA & IA</span><h3>Données gouvernées</h3><p>Des équipes, des usages et des contrôles à relier dans une même architecture.</p></figcaption>
-        </figure>
-        <figure class="field-story">
-          <img src="assets/life-sciences-lab.webp" width="1672" height="941" alt="Chercheurs travaillant dans un laboratoire contemporain." loading="lazy" decoding="async">
-          <figcaption><span class="field-index">04 / SANTÉ & SCIENCES</span><h3>Environnements sensibles</h3><p>La qualité des flux et des accès compte autant que la performance des systèmes.</p></figcaption>
-        </figure>
-      </div>
-      <p class="field-stories-note">Images éditoriales illustratives créées pour le site.</p>
-    </div>
-  </section>
-
   <!-- AUDE PLATFORM CONSOLE -->
   <section class="section-pad aude-section" id="aude">
     <div class="container">
@@ -3299,16 +3248,6 @@
           Aude est notre gamme de produits technologiques. Elle ingère les diagnostics de vos environnements existants pour certifier l'application des contrôles de sécurité et éclairer les décisions d'arbitrage.
         </p>
       </div>
-
-      <figure class="evidence-flow" aria-label="De la preuve au pilotage.">
-        <figcaption><span class="flow-kicker">CHAÎNE DE CONTRÔLE</span><h3>De la preuve au pilotage.</h3><p>Exemple de flux de travail pour rendre un contrôle compréhensible, traçable et actionnable.</p></figcaption>
-        <div class="evidence-track">
-          <div class="evidence-step"><span class="flow-dot">01</span><h4>Collecter</h4><p>Rassembler configurations, journaux et résultats existants.</p></div>
-          <div class="evidence-step"><span class="flow-dot">02</span><h4>Évaluer</h4><p>Comparer les éléments à un contrôle défini.</p></div>
-          <div class="evidence-step"><span class="flow-dot">03</span><h4>Documenter</h4><p>Conserver les constats et leurs dates de vérification.</p></div>
-          <div class="evidence-step"><span class="flow-dot">04</span><h4>Prioriser</h4><p>Attribuer les écarts et suivre les décisions.</p></div>
-        </div>
-      </figure>
 
       <figure class="evidence-flow" aria-label="De la preuve au pilotage.">
         <figcaption><span class="flow-kicker">CHAÎNE DE CONTRÔLE</span><h3>De la preuve au pilotage.</h3><p>Exemple de flux de travail pour rendre un contrôle compréhensible, traçable et actionnable.</p></figcaption>
