@@ -2327,6 +2327,523 @@
     @media(max-width:900px) { .field-stories-head { display:block; } .field-stories-head p { margin-top:18px; } .evidence-track { grid-template-columns:repeat(2,minmax(0,1fr)); row-gap:28px; } .evidence-track::before { display:none; } }
     @media(max-width:700px) { .field-story-grid,.evidence-track { grid-template-columns:1fr; } .field-stories-head h2 { overflow-wrap:anywhere; } .field-story figcaption { padding:20px; } .evidence-flow { padding:22px 18px; } .evidence-step { padding:0; display:grid; grid-template-columns:44px minmax(0,1fr); column-gap:16px; } .evidence-step .flow-dot { grid-row:span 2; margin-bottom:0; } .evidence-step h4 { align-self:end; } }
 
+  
+    /* ========================================================
+       EDITORIAL PICTURES & ARCHITECTURAL DIAGRAMS
+       ======================================================== */
+    .bridge-editorial-spotlight {
+      margin: 0 0 48px 0;
+    }
+    .visual-story-featured {
+      background: #0d1712;
+      border: 1px solid rgba(147, 197, 253, 0.3);
+      border-radius: 14px;
+      overflow: hidden;
+      margin: 0;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+    .visual-story-featured:hover {
+      border-color: rgba(147, 197, 253, 0.55);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(147, 197, 253, 0.15);
+    }
+    .visual-story-featured img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16/9;
+      display: block;
+      object-fit: cover;
+    }
+    .visual-story-featured figcaption {
+      padding: 28px 32px 32px;
+      background: linear-gradient(180deg, rgba(13, 23, 18, 0.85) 0%, rgba(9, 17, 13, 0.98) 100%);
+    }
+    .story-kicker-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .story-kicker {
+      color: #93c5fd;
+      font: 800 11.5px var(--font-mono);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .story-badge {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      color: #dbeafe;
+      background: rgba(147, 197, 253, 0.14);
+      border: 1px solid rgba(147, 197, 253, 0.35);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+    .visual-story-featured strong {
+      display: block;
+      color: #ffffff;
+      font-size: clamp(22px, 2.4vw, 32px);
+      line-height: 1.25;
+      margin-bottom: 10px;
+      font-weight: 800;
+    }
+    .visual-story-featured p {
+      color: var(--ink-soft);
+      font-size: 16px;
+      line-height: 1.65;
+      margin: 0;
+      max-width: 900px;
+    }
+
+    /* DIAGRAM CONTAINER & PIPELINE */
+    .diagram-container {
+      margin: 54px 0 0;
+      padding: 36px 32px;
+      background: #09120d;
+      border: 1px solid rgba(147, 197, 253, 0.25);
+      border-radius: 16px;
+      box-shadow: 0 16px 45px rgba(0, 0, 0, 0.7);
+    }
+    .diagram-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+      margin-bottom: 34px;
+      flex-wrap: wrap;
+    }
+    .diagram-head-left .diagram-kicker {
+      display: block;
+      color: #93c5fd;
+      font: 800 11px var(--font-mono);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .diagram-head-left h3 {
+      color: #ffffff;
+      font-size: clamp(22px, 2.2vw, 32px);
+      line-height: 1.2;
+      margin: 0;
+    }
+    .diagram-pill {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #a3e635;
+      background: rgba(163, 230, 53, 0.12);
+      border: 1px solid rgba(163, 230, 53, 0.35);
+      padding: 8px 14px;
+      border-radius: 999px;
+    }
+
+    .bridge-pipeline-diagram {
+      display: grid;
+      grid-template-columns: 1fr 140px 1fr;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+    @media (max-width: 960px) {
+      .bridge-pipeline-diagram {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+    }
+    .pipeline-column {
+      background: #0c1711;
+      border: 1px solid rgba(77, 93, 54, 0.4);
+      border-radius: 12px;
+      padding: 24px 22px;
+    }
+    .stream-advisory {
+      border-color: rgba(147, 197, 253, 0.32);
+    }
+    .stream-tech {
+      border-color: rgba(56, 189, 248, 0.32);
+    }
+    .pipeline-header {
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 14px;
+    }
+    .stream-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 800;
+      color: #93c5fd;
+      background: rgba(147, 197, 253, 0.12);
+      padding: 4px 8px;
+      border-radius: 4px;
+      margin-bottom: 6px;
+    }
+    .badge-tech-stream {
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.12);
+    }
+    .pipeline-header h4 {
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 800;
+      margin: 0;
+      letter-spacing: 0.04em;
+    }
+    .pipeline-nodes {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .pipeline-node {
+      background: #08100b;
+      border: 1px solid rgba(77, 93, 54, 0.3);
+      border-radius: 8px;
+      padding: 16px;
+      transition: border-color 0.2s;
+    }
+    .stream-advisory .pipeline-node:hover {
+      border-color: rgba(147, 197, 253, 0.45);
+    }
+    .stream-tech .pipeline-node:hover {
+      border-color: rgba(56, 189, 248, 0.45);
+    }
+    .node-tag {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      color: #93c5fd;
+      margin-bottom: 4px;
+    }
+    .tag-tech {
+      color: #38bdf8;
+    }
+    .pipeline-node strong {
+      display: block;
+      color: #f1f5f2;
+      font-size: 15px;
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+    .pipeline-node p {
+      color: var(--ink-soft);
+      font-size: 13.5px;
+      line-height: 1.5;
+      margin: 0 0 10px 0;
+    }
+    .node-metric {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #a3e635;
+      background: rgba(163, 230, 53, 0.08);
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 1px solid rgba(163, 230, 53, 0.22);
+    }
+    .metric-tech {
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.08);
+      border-color: rgba(56, 189, 248, 0.22);
+    }
+
+    /* CENTER NEXUS HUB */
+    .pipeline-center-bridge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .bridge-nexus-core {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+    }
+    .nexus-hub-coin {
+      display: grid;
+      place-items: center;
+      filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.4));
+      animation: coinPulse 3s ease-in-out infinite;
+    }
+    @keyframes coinPulse {
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 18px rgba(56, 189, 248, 0.35)); }
+      50% { transform: scale(1.06); filter: drop-shadow(0 0 26px rgba(147, 197, 253, 0.6)); }
+    }
+    .nexus-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .nexus-sub {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: #a3e635;
+    }
+    .diagram-footer-caption {
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      line-height: 1.6;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 16px;
+      margin: 0;
+    }
+    .diagram-footer-caption span {
+      font-family: var(--font-mono);
+      color: #93c5fd;
+      font-weight: 700;
+    }
+
+    /* TECHNICAL BLUEPRINT CARDS IN DIVISIONS */
+    .technical-blueprint-card {
+      margin: 28px 0;
+      padding: 24px;
+      background: #08100b;
+      border: 1px solid rgba(77, 93, 54, 0.4);
+      border-radius: 10px;
+    }
+    .blueprint-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 10px;
+      border-bottom: 1px solid rgba(77, 93, 54, 0.25);
+      padding-bottom: 12px;
+    }
+    .blueprint-kicker {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 800;
+      color: #93c5fd;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .blueprint-kicker-tech {
+      color: #38bdf8;
+    }
+    .blueprint-badge {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: #cbd5ce;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 3px 8px;
+      border-radius: 3px;
+    }
+    .carveout-flow-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      align-items: center;
+      gap: 12px;
+    }
+    @media (max-width: 820px) {
+      .carveout-flow-grid {
+        grid-template-columns: 1fr;
+      }
+      .carveout-arrow {
+        transform: rotate(90deg);
+        margin: 10px auto;
+      }
+    }
+    .carveout-stage {
+      background: #0b150e;
+      border: 1px solid rgba(77, 93, 54, 0.3);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .stage-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      color: #8f9f7a;
+      margin-bottom: 8px;
+    }
+    .stage-box strong {
+      display: block;
+      color: #ffffff;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    .stage-box ul {
+      margin: 0;
+      padding-left: 16px;
+      font-size: 12.5px;
+      color: var(--ink-soft);
+      line-height: 1.5;
+    }
+    .stage-box-accent {
+      border-left: 2px solid #93c5fd;
+      padding-left: 8px;
+    }
+    .stage-box-target {
+      border-left: 2px solid #a3e635;
+      padding-left: 8px;
+    }
+    .carveout-arrow {
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 9px;
+      color: #93c5fd;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+    }
+    .carveout-arrow .arrow-line {
+      width: 32px;
+      height: 2px;
+      background: #93c5fd;
+      margin: 4px auto 0;
+      position: relative;
+    }
+    .carveout-arrow .arrow-line::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: -3px;
+      width: 0;
+      height: 0;
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+      border-left: 6px solid #93c5fd;
+    }
+
+    /* DEFENSE LAYERS GRID */
+    .defense-layers-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    @media (max-width: 600px) {
+      .defense-layers-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .defense-layer-item {
+      background: #0b150e;
+      border: 1px solid rgba(56, 189, 248, 0.22);
+      border-radius: 8px;
+      padding: 16px;
+      transition: border-color 0.2s;
+    }
+    .defense-layer-item:hover {
+      border-color: rgba(56, 189, 248, 0.45);
+    }
+    .layer-num {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 800;
+      color: #38bdf8;
+      margin-bottom: 6px;
+    }
+    .defense-layer-item strong {
+      display: block;
+      color: #ffffff;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+    .defense-layer-item p {
+      font-size: 12.5px;
+      color: var(--ink-soft);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* NETWORK TOPOLOGY BOX IN CONTACT */
+    .network-topology-box {
+      background: #070c08;
+      border: 1px solid rgba(147, 197, 253, 0.28);
+      border-radius: 8px;
+      padding: 18px 16px;
+      margin: 20px 0;
+    }
+    .topology-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .topology-kicker {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 800;
+      color: #93c5fd;
+      letter-spacing: 0.08em;
+    }
+    .topology-status {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: #a3e635;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 700;
+    }
+    .topology-nodes-network {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+    .hub-node {
+      background: #0c1712;
+      border: 1px solid rgba(77, 93, 54, 0.5);
+      border-radius: 6px;
+      padding: 8px 10px;
+      text-align: center;
+      flex: 1 1 50px;
+      min-width: 44px;
+      transition: all 0.2s;
+    }
+    .hub-node:hover {
+      border-color: #38bdf8;
+      transform: translateY(-1px);
+    }
+    .hub-node-highlight {
+      border-color: #93c5fd;
+      background: rgba(147, 197, 253, 0.08);
+    }
+    .node-city {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+    .node-role {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 8.5px;
+      color: #8f9f7a;
+      white-space: nowrap;
+      margin-top: 2px;
+    }
+    .node-wire {
+      height: 1px;
+      flex: 0 0 10px;
+      background: rgba(147, 197, 253, 0.3);
+    }
+    .topology-footer-note {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      color: #8f9f7a;
+      line-height: 1.4;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 10px;
+    }
+    
   </style>
 </head>
 <body>
@@ -2737,6 +3254,57 @@
             </div>
           </div>
 
+                      <!-- CARVE-OUT SEPARATION BLUEPRINT DIAGRAM -->
+            <div class="technical-blueprint-card crosshair-corner">
+              <div class="blueprint-header">
+                <span class="blueprint-kicker">BLUEPRINT // CARVE-OUT &amp; SÉPARATION D'ACTIFS SI</span>
+                <span class="blueprint-badge">MÉTHODOLOGIE DÉCOUPLAGE ZERO-DAY</span>
+              </div>
+              <div class="carveout-flow-grid">
+                <div class="carveout-stage stage-source">
+                  <div class="stage-tag">ENTREPRISE MÈRE / VENDEUR</div>
+                  <div class="stage-box">
+                    <strong>Périmètre Intriqué</strong>
+                    <ul>
+                      <li>Tenant Azure / AWS partagé</li>
+                      <li>ERP &amp; SAP centralisés</li>
+                      <li>Accès Active Directory communs</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="carveout-arrow">
+                  <span>DÉCOUPLAGE</span>
+                  <div class="arrow-line"></div>
+                </div>
+                <div class="carveout-stage stage-gateway">
+                  <div class="stage-tag">SAS TRANSITOIRE TSA (AUBAN)</div>
+                  <div class="stage-box stage-box-accent">
+                    <strong>Sas Filtrant &amp; Proxy</strong>
+                    <ul>
+                      <li>Cloisonnement des flux réseau</li>
+                      <li>Séparation des identités IAM</li>
+                      <li>Supervision des dépendances TSA</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="carveout-arrow">
+                  <span>AUTONOMIE</span>
+                  <div class="arrow-line"></div>
+                </div>
+                <div class="carveout-stage stage-target">
+                  <div class="stage-tag">CIBLE AUTONOME (DAY 1)</div>
+                  <div class="stage-box stage-box-target">
+                    <strong>Socle Propre &amp; Souverain</strong>
+                    <ul>
+                      <li>Tenant dédié &amp; sauvegardes étanches</li>
+                      <li>Contrats fournisseurs directs</li>
+                      <li>Auditabilité DORA / FCA prête</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           <div class="division-card-footer">
             <span class="buyers-label">Interlocuteurs : Conseils · DG · Fonds PE · CFOs</span>
             <a href="#cadrage" class="btn btn-brass" onclick="setScoperDivision('advisory')">
@@ -2793,6 +3361,36 @@
               </div>
             </div>
           </div>
+
+                      <!-- ZERO TRUST DEFENSE-IN-DEPTH DIAGRAM -->
+            <div class="technical-blueprint-card crosshair-corner">
+              <div class="blueprint-header">
+                <span class="blueprint-kicker blueprint-kicker-tech">BLUEPRINT // DÉFENSE EN PROFONDEUR SOUVERAINE</span>
+                <span class="blueprint-badge badge-tech-stream">STANDARD ZERO TRUST NATO-GRADE</span>
+              </div>
+              <div class="defense-layers-grid">
+                <div class="defense-layer-item">
+                  <div class="layer-num">COUCHE 01</div>
+                  <strong>Identité Matérielle Résistante</strong>
+                  <p>Clés FIDO2 physiques, zéro mot de passe permanent, élévation des droits Just-In-Time (JIT).</p>
+                </div>
+                <div class="defense-layer-item">
+                  <div class="layer-num">COUCHE 02</div>
+                  <strong>Micro-Segmentation Réseau</strong>
+                  <p>Isolement strict des segments OT/IT, politique « Never Trust, Always Verify », chiffrement mTLS.</p>
+                </div>
+                <div class="defense-layer-item">
+                  <div class="layer-num">COUCHE 03</div>
+                  <strong>Cloud Souverain &amp; Enclaves</strong>
+                  <p>Hébergement qualifié SecNumCloud, processeurs confidentiels (TEE), maîtrise des clés de chiffrement.</p>
+                </div>
+                <div class="defense-layer-item">
+                  <div class="layer-num">COUCHE 04</div>
+                  <strong>Coffre Immuable Airgappé</strong>
+                  <p>Sauvegardes WORM déconnectées, tests de restauration PRA continus sous 4h, attestation d'invariance Aude.</p>
+                </div>
+              </div>
+            </div>
 
           <div class="division-card-footer">
             <span class="buyers-label">Interlocuteurs : CIOs · CTOs · CISOs · COOs</span>
@@ -2877,6 +3475,93 @@
           <div class="map-node"><span class="map-num">03</span><h4>Données & IA</h4><p>Quels actifs, usages et contraintes doivent être gouvernés ?</p><span class="map-output">Inventaire et règles</span></div>
           <div class="map-node"><span class="map-num">04</span><h4>Continuité</h4><p>Que faut-il tester pour garantir la reprise des services ?</p><span class="map-output">Plan de contrôle</span></div>
         </div>
+      </figure>
+
+      <!-- OPERATIONAL BRIDGE ARCHITECTURAL DIAGRAM -->
+      <figure class="diagram-container crosshair-corner" aria-label="Schéma d'architecture du Pont Opérationnel Auban">
+        <div class="diagram-head">
+          <div class="diagram-head-left">
+            <span class="diagram-kicker">ARCHITECTURE OPÉRATIONNELLE UNIFIÉE</span>
+            <h3>Le Flux Continu : De l'Audit de Diligence à la Résilience 24/7</h3>
+          </div>
+          <span class="diagram-pill">FLUX SANS RUPTURE DE CHARGE</span>
+        </div>
+
+        <div class="bridge-pipeline-diagram">
+          <!-- Column 1: Advisory Stream -->
+          <div class="pipeline-column stream-advisory">
+            <div class="pipeline-header">
+              <span class="stream-badge">AUBAN ADVISORY</span>
+              <h4>GOUVERNANCE &amp; TRANSACTIONS</h4>
+            </div>
+            <div class="pipeline-nodes">
+              <div class="pipeline-node">
+                <span class="node-tag">PHASE 01</span>
+                <strong>Due Diligence Pré-Deal</strong>
+                <p>Audit d'architecture, analyse de dette technique, identification des passifs masqués.</p>
+                <span class="node-metric">Délai standard : 10 à 15 jours</span>
+              </div>
+              <div class="pipeline-node">
+                <span class="node-tag">PHASE 02</span>
+                <strong>Architecture de Carve-Out</strong>
+                <p>Détricotage SI, modélisation des TSA et chiffrage des trajectoires de séparation.</p>
+                <span class="node-metric">Clôture Day-1 sans interruption</span>
+              </div>
+              <div class="pipeline-node">
+                <span class="node-tag">PHASE 03</span>
+                <strong>Conformité DORA &amp; Régulation</strong>
+                <p>Surveillance des tiers TIC, gouvernance EU AI Act et attestations comités.</p>
+                <span class="node-metric">Auditabilité formelle certifiée</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Center Column: The Bridge Nexus -->
+          <div class="pipeline-center-bridge">
+            <div class="bridge-nexus-core">
+              <div class="nexus-hub-coin">
+                <svg width="44" height="44" viewBox="0 0 100 100" fill="none">
+                  <rect width="100" height="100" rx="20" fill="#000000" stroke="#FFFFFF" stroke-width="4"/>
+                  <path d="M 50 16 L 74 54 L 62 54 L 50 34 L 38 54 L 26 54 Z" fill="#FFE600"/>
+                  <path d="M 26 54 L 38 54 L 38 72 C 38 78 43 81.5 50 81.5 C 57 81.5 62 78 62 72 L 62 54 L 74 54 L 74 72 C 74 84 64 91 50 91 C 36 91 26 84 26 72 Z" fill="#A3E635"/>
+                </svg>
+              </div>
+              <span class="nexus-label">LE PONT OPÉRATIONNEL</span>
+              <span class="nexus-sub">Zéro rupture de charge</span>
+            </div>
+          </div>
+
+          <!-- Column 2: Technology Stream -->
+          <div class="pipeline-column stream-tech">
+            <div class="pipeline-header">
+              <span class="stream-badge badge-tech-stream">AUBAN TECHNOLOGY</span>
+              <h4>INGÉNIERIE &amp; DÉFENSE CRITIQUE</h4>
+            </div>
+            <div class="pipeline-nodes">
+              <div class="pipeline-node">
+                <span class="node-tag tag-tech">EXÉCUTION 01</span>
+                <strong>Hardening Zero Trust &amp; IAM</strong>
+                <p>FIDO2 phishing-resistant, fermeture des privilèges permanents et sas de crise.</p>
+                <span class="node-metric metric-tech">Zero Standing Privileges</span>
+              </div>
+              <div class="pipeline-node">
+                <span class="node-tag tag-tech">EXÉCUTION 02</span>
+                <strong>Sovereign Cloud &amp; Decoupling</strong>
+                <p>Conteneurisation bare-metal, enclaves SecNumCloud et modernisation du legacy.</p>
+                <span class="node-metric metric-tech">Isolation certifiée ANSSI/BSI</span>
+              </div>
+              <div class="pipeline-node">
+                <span class="node-tag tag-tech">EXÉCUTION 03</span>
+                <strong>24/7 MCO &amp; Preuve Aude</strong>
+                <p>Supervision continue, sauvegardes immuables airgappées et registre SHA-256.</p>
+                <span class="node-metric metric-tech">RTO vérifié &lt; 4 heures</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <figcaption class="diagram-footer-caption">
+          <span>◆ Trajectoire Intégrée :</span> Chaque constat formulé en comité Advisory alimente directement le carnet d'ingénierie de la squad Technology. Aucune perte d'information, aucune sous-traitance intermédiaire.
+        </figcaption>
       </figure>
     </div>
   </section>
@@ -3878,6 +4563,48 @@
             <div class="hub-pill"><span>◆ Amsterdam</span> Zuidas</div>
             <div class="hub-pill"><span>◆ Bruxelles</span> Quartier Européen</div>
             <div class="hub-pill"><span>◆ Lille</span> Siège &amp; Lab</div>
+          </div>
+
+                    <!-- EUROPEAN NETWORK TOPOLOGY DIAGRAM -->
+          <div class="network-topology-box crosshair-corner">
+            <div class="topology-header">
+              <span class="topology-kicker">RÉSEAU SOUVERAIN // TOPOLOGIE MULTI-HUBS</span>
+              <span class="topology-status"><span class="pulse-dot"></span> MAILLAGE ACTIF</span>
+            </div>
+            <div class="topology-nodes-network">
+              <div class="hub-node" title="London Hub">
+                <span class="node-city">LON</span>
+                <span class="node-role">M&amp;A / PE</span>
+              </div>
+              <div class="node-wire"></div>
+              <div class="hub-node" title="Paris Hub">
+                <span class="node-city">PAR</span>
+                <span class="node-role">Strategic Hub</span>
+              </div>
+              <div class="node-wire"></div>
+              <div class="hub-node hub-node-highlight" title="Luxembourg Hub">
+                <span class="node-city">LUX</span>
+                <span class="node-role">Finance &amp; DORA</span>
+              </div>
+              <div class="node-wire"></div>
+              <div class="hub-node" title="Amsterdam Hub">
+                <span class="node-city">AMS</span>
+                <span class="node-role">Cloud &amp; Tech</span>
+              </div>
+              <div class="node-wire"></div>
+              <div class="hub-node" title="Bruxelles Hub">
+                <span class="node-city">BRU</span>
+                <span class="node-role">EU / Defense</span>
+              </div>
+              <div class="node-wire"></div>
+              <div class="hub-node" title="Lille Hub">
+                <span class="node-city">LIL</span>
+                <span class="node-role">Tech Lab / Ops</span>
+              </div>
+            </div>
+            <div class="topology-footer-note">
+              Canaux chiffrés directs · Associés de mission habilités · Déploiement pan-européen sous 24h
+            </div>
           </div>
 
           <div class="outlook-quick-triggers">
