@@ -522,20 +522,31 @@
       padding: 7px 0;
       font-family: var(--font-mono);
       font-size: 10.5px;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.05em;
       position: relative;
       z-index: 101;
+      white-space: nowrap;
+      line-height: 1.2;
     }
     .command-ribbon-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      gap: 12px;
+      white-space: nowrap;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .command-ribbon-inner::-webkit-scrollbar {
+      display: none;
     }
     .ribbon-unit {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     .ribbon-kicker {
       font-weight: 800;
@@ -543,6 +554,8 @@
       border-radius: 4px;
       font-size: 10px;
       letter-spacing: 0.06em;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     .kicker-advisory {
       background: rgba(147, 197, 253, 0.16);
@@ -557,10 +570,14 @@
     .ribbon-desc {
       color: #cbd5ce;
       font-weight: 700;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     .ribbon-sep {
       color: rgba(56, 189, 248, 0.35);
       font-size: 11px;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     .ribbon-hubs {
       display: flex;
@@ -568,7 +585,19 @@
       gap: 6px;
       color: var(--olive-sage);
       font-weight: 750;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    @media (max-width: 1280px) {
+      .top-command-ribbon { font-size: 9.5px; }
+      .command-ribbon-inner { gap: 8px; }
+      .ribbon-unit { gap: 5px; }
+    }
+    @media (max-width: 1100px) {
+      .top-command-ribbon { font-size: 9px; }
+      .command-ribbon-inner { gap: 6px; }
+      .ribbon-kicker { font-size: 9px; padding: 1px 5px; }
     }
     @media (max-width: 960px) {
       .top-command-ribbon { display: none; }
@@ -760,9 +789,15 @@
     .hero-pill-cluster {
       display: flex;
       align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
+      gap: 10px;
+      flex-wrap: nowrap;
+      white-space: nowrap;
       margin-bottom: 24px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .hero-pill-cluster::-webkit-scrollbar {
+      display: none;
     }
     .hero-pill {
       display: inline-flex;
@@ -2431,14 +2466,14 @@
         <div class="hero-pill-cluster">
           <span class="hero-pill hero-pill-advisory">
             <span class="pulse-dot" style="color:var(--brass-light);"></span>
-            AUBAN ADVISORY : M&amp;A · TRANSACTIONS · CORPORATE FINANCE
+            AUBAN ADVISORY
           </span>
           <span class="hero-pill hero-pill-tech">
             <span class="pulse-dot" style="color:var(--phosphor-bright);"></span>
-            AUBAN TECHNOLOGY : CYBER DEFENCE · CLOUD · DATA &amp; IA · OPS
+            AUBAN TECHNOLOGY
           </span>
           <span class="hero-pill hero-pill-london">
-            LONDON · PARIS · AMSTERDAM · BRUXELLES · LILLE
+            LONDON · PARIS · AMSTERDAM · BRUSSELS · LILLE
           </span>
         </div>
 
@@ -3466,8 +3501,13 @@
   <section class="section-pad careers-section" id="careers">
     <div class="container">
       <div class="section-head">
-        <div class="section-kicker kicker-advisory">CAREERS &amp; TALENT // ELITE STANDARDS</div>
-        <h2>Join the premier firm for technology arbitrage and critical engineering.</h2>
+        <div>
+          <div class="eyebrow eyebrow-brass">
+            <span class="eyebrow-rule"></span>
+            CAREERS &amp; TALENT // ELITE STANDARDS
+          </div>
+          <h2>Join the premier firm for technology arbitrage and critical engineering.</h2>
+        </div>
         <p>
           Auban rassemble des stratèges et des bâtisseurs de premier rang à London, Paris, Luxembourg, Amsterdam, Brussels, and Lille. 
           Nous recherchons des profils hybrides rares : consultants en gouvernance technologique formés aux sciences dures, architectes de cyber-résilience et ingénieurs de systèmes critiques.
@@ -3583,8 +3623,13 @@
   <section class="section-pad partnerships-section" id="partnerships">
     <div class="container">
       <div class="section-head">
-        <div class="section-kicker kicker-advisory">ALLIANCES &amp; PARTNERSHIPS // STRATEGIC ECOSYSTEM</div>
-        <h2>Elite synergies accelerating value creation and sovereign resilience.</h2>
+        <div>
+          <div class="eyebrow eyebrow-brass">
+            <span class="eyebrow-rule"></span>
+            ALLIANCES &amp; PARTNERSHIPS // STRATEGIC ECOSYSTEM
+          </div>
+          <h2>Elite synergies accelerating value creation and sovereign resilience.</h2>
+        </div>
         <p>
           Auban collaborates closely with leading private equity firms, premier corporate law practices, sovereign technology pioneers, and applied research laboratories.
         </p>
@@ -3656,8 +3701,13 @@
   <section class="section-pad enquiry-section" id="contact">
     <div class="container">
       <div class="section-head">
-        <div class="section-kicker kicker-tech">ENGAGEMENT &amp; ARBITRAGE // ENQUIRIES</div>
-        <h2>Initiate an executive briefing under strict formal non-disclosure.</h2>
+        <div>
+          <div class="eyebrow eyebrow-phosphor">
+            <span class="eyebrow-rule"></span>
+            ENGAGEMENT &amp; ARBITRAGE // ENQUIRIES
+          </div>
+          <h2>Initiate an executive briefing under strict formal non-disclosure.</h2>
+        </div>
         <p>
           Que vous prépariez une transaction stratégique, un audit de due diligence ou la sécurisation d'un socle critique, nos associés vous répondent sous 4 heures ouvrées depuis London, Paris, Luxembourg, Amsterdam, Brussels, or Lille.
         </p>
