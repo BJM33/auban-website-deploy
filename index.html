@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Auban — AUBAN ADVISORY : M&amp;A · TRANSACTIONS · CORPORATE FINANCE ┃ AUBAN TECHNOLOGY : CYBER DEFENCE · CLOUD · DATA &amp; IA · OPS (London · Paris · Amsterdam · Bruxelles · Lille)</title>
-  <meta name="description" content="Auban : AUBAN ADVISORY (M&amp;A · Transactions · Corporate Finance) et AUBAN TECHNOLOGY (Cyber Defence · Cloud · Data &amp; IA · Ops). Présent à London, Paris, Amsterdam, Bruxelles et Lille.">
+  <title>Auban — AUBAN ADVISORY : CONSEIL STRATÉGIQUE CORPORATE &amp; TECH M&amp;A ┃ AUBAN TECHNOLOGY : CYBER DEFENCE · CLOUD · DATA &amp; IA · OPS (London · Paris · Luxembourg · Amsterdam · Bruxelles · Lille)</title>
+  <meta name="description" content="Auban : Le cabinet technologique unifié pour le conseil corporate et l'ingénierie critique. AUBAN ADVISORY (Conseil Stratégique d'Entreprise · Tech M&amp;A · Due Diligence) et AUBAN TECHNOLOGY (Cyber Defence · Cloud Souverain · Data &amp; IA · Ops 24/7). Présent à London, Paris, Luxembourg, Amsterdam, Bruxelles et Lille.">
   <link rel="canonical" href="https://auban.fr/">
   <link rel="alternate" hreflang="fr" href="https://auban.fr/">
   <link rel="alternate" hreflang="en" href="https://auban.fr/en.html">
@@ -21,16 +21,16 @@
   <meta property="og:locale" content="fr_FR">
   <meta property="og:url" content="https://auban.fr/">
   <meta property="og:title" content="AUBAN ADVISORY : M&amp;A · TRANSACTIONS · CORPORATE FINANCE ┃ AUBAN TECHNOLOGY : CYBER DEFENCE · CLOUD · DATA &amp; IA · OPS">
-  <meta property="og:description" content="Auban : AUBAN ADVISORY (M&amp;A · Transactions · Corporate Finance) et AUBAN TECHNOLOGY (Cyber Defence · Cloud · Data &amp; IA · Ops). London · Paris · Amsterdam · Bruxelles · Lille.">
+  <meta property="og:description" content="Auban : AUBAN ADVISORY (M&amp;A · Transactions · Corporate Finance) et AUBAN TECHNOLOGY (Cyber Defence · Cloud · Data &amp; IA · Ops). London · Paris · Luxembourg · Amsterdam · Bruxelles · Lille.">
   <meta property="og:image" content="https://auban.fr/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Auban — Advisory &amp; Technology (London · Paris · Amsterdam · Bruxelles · Lille)">
+  <meta property="og:image:alt" content="Auban — Advisory &amp; Technology (London · Paris · Luxembourg · Amsterdam · Bruxelles · Lille)">
 
   <!-- Twitter / X Card Protocol -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="AUBAN ADVISORY : M&amp;A · TRANSACTIONS · CORPORATE FINANCE ┃ AUBAN TECHNOLOGY : CYBER DEFENCE · CLOUD · DATA &amp; IA · OPS">
-  <meta name="twitter:description" content="Auban : AUBAN ADVISORY (M&amp;A · Transactions · Corporate Finance) et AUBAN TECHNOLOGY (Cyber Defence · Cloud · Data &amp; IA · Ops). London · Paris · Amsterdam · Bruxelles · Lille.">
+  <meta name="twitter:description" content="Auban : AUBAN ADVISORY (M&amp;A · Transactions · Corporate Finance) et AUBAN TECHNOLOGY (Cyber Defence · Cloud · Data &amp; IA · Ops). London · Paris · Luxembourg · Amsterdam · Bruxelles · Lille.">
   <meta name="twitter:image" content="https://auban.fr/og-image.png">
 
   <!-- Institutional Schema.org Structured Data -->
@@ -52,7 +52,8 @@
         "address": [
           { "@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB" },
           { "@type": "PostalAddress", "addressLocality": "Paris", "addressCountry": "FR" },
-          { "@type": "PostalAddress", "addressLocality": "Amsterdam", "addressCountry": "NL" },
+          { "@type": "PostalAddress", "addressLocality": "Luxembourg", "addressCountry": "LU" },
+      { "@type": "PostalAddress", "addressLocality": "Amsterdam", "addressCountry": "NL" },
           { "@type": "PostalAddress", "addressLocality": "Bruxelles", "addressCountry": "BE" },
           { "@type": "PostalAddress", "addressLocality": "Lille", "addressCountry": "FR" }
         ],
@@ -68,6 +69,172 @@
       }
     ]
   }
+  
+    // ========================================================
+    // 7. OUTLOOK POPOUT SYSTEM (ADVISORY & TECHNOLOGY)
+    // ========================================================
+    let currentModalTemplateText = "";
+
+    function openOutlookPopout(division, customSubject) {
+      const modal = document.getElementById('outlookPopoutModal');
+      const box = document.getElementById('outlookModalBox');
+      const badge = document.getElementById('modalDivisionBadge');
+      const title = document.getElementById('modalTitle');
+      const sub = document.getElementById('modalSubtitle');
+      const recipient = document.getElementById('modalRecipient');
+      const subject = document.getElementById('modalSubject');
+      const bodyArea = document.getElementById('modalBriefingBody');
+      const desktopBtn = document.getElementById('modalDesktopBtn');
+      const webBtn = document.getElementById('modalWebBtn');
+
+      if (!modal) return;
+
+      const isAdvisory = (division === 'advisory');
+
+      if (isAdvisory) {
+        box.classList.remove('mode-tech');
+        badge.className = 'division-badge badge-brass';
+        badge.textContent = 'AUBAN ADVISORY';
+        title.textContent = 'Auban Advisory // Briefing Mandat Corporate';
+        sub.textContent = 'Conseil Stratégique d\'Entreprise, Tech M&A et Due Diligence Technologique.';
+        
+        const toEmail = 'advisory@auban.fr';
+        const subjText = customSubject || '[Auban Advisory] Mandat Conseil Corporate & Diligence Technologique';
+        const bodyText = [
+          "À l'attention de la Direction Auban Advisory,",
+          "",
+          "- Organisation / Fonds : [Nom de votre organisation]",
+          "- Nature de l'opération : [Conseil Stratégique / Tech M&A / Due Diligence / Carve-Out SI / DORA]",
+          "- Hub d'échange souhaité : [London / Paris / Luxembourg / Amsterdam / Bruxelles / Lille]",
+          "- Calendrier & Horizon : [Ex: Sous 15 jours / Trimestre en cours]",
+          "",
+          "Synthèse de la situation / Enjeu :",
+          "[Précisez le contexte du mandat ou de la transaction]",
+          "",
+          "Contact direct : [Nom, Rôle, Ligne Téléphonique Directe]"
+        ].join('\n');
+
+        recipient.textContent = toEmail;
+        subject.textContent = subjText;
+        bodyArea.value = bodyText;
+        currentModalTemplateText = bodyText;
+
+        const mailtoUrl = `mailto:${toEmail}?cc=info@auban.fr&subject=${encodeURIComponent(subjText)}&body=${encodeURIComponent(bodyText)}`;
+        const webOutlookUrl = `https://outlook.office.com/mail/deeplink/compose?to=${toEmail}&cc=info@auban.fr&subject=${encodeURIComponent(subjText)}&body=${encodeURIComponent(bodyText)}`;
+
+        desktopBtn.setAttribute('href', mailtoUrl);
+        desktopBtn.className = 'btn btn-brass modal-action-btn';
+        webBtn.setAttribute('href', webOutlookUrl);
+      } else {
+        box.classList.add('mode-tech');
+        badge.className = 'division-badge badge-tech';
+        badge.textContent = 'AUBAN TECHNOLOGY';
+        title.textContent = 'Auban Technology // Squad Cyber Defence & Ops';
+        sub.textContent = 'Cyber Defence Zero Trust, Sovereign Cloud, Data & IA, MCO 24/7.';
+        
+        const toEmail = 'technology@auban.fr';
+        const subjText = customSubject || '[Auban Technology] Mobilisation Squad Cyber Defence & Ops';
+        const bodyText = [
+          "À l'attention du Commandement Auban Technology,",
+          "",
+          "- Organisation : [Nom de l'entreprise ou institution]",
+          "- Périmètre d'intervention : [Cyber Defence / Sovereign Cloud / Modernisation Core / LLMOps / MCO 24/7]",
+          "- Niveau d'urgence : [Immédiat (< 48h) / Sous 30 jours / Cadrage amont]",
+          "- Hub d'échange souhaité : [London / Paris / Luxembourg / Amsterdam / Bruxelles / Lille]",
+          "",
+          "Périmètre technique ou contrainte opérationnelle :",
+          "[Précisez les technologies, les actifs critiques et les objectifs d'intervention]",
+          "",
+          "Contact direct : [Nom, Rôle, Ligne Téléphonique Directe]"
+        ].join('\n');
+
+        recipient.textContent = toEmail;
+        subject.textContent = subjText;
+        bodyArea.value = bodyText;
+        currentModalTemplateText = bodyText;
+
+        const mailtoUrl = `mailto:${toEmail}?cc=info@auban.fr&subject=${encodeURIComponent(subjText)}&body=${encodeURIComponent(bodyText)}`;
+        const webOutlookUrl = `https://outlook.office.com/mail/deeplink/compose?to=${toEmail}&cc=info@auban.fr&subject=${encodeURIComponent(subjText)}&body=${encodeURIComponent(bodyText)}`;
+
+        desktopBtn.setAttribute('href', mailtoUrl);
+        desktopBtn.className = 'btn btn-phosphor modal-action-btn';
+        webBtn.setAttribute('href', webOutlookUrl);
+      }
+
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeOutlookPopout() {
+      const modal = document.getElementById('outlookPopoutModal');
+      if (modal) modal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    function handleModalOverlayClick(e) {
+      if (e.target && e.target.id === 'outlookPopoutModal') {
+        closeOutlookPopout();
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeOutlookPopout();
+    });
+
+    function copyModalTemplate() {
+      if (!navigator.clipboard) return;
+      navigator.clipboard.writeText(currentModalTemplateText).then(() => {
+        const textSpan = document.getElementById('copyBtnText');
+        const iconSpan = document.getElementById('copyBtnIcon');
+        textSpan.textContent = 'Texte copié dans le presse-papier !';
+        iconSpan.textContent = '✓';
+        setTimeout(() => {
+          textSpan.textContent = 'Copier le texte du mandat';
+          iconSpan.textContent = '📋';
+        }, 2200);
+      });
+    }
+
+    // ========================================================
+    // 8. INTERACTIVE ENQUIRY FORM LOGIC
+    // ========================================================
+    function handleEnquirySubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('enqName').value;
+      const email = document.getElementById('enqEmail').value;
+      const org = document.getElementById('enqOrg').value;
+      const phone = document.getElementById('enqPhone').value || 'Non renseigné';
+      const subject = document.getElementById('enqSubject').value;
+      const hub = document.getElementById('enqHub').value;
+      const msg = document.getElementById('enqMessage').value;
+
+      const isAdv = subject.startsWith('advisory') || subject === 'partnership';
+      const destEmail = isAdv ? 'advisory@auban.fr' : 'technology@auban.fr';
+      const subjTitle = `[Demande Enquiries] ${org} — Hub ${hub}`;
+
+      const mailBody = `Nom : ${name}\nEmail : ${email}\nTéléphone : ${phone}\nOrganisation : ${org}\nObjet : ${subject}\nHub de rattachement : ${hub}\n\nMessage :\n${msg}`;
+
+      const mailtoUrl = `mailto:${destEmail}?cc=info@auban.fr&subject=${encodeURIComponent(subjTitle)}&body=${encodeURIComponent(mailBody)}`;
+
+      const feedback = document.getElementById('enqFeedback');
+      feedback.style.display = 'block';
+      feedback.textContent = 'Ouverture de votre client de messagerie chiffré... Demande transmise aux associés du hub ' + hub + '.';
+
+      window.location.href = mailtoUrl;
+    }
+
+    function triggerOutlookFromForm() {
+      const org = document.getElementById('enqOrg').value || '[Votre Organisation]';
+      const subjectVal = document.getElementById('enqSubject').value;
+      const isAdv = subjectVal.startsWith('advisory') || subjectVal === 'partnership' || subjectVal === 'careers';
+      const division = isAdv ? 'advisory' : 'technology';
+      openOutlookPopout(division, `[Cadrage Enquiries] ${org}`);
+    }
+
+    function handleEnquirySubjectChange(val) {
+      // Optional auto-switching styling or suggestions
+    }
+    
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -82,7 +249,7 @@
       --mil-surface-elevated: #132017;
       --mil-card: rgba(14, 23, 17, 0.95);
       --mil-card-border: rgba(77, 93, 54, 0.35);
-      --mil-card-border-brass: rgba(197, 160, 89, 0.35);
+      --mil-card-border-brass: rgba(147, 197, 253, 0.35);
 
       --ink: #f1f5f2;           /* Light text for dark theme */
       --ink-soft: #cbd5ce;      /* Muted light text */
@@ -112,11 +279,11 @@
       --phosphor-dark: #0284c7;
       --phosphor-glow: rgba(56, 189, 248, 0.45);
 
-      /* Advisory & Capital Accent: Military Command Brass / Khaki Gold */
-      --brass: #c5a059;
-      --brass-light: #dfc27e;
-      --brass-deep: #967534;
-      --brass-glow: rgba(197, 160, 89, 0.38);
+      /* Advisory & Corporate Strategy: High-Visibility Strategic Blue / Ice Blue */
+      --brass: #93c5fd;
+      --brass-light: #dbeafe;
+      --brass-deep: #2563eb;
+      --brass-glow: rgba(147, 197, 253, 0.40);
 
       /* Operational Alert Colors */
       --alert-amber: #f59e0b;
@@ -263,7 +430,7 @@
     .btn-brass:hover {
       background: var(--brass-light);
       transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(197, 160, 89, 0.55);
+      box-shadow: 0 8px 30px rgba(147, 197, 253, 0.55);
     }
     .btn-phosphor {
       background: #0284c7;
@@ -294,7 +461,7 @@
       border: 1px solid var(--brass);
     }
     .btn-outline-brass:hover {
-      background: rgba(197, 160, 89, 0.15);
+      background: rgba(147, 197, 253, 0.15);
       transform: translateY(-2px);
     }
     .btn-outline-phosphor {
@@ -378,9 +545,9 @@
       letter-spacing: 0.06em;
     }
     .kicker-advisory {
-      background: rgba(197, 160, 89, 0.16);
+      background: rgba(147, 197, 253, 0.16);
       color: var(--brass-light);
-      border: 1px solid rgba(197, 160, 89, 0.45);
+      border: 1px solid rgba(147, 197, 253, 0.45);
     }
     .kicker-tech {
       background: rgba(56, 189, 248, 0.14);
@@ -527,7 +694,7 @@
       border-radius: 6px;
       font-size: 11.5px;
       font-weight: 800;
-      background: rgba(197, 160, 89, 0.14);
+      background: rgba(147, 197, 253, 0.14);
       color: var(--brass-light);
       border: 1px solid var(--brass);
       transition: all 0.2s;
@@ -568,7 +735,7 @@
     .hero-halo {
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 85% 50%, rgba(197, 160, 89, 0.14), transparent 60%),
+      background: radial-gradient(ellipse at 85% 50%, rgba(147, 197, 253, 0.14), transparent 60%),
                   radial-gradient(ellipse at 18% 85%, rgba(56, 189, 248, 0.16), transparent 55%),
                   radial-gradient(circle at 50% 20%, rgba(77, 93, 54, 0.25), transparent 70%);
       pointer-events: none;
@@ -613,8 +780,8 @@
     }
     .hero-pill-advisory {
       color: var(--brass-light);
-      border-color: rgba(197, 160, 89, 0.4);
-      background: rgba(197, 160, 89, 0.08);
+      border-color: rgba(147, 197, 253, 0.4);
+      background: rgba(147, 197, 253, 0.08);
     }
     .hero-pill-tech {
       color: var(--phosphor-bright);
@@ -749,7 +916,7 @@
     .visual-mode-tab.active {
       background: rgba(22, 36, 26, 0.95);
       color: var(--brass-light);
-      border-color: rgba(197, 160, 89, 0.5);
+      border-color: rgba(147, 197, 253, 0.5);
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
     }
     .visual-mode-tab.tab-tech.active {
@@ -874,7 +1041,7 @@
       font-size: 11.5px;
       flex-shrink: 0;
       font-family: var(--font-mono);
-      border: 1px solid rgba(197, 160, 89, 0.4);
+      border: 1px solid rgba(147, 197, 253, 0.4);
     }
     .badge-glyph-tech {
       color: var(--tech-blue);
@@ -933,7 +1100,7 @@
     }
     .card-advisory:hover {
       border-color: var(--brass);
-      box-shadow: 0 24px 60px rgba(197, 160, 89, 0.22);
+      box-shadow: 0 24px 60px rgba(147, 197, 253, 0.22);
     }
     .card-advisory h3 { color: #ffffff; }
 
@@ -964,7 +1131,7 @@
       margin-bottom: 20px;
     }
     .badge-brass {
-      background: rgba(197, 160, 89, 0.16);
+      background: rgba(147, 197, 253, 0.16);
       color: var(--brass-light);
       border: 1px solid var(--brass);
     }
@@ -1015,7 +1182,7 @@
       margin-top: 2px;
     }
     .card-advisory .pillar-bullet {
-      background: rgba(197, 160, 89, 0.2);
+      background: rgba(147, 197, 253, 0.2);
       color: var(--brass-light);
       border: 1px solid var(--brass);
     }
@@ -1328,7 +1495,7 @@
       color: white;
     }
     .console-version {
-      background: rgba(197, 160, 89, 0.18);
+      background: rgba(147, 197, 253, 0.18);
       color: var(--brass-light);
       border: 1px solid var(--brass);
       padding: 3px 8px;
@@ -1676,6 +1843,484 @@
       .mobile-nav-panel a { color: #cbd5ce; padding: 8px 10px; border-radius: 4px; font-weight: 700; font-size: 13.5px; }
       .mobile-nav-panel a:hover { background: rgba(56, 189, 248, 0.12); color: var(--phosphor-bright); }
     }
+  
+    /* ========================================================
+       CAREERS, PARTNERSHIPS, ENQUIRIES & OUTLOOK POPOUT STYLES
+       ======================================================== */
+    .careers-section {
+      background: #070c08;
+      border-top: 1px solid var(--line);
+    }
+    .careers-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    @media (max-width: 900px) {
+      .careers-grid { grid-template-columns: 1fr; }
+    }
+    .career-card {
+      background: #090f0b;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .career-card:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+      transform: translateY(-2px);
+    }
+    .career-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .career-location {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: var(--ink-muted);
+      font-weight: 700;
+    }
+    .career-card h3 {
+      font-size: 20px;
+      color: var(--ink);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .career-desc {
+      font-size: 14.5px;
+      color: var(--ink-soft);
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+    .career-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 0;
+      list-style: none;
+      margin: 0 0 24px 0;
+    }
+    .career-tags li {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(77, 93, 54, 0.4);
+      color: var(--brass-light);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+    .career-spontaneous-banner {
+      background: #0b150e;
+      border: 1px solid rgba(147, 197, 253, 0.35);
+      border-radius: 8px;
+      padding: 32px;
+      margin-top: 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .career-spontaneous-banner h4 {
+      font-size: 18px;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .career-spontaneous-banner p {
+      font-size: 14px;
+      color: var(--ink-soft);
+      max-width: 680px;
+      margin: 0;
+    }
+
+    /* PARTNERSHIPS SECTION */
+    .partnerships-section {
+      background: #090f0b;
+      border-top: 1px solid var(--line);
+    }
+    .partnerships-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    @media (max-width: 900px) {
+      .partnerships-grid { grid-template-columns: 1fr; }
+    }
+    .partnership-card {
+      background: #070c08;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 32px 28px;
+      transition: border-color 0.2s;
+    }
+    .partnership-card:hover {
+      border-color: rgba(147, 197, 253, 0.45);
+    }
+    .partnership-icon-badge {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--brass);
+      background: rgba(147, 197, 253, 0.12);
+      border: 1px solid rgba(147, 197, 253, 0.3);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      margin-bottom: 16px;
+    }
+    .partnership-card h3 {
+      font-size: 20px;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+    .partnership-desc {
+      font-size: 14.5px;
+      color: var(--ink-soft);
+      line-height: 1.65;
+      margin-bottom: 18px;
+    }
+    .partnership-benefit {
+      font-size: 13px;
+      color: var(--brass-light);
+      background: rgba(147, 197, 253, 0.05);
+      border-left: 2px solid var(--brass);
+      padding: 8px 12px;
+    }
+    .partnership-benefit span {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: var(--brass);
+    }
+    .partnership-cta-box {
+      background: #0e1711;
+      border: 1px solid rgba(77, 93, 54, 0.4);
+      border-radius: 8px;
+      padding: 32px;
+      margin-top: 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .partnership-cta-box h4 {
+      font-size: 18px;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .partnership-cta-box p {
+      font-size: 14px;
+      color: var(--ink-soft);
+      max-width: 680px;
+      margin: 0;
+    }
+
+    /* ENQUIRY & CONTACT SECTION */
+    .enquiry-section {
+      background: #070c08;
+      border-top: 1px solid var(--line);
+    }
+    .enquiry-layout {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 32px;
+      margin-top: 40px;
+    }
+    @media (max-width: 960px) {
+      .enquiry-layout { grid-template-columns: 1fr; }
+    }
+    .enquiry-card-form {
+      background: #090f0b;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 36px 32px;
+    }
+    .enquiry-form-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 10px;
+      border-bottom: 1px solid rgba(77, 93, 54, 0.25);
+      padding-bottom: 16px;
+    }
+    .form-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+    @media (max-width: 600px) {
+      .form-row-2 { grid-template-columns: 1fr; }
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+    .form-group label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--ink-muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: #060a07;
+      border: 1px solid rgba(77, 93, 54, 0.45);
+      border-radius: 6px;
+      padding: 12px 14px;
+      font-family: var(--font-sans);
+      font-size: 14.5px;
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--phosphor-bright);
+      box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.25);
+    }
+    .form-actions-tray {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .enquiry-card-channels {
+      background: #0b150e;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+    }
+    .enquiry-card-channels h3 {
+      font-size: 22px;
+      color: var(--ink);
+      margin: 12px 0 8px 0;
+    }
+    .direct-channel-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .channel-item {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      border-bottom: 1px solid rgba(77, 93, 54, 0.2);
+      padding-bottom: 10px;
+    }
+    .channel-label {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      color: var(--ink-muted);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .channel-val {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+      transition: color 0.2s;
+    }
+    .channel-val:hover {
+      color: var(--phosphor-bright);
+    }
+    .hubs-compact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .hub-pill {
+      background: #070c08;
+      border: 1px solid rgba(77, 93, 54, 0.3);
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--ink-soft);
+    }
+    .hub-pill span {
+      color: var(--phosphor-bright);
+      font-weight: 700;
+    }
+    .outlook-quick-triggers {
+      background: #070c08;
+      border: 1px dashed rgba(147, 197, 253, 0.35);
+      border-radius: 6px;
+      padding: 16px;
+      margin-top: auto;
+    }
+
+    /* OUTLOOK MODAL POPOUT */
+    .outlook-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.82);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 999999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .outlook-modal-box {
+      background: #0a120c;
+      border: 1.5px solid var(--brass);
+      border-radius: 10px;
+      max-width: 640px;
+      width: 100%;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9), 0 0 35px rgba(147, 197, 253, 0.15);
+      position: relative;
+      padding: 32px 30px;
+      animation: modalFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .outlook-modal-box.mode-tech {
+      border-color: var(--tech-blue);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9), 0 0 35px rgba(56, 189, 248, 0.2);
+    }
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.96) translateY(10px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .outlook-modal-close {
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: var(--ink-muted);
+      font-size: 22px;
+      cursor: pointer;
+      line-height: 1;
+      padding: 4px;
+      transition: color 0.2s;
+    }
+    .outlook-modal-close:hover {
+      color: #ffffff;
+    }
+    .outlook-badge-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .outlook-indicator {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--brass-light);
+      font-weight: 700;
+    }
+    .outlook-modal-box.mode-tech .outlook-indicator {
+      color: var(--tech-blue);
+    }
+    .outlook-modal-header h3 {
+      font-size: 22px;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .outlook-modal-header p {
+      font-size: 14px;
+      color: var(--ink-soft);
+      margin: 0 0 20px 0;
+    }
+    .modal-field-block {
+      margin-bottom: 14px;
+    }
+    .modal-field-block label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      color: var(--ink-muted);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+    .modal-readonly-input {
+      background: #060a07;
+      border: 1px solid rgba(77, 93, 54, 0.4);
+      border-radius: 4px;
+      padding: 8px 12px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--ink);
+    }
+    .modal-body-textarea {
+      width: 100%;
+      background: #060a07;
+      border: 1px solid rgba(77, 93, 54, 0.4);
+      border-radius: 4px;
+      padding: 10px 12px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: #cbd5ce;
+      line-height: 1.5;
+      resize: none;
+      box-sizing: border-box;
+      outline: none;
+    }
+    .modal-actions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    @media (max-width: 580px) {
+      .modal-actions-grid { grid-template-columns: 1fr; }
+    }
+    .modal-action-btn {
+      text-align: center;
+      justify-content: center;
+      font-size: 13px;
+      padding: 12px 14px;
+    }
+    .btn-copy-template {
+      background: none;
+      border: 1px solid rgba(77, 93, 54, 0.5);
+      color: var(--ink-soft);
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .btn-copy-template:hover {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--ink);
+      border-color: var(--ink-muted);
+    }
+    
   </style>
 </head>
 <body>
@@ -1688,7 +2333,7 @@
     <div class="container command-ribbon-inner">
       <div class="ribbon-unit">
         <span class="ribbon-kicker kicker-advisory">AUBAN ADVISORY</span>
-        <span class="ribbon-desc">M&amp;A · TRANSACTIONS · CORPORATE FINANCE</span>
+        <span class="ribbon-desc">CONSEIL CORPORATE · TECH M&amp;A · STRATÉGIE</span>
       </div>
       <div class="ribbon-sep">┃</div>
       <div class="ribbon-unit">
@@ -1739,14 +2384,14 @@
         <a href="#divisions" class="nav-link nav-advisory" onclick="setScoperDivision('advisory')">Auban Advisory</a>
         <a href="#divisions" class="nav-link nav-tech" onclick="setScoperDivision('tech')">Auban Technology</a>
         <a href="#bridge" class="nav-link">Pont Opérationnel</a>
-        <a href="#secteurs" class="nav-link">Industries STEM</a>
-        <a href="#packages" class="nav-link">Offres Clés en Main</a>
-        <a href="#aude" class="nav-link">Plateforme Aude</a>
+        <a href="#careers" class="nav-link">Carrières</a>
+        <a href="#partnerships" class="nav-link">Partenariats</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </nav>
 
       <div class="header-dual-cta">
-        <a href="#cadrage" class="header-cta-advisory" onclick="setScoperDivision('advisory')">Mandat Advisory</a>
-        <a href="#cadrage" class="header-cta-tech" onclick="setScoperDivision('tech')">Squads Tech</a>
+        <button type="button" class="header-cta-advisory" onclick="openOutlookPopout('advisory')" title="Ouvrir briefing Outlook Advisory">Mandat Advisory ↗</button>
+        <button type="button" class="header-cta-tech" onclick="openOutlookPopout('technology')" title="Ouvrir briefing Outlook Technology">Squads Tech ↗</button>
       </div>
 
       <details class="mobile-nav">
@@ -1760,13 +2405,16 @@
               <a href="nl.html" class="lang-btn">NL</a>
             </div>
           </div>
-          <a href="#divisions">AUBAN ADVISORY : M&amp;A · TRANSACTIONS · CORPORATE FINANCE</a>
-          <a href="#divisions">AUBAN TECHNOLOGY : CYBER DEFENCE · CLOUD · DATA &amp; IA · OPS</a>
+          <a href="#divisions" onclick="setScoperDivision('advisory')">AUBAN ADVISORY : CONSEIL CORPORATE &amp; TECH M&amp;A</a>
+          <a href="#divisions" onclick="setScoperDivision('tech')">AUBAN TECHNOLOGY : CYBER DEFENCE · CLOUD · DATA &amp; IA · OPS</a>
           <a href="#bridge">Le Pont Opérationnel</a>
-          <a href="#secteurs">Industries STEM</a>
-          <a href="#packages">Offres Clés en Main</a>
-          <a href="#aude">Plateforme Logicielle Aude</a>
-          <a href="#cadrage">Cadrer une intervention</a>
+          <a href="#careers">Carrières &amp; Recrutement</a>
+          <a href="#partnerships">Partenariats Stratégiques</a>
+          <a href="#contact">Contact &amp; Demandes d'Intervention</a>
+          <div style="padding: 10px 0; display:flex; gap:8px;">
+            <button type="button" class="header-cta-advisory" style="flex:1;" onclick="openOutlookPopout('advisory')">Outlook Advisory ↗</button>
+            <button type="button" class="header-cta-tech" style="flex:1;" onclick="openOutlookPopout('technology')">Outlook Tech ↗</button>
+          </div>
         </nav>
       </details>
     </div>
@@ -1799,24 +2447,24 @@
         </h1>
 
         <p class="hero-lead">
-          Auban est le cabinet technologique pour les transactions, la défense et le déploiement. 
-          Nous combinons <strong>Auban Advisory</strong> (M&amp;A · Transactions · Corporate Finance · Due Diligence) et <strong>Auban Technology</strong> (Cyber Defence · Cloud · Data &amp; IA · Ops · Maintien Opérationnel 24/7).
+          Auban est le cabinet technologique unifié de conseil corporate et d'ingénierie critique. 
+          Nous unissons <strong>Auban Advisory</strong> (Conseil Stratégique d'Entreprise · Tech M&amp;A · Due Diligence Technologique · Carve-Outs SI) et <strong>Auban Technology</strong> (Cyber Defence · Cloud Souverain · Data &amp; IA · Maintien Opérationnel 24/7) sous une doctrine opérationnelle d'excellence.
         </p>
 
         <div class="hero-actions">
-          <a href="#cadrage" class="btn btn-brass" onclick="setScoperDivision('advisory')">
-            Consulter Auban Advisory (M&amp;A &amp; Capital) →
-          </a>
-          <a href="#cadrage" class="btn btn-phosphor" onclick="setScoperDivision('tech')">
-            Mobiliser Auban Technology (Cyber Defence &amp; Ops) →
-          </a>
+          <button type="button" class="btn btn-brass" onclick="openOutlookPopout('advisory')">
+            Mandat Auban Advisory (Conseil Tech &amp; M&amp;A) ↗ Outlook
+          </button>
+          <button type="button" class="btn btn-phosphor" onclick="openOutlookPopout('technology')">
+            Mobiliser Auban Technology (Cyber &amp; Ops) ↗ Outlook
+          </button>
         </div>
 
         <div class="hero-dual-cards">
           <div class="hero-subcard hero-subcard-advisory">
             <span class="hero-subcard-kicker text-brass">AUBAN ADVISORY</span>
-            <strong>M&amp;A · TRANSACTIONS · CORPORATE FINANCE</strong>
-            <p>Due diligence tech &amp; cyber pré-deal, carve-outs complexes, structuration M&amp;A, levées de fonds et conformité DORA/NIS2 pour fonds PE et directions générales à London, Paris, Amsterdam et Lille.</p>
+            <strong>CONSEIL CORPORATE · TECH M&amp;A · DUE DILIGENCE</strong>
+            <p>Conseil technologique de direction, due diligence pré-acquisition, détricotage de carve-outs SI complexes, valorisation d'actifs numériques et conformité DORA/NIS2 pour fonds PE et comités de direction à London, Paris, Luxembourg, Amsterdam, Bruxelles et Lille.</p>
           </div>
           <div class="hero-subcard hero-subcard-tech">
             <span class="hero-subcard-kicker text-phosphor">AUBAN TECHNOLOGY</span>
@@ -1861,8 +2509,8 @@
                 <stop offset="100%" stop-color="#2D3A1D" />
               </linearGradient>
               <linearGradient id="visBrass" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#DFC27E" />
-                <stop offset="100%" stop-color="#C5A059" />
+                <stop offset="0%" stop-color="#DBEAFE" />
+                <stop offset="100%" stop-color="#93C5FD" />
               </linearGradient>
               <linearGradient id="visPhosphor" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stop-color="#38BDF8" />
@@ -1892,7 +2540,7 @@
             </g>
 
             <!-- Interconnect Lines -->
-            <path id="busAdv1" d="M 150 110 L 250 110 L 310 200 L 370 200" stroke="#C5A059" stroke-width="2.5" fill="none" stroke-linecap="round" />
+            <path id="busAdv1" d="M 150 110 L 250 110 L 310 200 L 370 200" stroke="#93C5FD" stroke-width="2.5" fill="none" stroke-linecap="round" />
             <path id="busAdv2" d="M 590 110 L 490 110 L 430 200 L 370 200" stroke="#4D5D36" stroke-width="1.5" fill="none" stroke-linecap="round" />
             <path id="busTech1" d="M 150 390 L 250 390 L 310 300 L 370 300" stroke="#4D5D36" stroke-width="1.5" fill="none" stroke-linecap="round" />
             <path id="busTech2" d="M 590 390 L 490 390 L 430 300 L 370 300" stroke="#38BDF8" stroke-width="2.5" fill="none" stroke-linecap="round" />
@@ -1908,16 +2556,16 @@
 
             <!-- Node 1: M&A / Transaction Services -->
             <g transform="translate(70, 85)">
-              <rect x="0" y="0" width="180" height="52" rx="6" fill="#0B150E" stroke="#C5A059" stroke-width="2" />
-              <circle cx="16" cy="26" r="5" fill="#C5A059" />
+              <rect x="0" y="0" width="180" height="52" rx="6" fill="#0B150E" stroke="#93C5FD" stroke-width="2" />
+              <circle cx="16" cy="26" r="5" fill="#93C5FD" />
               <text x="32" y="24" fill="#E2E8F0" font-size="11" font-weight="700" font-family="monospace">TECH_DILIGENCE()</text>
-              <text x="32" y="40" fill="#DFC27E" font-size="9" font-family="monospace">VALUATION &amp; CARVE-OUT</text>
+              <text x="32" y="40" fill="#DBEAFE" font-size="9" font-family="monospace">VALUATION &amp; CARVE-OUT</text>
             </g>
 
             <!-- Node 2: DORA / Regulatory Compliance -->
             <g transform="translate(490, 85)">
-              <rect x="0" y="0" width="180" height="52" rx="6" fill="#0B150E" stroke="rgba(197, 160, 89, 0.4)" stroke-width="1" />
-              <circle cx="16" cy="26" r="5" fill="#DFC27E" />
+              <rect x="0" y="0" width="180" height="52" rx="6" fill="#0B150E" stroke="rgba(147, 197, 253, 0.4)" stroke-width="1" />
+              <circle cx="16" cy="26" r="5" fill="#DBEAFE" />
               <text x="32" y="24" fill="#E2E8F0" font-size="11" font-weight="700" font-family="monospace">DORA_NIS2_AUDIT</text>
               <text x="32" y="40" fill="#8F9F7A" font-size="9" font-family="monospace">DEFENCE ASSURANCE READY</text>
             </g>
@@ -1959,7 +2607,7 @@
         <div class="visual-footer-bar">
           <div class="footer-code">
             <span class="footer-prompt">&gt;</span>
-            <code id="visualCodeLine">auban.deploy({ advisory: "deals_and_capital", technology: "cyber_defence_cloud_ia_ops", hubs: "LONDON_PARIS_AMSTERDAM_BRUXELLES_LILLE" });</code>
+            <code id="visualCodeLine">auban.deploy({ advisory: "deals_and_capital", technology: "cyber_defence_cloud_ia_ops", hubs: "LONDON_PARIS_LUXEMBOURG_AMSTERDAM_BRUXELLES_LILLE" });</code>
           </div>
           <div class="footer-pill">
             <span class="pulse-dot" style="color:var(--phosphor-bright);"></span>
@@ -2019,7 +2667,7 @@
           </h2>
         </div>
         <p>
-          La plupart des cabinets conseillent sans savoir bâtir. Les ESN exécutent sans comprendre les enjeux de valorisation. Auban unifie l'advisory financier et l'ingénierie technologique sous une gouvernance unique opérant depuis London, Paris, Amsterdam, Bruxelles et Lille.
+          La plupart des cabinets conseillent sans savoir bâtir. Les ESN exécutent sans comprendre les enjeux de valorisation. Auban unifie l'advisory financier et l'ingénierie technologique sous une gouvernance unique opérant depuis London, Paris, Luxembourg, Amsterdam, Bruxelles et Lille.
         </p>
       </div>
 
@@ -2029,24 +2677,24 @@
           <div>
             <span class="division-badge badge-brass">DIVISION 01 // AUBAN ADVISORY</span>
             <h3>Auban Advisory</h3>
-            <div class="division-tagline">AUBAN ADVISORY : M&amp;A · TRANSACTIONS · CORPORATE FINANCE</div>
+            <div class="division-tagline">AUBAN ADVISORY : CONSEIL STRATÉGIQUE CORPORATE · TECH M&amp;A · DUE DILIGENCE</div>
             <p class="division-desc">
-              Nous conseillons les conseils d'administration, investisseurs, fondateurs et directions générales dans les moments de vérité : fusions-acquisitions, levées de fonds, audits réglementaires et restructurations de portefeuille.
+              Le pôle de conseil stratégique et de gouvernance technologique d'entreprise. Nous accompagnons les conseils d'administration, directions générales et fonds d'investissement sur l'arbitrage technologique des transactions, les restructurations d'infrastructures critiques, la due diligence d'actifs logiciels et la conformité souveraine (DORA, NIS2, AI Act).
             </p>
 
             <div class="service-pillars-list">
               <div class="pillar-item">
                 <span class="pillar-bullet">01</span>
                 <div>
-                  <strong>M&amp;A &amp; Transaction Advisory</strong>
-                  <p>Accompagnement buy-side et sell-side, ciblage stratégique, évaluation des synergies et structuration de deals STEM à London, Paris et Amsterdam.</p>
+                  <strong>Technology Corporate Consultancy &amp; Stratégie de Direction</strong>
+                  <p>Conseil stratégique aux conseils d'administration et directions générales : feuilles de route technologiques d'entreprise, optimisation des budgets d'infrastructure, Target Operating Models (TOM) et arbitrage d'investissements stratégiques.</p>
                 </div>
               </div>
               <div class="pillar-item">
                 <span class="pillar-bullet">02</span>
                 <div>
-                  <strong>Corporate Finance &amp; Levées Stratégiques</strong>
-                  <p>Préparation au capital, modélisation financière, dossiers investisseurs et préparation à l'exit pour sociétés technologiques européennes.</p>
+                  <strong>Tech M&amp;A, Carve-Outs SI &amp; Séparations d'Actifs</strong>
+                  <p>Conseil et ingénierie stratégique de séparation : détricotage de systèmes d'information intriqués, conception des contrats de transition (TSA), valorisation d'actifs technologiques et scissions opérationnelles sans interruption de service.</p>
                 </div>
               </div>
               <div class="pillar-item">
@@ -2328,7 +2976,7 @@
               <span class="stem-code">S7</span>
               <span class="stem-trigger">100-JOURS · PMI · CREATION DE VALEUR</span>
             </div>
-            <h3>Private Equity &amp; Investisseurs Technologiques (London / Paris / Amsterdam)</h3>
+            <h3>Private Equity &amp; Investisseurs Technologiques (London / Paris / Luxembourg / Amsterdam)</h3>
             <p>Fonds d'investissement mid-market et family offices réalisant des acquisitions de plateformes, des add-ons, des carve-outs complexes et des plans de création de valeur sur 3 à 5 ans.</p>
           </div>
           <div class="stem-mandate-split">
@@ -2657,7 +3305,7 @@
           </h2>
         </div>
         <p>
-          Sélectionnez votre priorité stratégique, votre division d'intervention et votre horizon. Nos associés basés à London, Paris, Amsterdam, Bruxelles et Lille prépareront l'échange.
+          Sélectionnez votre priorité stratégique, votre division d'intervention et votre horizon. Nos associés basés à London, Paris, Luxembourg, Amsterdam, Bruxelles et Lille prépareront l'échange.
         </p>
       </div>
 
@@ -2722,7 +3370,7 @@
             </button>
             <button type="button" class="scoper-btn" data-step="size" data-val="pe">
               <strong>Fonds Private Equity / Holding</strong>
-              <span>Équipe deal (London / Paris / Amsterdam), carve-out ou 100 jours</span>
+              <span>Équipe deal (London / Paris / Luxembourg / Amsterdam), carve-out ou 100 jours</span>
             </button>
             <button type="button" class="scoper-btn" data-step="size" data-val="large">
               <strong>Institution Financière / Grand Compte</strong>
@@ -2813,21 +3461,342 @@
     </div>
   </section>
 
-  <!-- CONTACT BAND -->
-  <section class="contact-band">
-    <div class="container contact-band-inner">
-      <div class="contact-band-copy">
-        <h2>Une transaction à sécuriser ou un socle à transformer ?</h2>
+  <!-- ========================================================
+       SECTION 08: CAREERS & RECRUTEMENT CRITIQUE (#careers)
+       ======================================================== -->
+  <section class="section-pad careers-section" id="careers">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker kicker-advisory">RECRUTEMENT &amp; TALENTS // STANDARDS D'ÉLITE</div>
+        <h2>Rejoindre la firme d'arbitrage technologique et d'ingénierie critique.</h2>
         <p>
-          Partagez votre enjeu avec un associé Auban à London, Paris, Amsterdam, Bruxelles ou Lille. Nous organisons un échange d'arbitrage direct, sous confidentialité formelle.
+          Auban rassemble des stratèges et des bâtisseurs de premier rang à London, Paris, Luxembourg, Amsterdam, Bruxelles et Lille. 
+          Nous recherchons des profils hybrides rares : consultants en gouvernance technologique formés aux sciences dures, architectes de cyber-résilience et ingénieurs de systèmes critiques.
         </p>
       </div>
-      <div class="contact-dual-actions">
-        <a href="mailto:info@auban.fr" class="btn btn-brass">Contacter un associé : info@auban.fr →</a>
-        <a href="tel:+33758585705" style="color:var(--phosphor-bright); font-family:var(--font-mono); font-size:13px; font-weight:700; display:flex; align-items:center; gap:8px;">
-          <span class="pulse-dot" style="color:var(--phosphor-bright);"></span>
-          <span>Ligne directe associée : +33 7 58 58 57 05</span>
-        </a>
+
+      <div class="careers-grid">
+        <!-- Position 1: Advisory Lead -->
+        <article class="career-card crosshair-corner">
+          <div class="career-header">
+            <span class="division-badge badge-brass">AUBAN ADVISORY // SENIOR LEAD</span>
+            <span class="career-location">London · Paris · Luxembourg</span>
+          </div>
+          <h3>Principal — Technology Corporate Consultancy &amp; Tech M&amp;A</h3>
+          <p class="career-desc">
+            Direction des audits de valorisation logicielle et due diligence technique pour comités d'investissement et fonds Private Equity. Cadrage stratégique des carve-outs SI complexes et modélisation des Target Operating Models.
+          </p>
+          <ul class="career-tags">
+            <li>Tech M&amp;A</li>
+            <li>Due Diligence</li>
+            <li>Carve-Out TSA</li>
+            <li>Private Equity</li>
+          </ul>
+          <button type="button" class="btn btn-brass" onclick="openOutlookPopout('advisory', 'Candidature : Principal Tech Corporate Consultancy')">
+            Postuler via Outlook ↗
+          </button>
+        </article>
+
+        <!-- Position 2: Cyber Defence Principal -->
+        <article class="career-card crosshair-corner">
+          <div class="career-header">
+            <span class="division-badge badge-tech">AUBAN TECHNOLOGY // CYBER DEFENCE</span>
+            <span class="career-location">Luxembourg · Paris · Bruxelles</span>
+          </div>
+          <h3>Directeur de Mission — Cyber Defence &amp; Résilience DORA / NIS2</h3>
+          <p class="career-desc">
+            Conception et supervision d'architectures Zero Trust, protocoles d'isolement de crise, tests de résilience opérationnelle numérique (DORA Art. 26/28) et maintien en conditions hostiles pour infrastructures bancaires et industrielles.
+          </p>
+          <ul class="career-tags">
+            <li>Zero Trust</li>
+            <li>DORA / NIS2</li>
+            <li>ANSSI ReCyF</li>
+            <li>Architecture Défense</li>
+          </ul>
+          <button type="button" class="btn btn-phosphor" onclick="openOutlookPopout('technology', 'Candidature : Directeur de Mission Cyber Defence & DORA')">
+            Postuler via Outlook ↗
+          </button>
+        </article>
+
+        <!-- Position 3: Sovereign Cloud Architect -->
+        <article class="career-card crosshair-corner">
+          <div class="career-header">
+            <span class="division-badge badge-tech">AUBAN TECHNOLOGY // DIGITAL CORE</span>
+            <span class="career-location">Amsterdam · Lille · Paris</span>
+          </div>
+          <h3>Lead Architect — Sovereign Cloud &amp; Core Modernisation</h3>
+          <p class="career-desc">
+            Orchestration du détricotage d'infrastructures héritées (legacy decoupling), conteneurisation souveraine (SecNumCloud) et conception de plateformes à tolérance de panne absolue avec observabilité continue.
+          </p>
+          <ul class="career-tags">
+            <li>Sovereign Cloud</li>
+            <li>Legacy Decoupling</li>
+            <li>Kubernetes Hardening</li>
+            <li>SRE 24/7</li>
+          </ul>
+          <button type="button" class="btn btn-phosphor" onclick="openOutlookPopout('technology', 'Candidature : Lead Architect Sovereign Cloud')">
+            Postuler via Outlook ↗
+          </button>
+        </article>
+
+        <!-- Position 4: AI & Data Consultant -->
+        <article class="career-card crosshair-corner">
+          <div class="career-header">
+            <span class="division-badge badge-brass">AUBAN ADVISORY &amp; TECH // DATA &amp; AI</span>
+            <span class="career-location">Paris · London · Amsterdam</span>
+          </div>
+          <h3>Senior Consultant — Enterprise AI Governance &amp; LLMOps</h3>
+          <p class="career-desc">
+            Audit de conformité EU AI Act, déploiement d'architectures de modèles d'IA souverains on-premise, sécurisation des flux de données sensibles et automatisation des workflows de décision d'entreprise.
+          </p>
+          <ul class="career-tags">
+            <li>EU AI Act</li>
+            <li>LLMOps Souverain</li>
+            <li>Data Governance</li>
+            <li>Zero Leakage</li>
+          </ul>
+          <button type="button" class="btn btn-brass" onclick="openOutlookPopout('advisory', 'Candidature : Senior Consultant AI Governance')">
+            Postuler via Outlook ↗
+          </button>
+        </article>
+      </div>
+
+      <!-- Spontaneous application banner -->
+      <div class="career-spontaneous-banner crosshair-corner">
+        <div>
+          <h4>Candidature Spontanée &amp; Échange Confidentiel</h4>
+          <p>
+            Vous disposez d'une expertise exceptionnelle en technologie critique, transactions ou cyber-défense ? Nos associés examinent directement chaque dossier sous confidentialité stricte.
+          </p>
+        </div>
+        <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+          <a href="mailto:careers@auban.fr?subject=Candidature%20Spontanee%20Auban&body=Madame%2C%20Monsieur%2C%0A%0AJe%20souhaite%20soumettre%20ma%20candidature%20pour%20rejoindre%20Auban%20%3A%0A%0A-%20Domaine%20d%27expertise%20%3A%20%0A-%20Hub%20souhait%C3%A9%20(London%20%2F%20Paris%20%2F%20Luxembourg%20%2F%20Amsterdam%20%2F%20Bruxelles%20%2F%20Lille)%20%3A%20%0A-%20Lien%20LinkedIn%20%2F%20Profil%20%3A%20%0A%0ACordialement." class="btn btn-brass">
+            Contacter le recrutement : careers@auban.fr ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       SECTION 09: STRATEGIC PARTNERSHIPS & ALLIANCES (#partnerships)
+       ======================================================== -->
+  <section class="section-pad partnerships-section" id="partnerships">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker kicker-advisory">ALLIANCES &amp; PARTENARIATS // ÉCOSYSTÈME STRATÉGIQUE</div>
+        <h2>Des synergies d'élite pour accélérer la création de valeur et la résilience souveraine.</h2>
+        <p>
+          Auban collabore étroitement avec les acteurs majeurs du capital-investissement, du droit des affaires, des technologies souveraines et des laboratoires de recherche appliquée.
+        </p>
+      </div>
+
+      <div class="partnerships-grid">
+        <article class="partnership-card crosshair-corner">
+          <div class="partnership-icon-badge">01</div>
+          <h3>Fonds de Private Equity &amp; Family Offices</h3>
+          <p class="partnership-desc">
+            Accords-cadres d'intervention pour due diligences technologiques accélérées (Red-Flag en 10 jours), cadrage des carve-outs pré-closing et pilotage des plans de création de valeur digitale 100 jours post-acquisition.
+          </p>
+          <div class="partnership-benefit">
+            <span>◆ Bénéfice clé :</span> Zéro surprise technologique sur les multiples de valorisation et passifs masqués.
+          </div>
+        </article>
+
+        <article class="partnership-card crosshair-corner">
+          <div class="partnership-icon-badge">02</div>
+          <h3>Éditeurs &amp; Pure-Players Technologiques Souverains</h3>
+          <p class="partnership-desc">
+            Partenariats de déploiement et d'audit indépendant avec les fournisseurs de clouds qualifiés SecNumCloud, constructeurs de HSM souverains et concepteurs de briques Zero Trust d'origine européenne.
+          </p>
+          <div class="partnership-benefit">
+            <span>◆ Bénéfice clé :</span> Neutralité fiduciaire garantie sans rétrocommission, intégration conforme aux exigences militaires.
+          </div>
+        </article>
+
+        <article class="partnership-card crosshair-corner">
+          <div class="partnership-icon-badge">03</div>
+          <h3>Cabinets d'Avocats d'Affaires &amp; Boutiques M&amp;A</h3>
+          <p class="partnership-desc">
+            Binôme opérationnel lors des négociations de carve-outs intriqués, rédaction technique des Transitional Service Agreements (TSA) et démonstration de conformité formelle (DORA, RGPD, AI Act) devant régulateurs.
+          </p>
+          <div class="partnership-benefit">
+            <span>◆ Bénéfice clé :</span> Traduction directe des contraintes techniques dans les actes juridiques contractuels.
+          </div>
+        </article>
+
+        <article class="partnership-card crosshair-corner">
+          <div class="partnership-icon-badge">04</div>
+          <h3>Pôles de Recherche STEM &amp; Écosystèmes de Défense</h3>
+          <p class="partnership-desc">
+            Transfert de compétences sur la cryptographie post-quantique (PQC), les environnements d'exécution de confiance (TEE) et les méthodologies de vérification formelle déterministe intégrées à la plateforme Aude.
+          </p>
+          <div class="partnership-benefit">
+            <span>◆ Bénéfice clé :</span> Accès anticipé aux ruptures technologiques avant leur généralisation sur le marché.
+          </div>
+        </article>
+      </div>
+
+      <div class="partnership-cta-box crosshair-corner">
+        <div>
+          <h4>Initier un Partenariat ou une Alliance Stratégique</h4>
+          <p>
+            Échangez directement avec la direction des partenariats Auban pour formaliser un protocole de collaboration ou un accord d'apport mutuel d'affaires.
+          </p>
+        </div>
+        <button type="button" class="btn btn-brass" onclick="openOutlookPopout('advisory', 'Proposition de Partenariat Stratégique Auban')">
+          Initier une Alliance via Outlook ↗
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       SECTION 10: ADVANCED CONTACT & ENQUIRIES SYSTEM (#contact)
+       ======================================================== -->
+  <section class="section-pad enquiry-section" id="contact">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker kicker-tech">DEMANDES &amp; ARBITRAGE // ENQUIRIES</div>
+        <h2>Engager un échange exécutif sous protocole de confidentialité formel.</h2>
+        <p>
+          Que vous prépariez une transaction stratégique, un audit de due diligence ou la sécurisation d'un socle critique, nos associés vous répondent sous 4 heures ouvrées depuis London, Paris, Luxembourg, Amsterdam, Bruxelles ou Lille.
+        </p>
+      </div>
+
+      <div class="enquiry-layout">
+        <!-- Left: Interactive Enquiry Form -->
+        <div class="enquiry-card-form crosshair-corner">
+          <div class="enquiry-form-header">
+            <span class="division-badge badge-tech">FORMULAIRE DE CADRAGE EXÉCUTIF</span>
+            <span style="font-family:var(--font-mono); font-size:11px; color:#8f9f7a;">CANAL CHIFFRÉ TLS 1.3</span>
+          </div>
+
+          <form id="aubanEnquiryForm" onsubmit="handleEnquirySubmit(event)">
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="enqName">Prénom &amp; Nom *</label>
+                <input type="text" id="enqName" required placeholder="Ex: Jean-Marc de Saint-Germain">
+              </div>
+              <div class="form-group">
+                <label for="enqEmail">Email Professionnel *</label>
+                <input type="email" id="enqEmail" required placeholder="nom@entreprise-ou-fonds.com">
+              </div>
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="enqOrg">Organisation / Fonds / Entreprise *</label>
+                <input type="text" id="enqOrg" required placeholder="Ex: Horizon Capital Partners">
+              </div>
+              <div class="form-group">
+                <label for="enqPhone">Ligne Téléphonique Directe / Signal</label>
+                <input type="tel" id="enqPhone" placeholder="+33 6 ... ou +44 20 ...">
+              </div>
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="enqSubject">Objet de la Demande *</label>
+                <select id="enqSubject" required onchange="handleEnquirySubjectChange(this.value)">
+                  <option value="advisory_mna">[Auban Advisory] Conseil Stratégique Corporate &amp; Tech M&amp;A</option>
+                  <option value="advisory_dd">[Auban Advisory] Tech &amp; Cyber Due Diligence Pré-Acquisition</option>
+                  <option value="advisory_carveout">[Auban Advisory] Carve-Out SI &amp; Séparation d'Actifs</option>
+                  <option value="advisory_dora">[Auban Advisory] Conformité Réglementaire DORA / NIS2</option>
+                  <option value="tech_cyber">[Auban Technology] Cyber Defence Zero Trust &amp; Résilience</option>
+                  <option value="tech_cloud">[Auban Technology] Sovereign Cloud &amp; Digital Core</option>
+                  <option value="tech_ops">[Auban Technology] Maintien en Condition Opérationnelle 24/7</option>
+                  <option value="integrated">[Programme Intégré] Advisory Corporate + Technology Squad</option>
+                  <option value="partnership">[Partenariat] Alliance Stratégique &amp; Écosystème</option>
+                  <option value="careers">[Carrières] Candidature &amp; Talents STEM</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="enqHub">Hub d'Échange Préféré *</label>
+                <select id="enqHub" required>
+                  <option value="London">London (Mayfair / St James's)</option>
+                  <option value="Paris" selected>Paris (Opéra / Vendôme)</option>
+                  <option value="Luxembourg">Luxembourg (Kirchberg Financial &amp; Tech Hub)</option>
+                  <option value="Amsterdam">Amsterdam (Zuidas Tech District)</option>
+                  <option value="Bruxelles">Bruxelles (Quartier Européen)</option>
+                  <option value="Lille">Lille (Siège Opérationnel &amp; Tech Lab)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="enqMessage">Synthèse de votre enjeu ou calendrier envisagé *</label>
+              <textarea id="enqMessage" rows="4" required placeholder="Précisez le contexte de l'opération (périmètre de la transaction, volumétrie, horizon d'intervention sous 15 jours, etc.)"></textarea>
+            </div>
+
+            <div class="form-actions-tray">
+              <button type="submit" class="btn btn-phosphor" id="enqSubmitBtn">
+                Transmettre la Demande de Cadrage →
+              </button>
+              <button type="button" class="btn btn-brass" onclick="triggerOutlookFromForm()">
+                Ouvrir dans Outlook ↗
+              </button>
+            </div>
+            <div id="enqFeedback" style="display:none; margin-top:14px; font-family:var(--font-mono); font-size:12px; color:var(--phosphor-bright);"></div>
+          </form>
+        </div>
+
+        <!-- Right: Executive Channels & Hubs Directory -->
+        <div class="enquiry-card-channels crosshair-corner">
+          <span class="division-badge badge-brass">CANAUX EXÉCUTIFS DIRECTS</span>
+          <h3>Arbitrage Immédiat &amp; Gouvernance</h3>
+          <p style="font-size:14px; color:var(--ink-soft); margin-bottom:20px;">
+            Pour les situations d'urgence (due diligence red-flag, incident de sécurité ou carve-out sous contrainte de calendrier), nos associés sont joignables en continu.
+          </p>
+
+          <div class="direct-channel-list">
+            <div class="channel-item">
+              <span class="channel-label">HOTLINE ASSOCIÉS 24/7 :</span>
+              <a href="tel:+33758585705" class="channel-val text-phosphor">
+                <span class="pulse-dot"></span> +33 7 58 58 57 05
+              </a>
+            </div>
+            <div class="channel-item">
+              <span class="channel-label">AUBAN ADVISORY :</span>
+              <a href="mailto:advisory@auban.fr" class="channel-val text-brass">advisory@auban.fr</a>
+            </div>
+            <div class="channel-item">
+              <span class="channel-label">AUBAN TECHNOLOGY :</span>
+              <a href="mailto:technology@auban.fr" class="channel-val text-phosphor">technology@auban.fr</a>
+            </div>
+            <div class="channel-item">
+              <span class="channel-label">PARTENARIATS :</span>
+              <a href="mailto:partnerships@auban.fr" class="channel-val">partnerships@auban.fr</a>
+            </div>
+            <div class="channel-item">
+              <span class="channel-label">RECRUTEMENT :</span>
+              <a href="mailto:careers@auban.fr" class="channel-val">careers@auban.fr</a>
+            </div>
+          </div>
+
+          <div class="hubs-compact-grid">
+            <div class="hub-pill"><span>◆ London</span> Mayfair / St James's</div>
+            <div class="hub-pill"><span>◆ Paris</span> Opéra / Vendôme</div>
+            <div class="hub-pill"><span>◆ Luxembourg</span> Kirchberg</div>
+            <div class="hub-pill"><span>◆ Amsterdam</span> Zuidas</div>
+            <div class="hub-pill"><span>◆ Bruxelles</span> Quartier Européen</div>
+            <div class="hub-pill"><span>◆ Lille</span> Siège &amp; Lab</div>
+          </div>
+
+          <div class="outlook-quick-triggers">
+            <div style="font-family:var(--font-mono); font-size:11px; color:#8f9f7a; font-weight:700; margin-bottom:8px;">
+              ACCÈS RAPIDE POPOUTS OUTLOOK DÉDIÉS :
+            </div>
+            <div style="display:flex; gap:10px;">
+              <button type="button" class="btn btn-brass" style="flex:1; font-size:12px; padding:10px 14px;" onclick="openOutlookPopout('advisory')">
+                Popout Advisory ↗
+              </button>
+              <button type="button" class="btn btn-phosphor" style="flex:1; font-size:12px; padding:10px 14px;" onclick="openOutlookPopout('technology')">
+                Popout Technology ↗
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -2845,7 +3814,7 @@
             Le cabinet technologique pour les transactions, la défense et le déploiement dans les industries STEM.
           </p>
           <p style="color:var(--brass-light); font-size:12px; font-family:var(--font-mono); margin-top:12px;">
-            London · Paris · Amsterdam · Bruxelles · Lille
+            London · Paris · Luxembourg · Amsterdam · Bruxelles · Lille
           </p>
         </div>
 
@@ -2853,9 +3822,11 @@
           <h5>Auban Advisory</h5>
           <span style="display:block; font-family:var(--font-mono); font-size:10px; color:var(--brass-light); margin-bottom:12px; font-weight:750;">M&amp;A · TRANSACTIONS · CORPORATE FINANCE</span>
           <div class="footer-links">
-            <a href="#divisions">M&amp;A &amp; Transaction Advisory</a>
-            <a href="#divisions">Corporate Finance &amp; Exit</a>
-            <a href="#divisions">Tech &amp; Cyber Due Diligence</a>
+            <a href="#divisions">Conseil Stratégique d'Entreprise</a>
+            <a href="#divisions">Tech M&amp;A &amp; Due Diligence</a>
+            <a href="#divisions">Carve-Outs SI &amp; Séparations</a>
+            <a href="#careers">Carrières &amp; Recrutement</a>
+            <a href="#partnerships">Alliances &amp; Partenariats</a>
             <a href="#divisions">Carve-Outs &amp; Scissions SI</a>
             <a href="#divisions">Conformité DORA, NIS2 &amp; AI Act</a>
             <a href="#divisions">Target Operating Models (TOM)</a>
@@ -2880,9 +3851,10 @@
           <div class="footer-links">
             <span style="color:white; font-weight:800;">London (Mayfair / St James's)</span>
             <span style="color:white; font-weight:800;">Paris (Opéra / Vendôme)</span>
+            <span style="color:white; font-weight:800;">Luxembourg (Kirchberg Financial &amp; Tech Hub)</span>
             <span style="color:white; font-weight:800;">Amsterdam (Zuidas Tech District)</span>
             <span style="color:white; font-weight:800;">Bruxelles (Quartier Européen)</span>
-            <span style="color:white; font-weight:800;">Lille (Siège &amp; Tech Lab)</span>
+            <span style="color:white; font-weight:800;">Lille (Siège Opérationnel &amp; Tech Lab)</span>
             <a href="mailto:info@auban.fr">info@auban.fr</a>
             <a href="tel:+33758585705">+33 7 58 58 57 05</a>
             <span style="color:#708552; font-size:11.5px; margin-top:8px;">Mandats en UK, France, Benelux et Europe</span>
@@ -2892,7 +3864,7 @@
 
       <div class="footer-bottom-strip">
         <div>© 2026 Auban. Tous droits réservés. Transactions · Technology · Transformation.</div>
-        <div>London · Paris · Amsterdam · Bruxelles · Lille · Europe</div>
+        <div>London · Paris · Luxembourg · Amsterdam · Bruxelles · Lille · Europe</div>
       </div>
     </div>
   </footer>
@@ -2902,9 +3874,9 @@
     // 1. Dual-Platform Interactive Visual Modes: Tactical Olive & Radar
     const visualModes = {
       dual: {
-        busAdv: '#C5A059',
+        busAdv: '#93C5FD',
         busTech: '#38BDF8',
-        code: 'auban.deploy({ advisory: "mna_transactions_corporate_finance", technology: "cyber_defence_cloud_ia_ops", hubs: "LONDON_PARIS_AMSTERDAM_BRUXELLES_LILLE" });',
+        code: 'auban.deploy({ advisory: "mna_transactions_corporate_finance", technology: "cyber_defence_cloud_ia_ops", hubs: "LONDON_PARIS_LUXEMBOURG_AMSTERDAM_BRUXELLES_LILLE" });',
         status: "TACTICAL READINESS : ACTIVE",
         topTitle: "Auban Advisory : M&A · Transactions · Corporate Finance",
         topSub: "M&A, Tech Diligence & Corporate Finance",
@@ -2912,7 +3884,7 @@
         bottomSub: "Cybersécurité Zero Trust, Cloud Souverain & MCO 24/7"
       },
       advisory: {
-        busAdv: '#DFC27E',
+        busAdv: '#DBEAFE',
         busTech: '#4D5D36',
         code: 'advisory.evaluateDeal({ techDebt: "quantified", carveOutTSA: "designed", londonHub: true });',
         status: "ADVISORY & TRANSACTION PLANE",
@@ -2932,7 +3904,7 @@
         bottomSub: "Validation des sauvegardes immuables et tests PRA"
       },
       evidence: {
-        busAdv: '#C5A059',
+        busAdv: '#93C5FD',
         busTech: '#38BDF8',
         code: 'aude.chainEvidence({ sha256: "8a4c01f92e...", standard: "CISA_SCUBA_RECYF_MIL" });',
         status: "AUDE CONTINUOUS EVIDENCE VAULT",
@@ -3168,6 +4140,224 @@
     } else {
       revealTargets.forEach(el => el.classList.add('in-view'));
     }
+  
+    // ========================================================
+    // 7. OUTLOOK POPOUT SYSTEM (ADVISORY & TECHNOLOGY)
+    // ========================================================
+    let currentModalTemplateText = "";
+
+    function openOutlookPopout(division, customSubject) {
+      const modal = document.getElementById('outlookPopoutModal');
+      const box = document.getElementById('outlookModalBox');
+      const badge = document.getElementById('modalDivisionBadge');
+      const title = document.getElementById('modalTitle');
+      const sub = document.getElementById('modalSubtitle');
+      const recipient = document.getElementById('modalRecipient');
+      const subject = document.getElementById('modalSubject');
+      const bodyArea = document.getElementById('modalBriefingBody');
+      const desktopBtn = document.getElementById('modalDesktopBtn');
+      const webBtn = document.getElementById('modalWebBtn');
+
+      if (!modal) return;
+
+      const isAdvisory = (division === 'advisory');
+
+      if (isAdvisory) {
+        box.classList.remove('mode-tech');
+        badge.className = 'division-badge badge-brass';
+        badge.textContent = 'AUBAN ADVISORY';
+        title.textContent = 'Auban Advisory // Briefing Mandat Corporate';
+        sub.textContent = 'Conseil Stratégique d\'Entreprise, Tech M&A et Due Diligence Technologique.';
+        
+        const toEmail = 'advisory@auban.fr';
+        const subjText = customSubject || '[Auban Advisory] Mandat Conseil Corporate & Diligence Technologique';
+        const bodyText = [
+          "À l'attention de la Direction Auban Advisory,",
+          "",
+          "- Organisation / Fonds : [Nom de votre organisation]",
+          "- Nature de l'opération : [Conseil Stratégique / Tech M&A / Due Diligence / Carve-Out SI / DORA]",
+          "- Hub d'échange souhaité : [London / Paris / Luxembourg / Amsterdam / Bruxelles / Lille]",
+          "- Calendrier & Horizon : [Ex: Sous 15 jours / Trimestre en cours]",
+          "",
+          "Synthèse de la situation / Enjeu :",
+          "[Précisez le contexte du mandat ou de la transaction]",
+          "",
+          "Contact direct : [Nom, Rôle, Ligne Téléphonique Directe]"
+        ].join('\n');
+
+        recipient.textContent = toEmail;
+        subject.textContent = subjText;
+        bodyArea.value = bodyText;
+        currentModalTemplateText = bodyText;
+
+        const mailtoUrl = `mailto:${toEmail}?cc=info@auban.fr&subject=${encodeURIComponent(subjText)}&body=${encodeURIComponent(bodyText)}`;
+        const webOutlookUrl = `https://outlook.office.com/mail/deeplink/compose?to=${toEmail}&cc=info@auban.fr&subject=${encodeURIComponent(subjText)}&body=${encodeURIComponent(bodyText)}`;
+
+        desktopBtn.setAttribute('href', mailtoUrl);
+        desktopBtn.className = 'btn btn-brass modal-action-btn';
+        webBtn.setAttribute('href', webOutlookUrl);
+      } else {
+        box.classList.add('mode-tech');
+        badge.className = 'division-badge badge-tech';
+        badge.textContent = 'AUBAN TECHNOLOGY';
+        title.textContent = 'Auban Technology // Squad Cyber Defence & Ops';
+        sub.textContent = 'Cyber Defence Zero Trust, Sovereign Cloud, Data & IA, MCO 24/7.';
+        
+        const toEmail = 'technology@auban.fr';
+        const subjText = customSubject || '[Auban Technology] Mobilisation Squad Cyber Defence & Ops';
+        const bodyText = [
+          "À l'attention du Commandement Auban Technology,",
+          "",
+          "- Organisation : [Nom de l'entreprise ou institution]",
+          "- Périmètre d'intervention : [Cyber Defence / Sovereign Cloud / Modernisation Core / LLMOps / MCO 24/7]",
+          "- Niveau d'urgence : [Immédiat (< 48h) / Sous 30 jours / Cadrage amont]",
+          "- Hub d'échange souhaité : [London / Paris / Luxembourg / Amsterdam / Bruxelles / Lille]",
+          "",
+          "Périmètre technique ou contrainte opérationnelle :",
+          "[Précisez les technologies, les actifs critiques et les objectifs d'intervention]",
+          "",
+          "Contact direct : [Nom, Rôle, Ligne Téléphonique Directe]"
+        ].join('\n');
+
+        recipient.textContent = toEmail;
+        subject.textContent = subjText;
+        bodyArea.value = bodyText;
+        currentModalTemplateText = bodyText;
+
+        const mailtoUrl = `mailto:${toEmail}?cc=info@auban.fr&subject=${encodeURIComponent(subjText)}&body=${encodeURIComponent(bodyText)}`;
+        const webOutlookUrl = `https://outlook.office.com/mail/deeplink/compose?to=${toEmail}&cc=info@auban.fr&subject=${encodeURIComponent(subjText)}&body=${encodeURIComponent(bodyText)}`;
+
+        desktopBtn.setAttribute('href', mailtoUrl);
+        desktopBtn.className = 'btn btn-phosphor modal-action-btn';
+        webBtn.setAttribute('href', webOutlookUrl);
+      }
+
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeOutlookPopout() {
+      const modal = document.getElementById('outlookPopoutModal');
+      if (modal) modal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    function handleModalOverlayClick(e) {
+      if (e.target && e.target.id === 'outlookPopoutModal') {
+        closeOutlookPopout();
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeOutlookPopout();
+    });
+
+    function copyModalTemplate() {
+      if (!navigator.clipboard) return;
+      navigator.clipboard.writeText(currentModalTemplateText).then(() => {
+        const textSpan = document.getElementById('copyBtnText');
+        const iconSpan = document.getElementById('copyBtnIcon');
+        textSpan.textContent = 'Texte copié dans le presse-papier !';
+        iconSpan.textContent = '✓';
+        setTimeout(() => {
+          textSpan.textContent = 'Copier le texte du mandat';
+          iconSpan.textContent = '📋';
+        }, 2200);
+      });
+    }
+
+    // ========================================================
+    // 8. INTERACTIVE ENQUIRY FORM LOGIC
+    // ========================================================
+    function handleEnquirySubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('enqName').value;
+      const email = document.getElementById('enqEmail').value;
+      const org = document.getElementById('enqOrg').value;
+      const phone = document.getElementById('enqPhone').value || 'Non renseigné';
+      const subject = document.getElementById('enqSubject').value;
+      const hub = document.getElementById('enqHub').value;
+      const msg = document.getElementById('enqMessage').value;
+
+      const isAdv = subject.startsWith('advisory') || subject === 'partnership';
+      const destEmail = isAdv ? 'advisory@auban.fr' : 'technology@auban.fr';
+      const subjTitle = `[Demande Enquiries] ${org} — Hub ${hub}`;
+
+      const mailBody = `Nom : ${name}\nEmail : ${email}\nTéléphone : ${phone}\nOrganisation : ${org}\nObjet : ${subject}\nHub de rattachement : ${hub}\n\nMessage :\n${msg}`;
+
+      const mailtoUrl = `mailto:${destEmail}?cc=info@auban.fr&subject=${encodeURIComponent(subjTitle)}&body=${encodeURIComponent(mailBody)}`;
+
+      const feedback = document.getElementById('enqFeedback');
+      feedback.style.display = 'block';
+      feedback.textContent = 'Ouverture de votre client de messagerie chiffré... Demande transmise aux associés du hub ' + hub + '.';
+
+      window.location.href = mailtoUrl;
+    }
+
+    function triggerOutlookFromForm() {
+      const org = document.getElementById('enqOrg').value || '[Votre Organisation]';
+      const subjectVal = document.getElementById('enqSubject').value;
+      const isAdv = subjectVal.startsWith('advisory') || subjectVal === 'partnership' || subjectVal === 'careers';
+      const division = isAdv ? 'advisory' : 'technology';
+      openOutlookPopout(division, `[Cadrage Enquiries] ${org}`);
+    }
+
+    function handleEnquirySubjectChange(val) {
+      // Optional auto-switching styling or suggestions
+    }
+    
   </script>
+  <!-- ========================================================
+       OUTLOOK BRIEFING POPOUT MODAL (ADVISORY & TECHNOLOGY SEPARATE)
+       ======================================================== -->
+  <div id="outlookPopoutModal" class="outlook-modal-overlay" style="display:none;" onclick="handleModalOverlayClick(event)">
+    <div class="outlook-modal-box crosshair-corner" id="outlookModalBox">
+      <button type="button" class="outlook-modal-close" onclick="closeOutlookPopout()" aria-label="Fermer">✕</button>
+      
+      <div class="outlook-modal-header">
+        <div class="outlook-badge-wrap">
+          <span class="division-badge" id="modalDivisionBadge">AUBAN ADVISORY</span>
+          <span class="outlook-indicator">OUTLOOK POP-OUT SYSTEM</span>
+        </div>
+        <h3 id="modalTitle">Auban Advisory // Briefing Mandat Outlook</h3>
+        <p id="modalSubtitle">Conseil Stratégique d'Entreprise, Tech M&amp;A et Due Diligence.</p>
+      </div>
+
+      <div class="outlook-modal-body">
+        <div class="modal-field-block">
+          <label>DESTINATAIRE ASSOCIÉ :</label>
+          <div class="modal-readonly-input" id="modalRecipient">advisory@auban.fr</div>
+        </div>
+
+        <div class="modal-field-block">
+          <label>OBJET DU MESSAGE :</label>
+          <div class="modal-readonly-input" id="modalSubject">[Mandat Auban Advisory] Conseil Stratégique Corporate &amp; Tech M&amp;A</div>
+        </div>
+
+        <div class="modal-field-block">
+          <label>CORPS DU BRIEFING STRUCTURÉ :</label>
+          <textarea id="modalBriefingBody" class="modal-body-textarea" rows="6" readonly></textarea>
+        </div>
+
+        <div class="modal-actions-grid">
+          <a id="modalDesktopBtn" href="#" class="btn btn-brass modal-action-btn">
+            <span>Ouvrir dans l'application Outlook (Desktop) ↗</span>
+          </a>
+          <a id="modalWebBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-phosphor modal-action-btn">
+            <span>Ouvrir dans Outlook Web (Office 365) ↗</span>
+          </a>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:14px; flex-wrap:wrap; gap:10px;">
+          <button type="button" class="btn-copy-template" onclick="copyModalTemplate()">
+            <span id="copyBtnIcon">📋</span> <span id="copyBtnText">Copier le texte du mandat</span>
+          </button>
+          <span style="font-family:var(--font-mono); font-size:11px; color:#8f9f7a;">
+            Accusé de réception et arbitrage sous 4h ouvrées
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
