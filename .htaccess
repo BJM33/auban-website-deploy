@@ -41,4 +41,6 @@ DirectoryIndex index.html
   ExpiresByType image/png "access plus 1 month"
   ExpiresByType image/jpeg "access plus 1 month"
   ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType application/manifest+json "access plus 1 week"
 </IfModule>

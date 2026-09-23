@@ -1,0 +1,21 @@
+{
+  "name": "Auban — Advisory & Technology",
+  "short_name": "Auban",
+  "description": "AUBAN ADVISORY (M&A · Transactions · Corporate Finance) & AUBAN TECHNOLOGY (Cyber Defence · Cloud · Data & IA · Ops). London · Paris · Amsterdam · Bruxelles · Lille.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#060A07",
+  "theme_color": "#364323",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

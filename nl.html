@@ -11,12 +11,64 @@
   <link rel="alternate" hreflang="nl" href="https://auban.fr/nl.html">
   <link rel="alternate" hreflang="x-default" href="https://auban.fr/en.html">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#364323">
+
+  <!-- OpenGraph Protocol -->
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Auban">
   <meta property="og:locale" content="nl_NL">
-  <meta property="og:url" content="https://auban.fr/">
+  <meta property="og:url" content="https://auban.fr/nl.html">
   <meta property="og:title" content="AUBAN ADVISORY : M&amp;A · TRANSACTIONS · CORPORATE FINANCE ┃ AUBAN TECHNOLOGY : CYBER DEFENCE · CLOUD · DATA &amp; IA · OPS">
-  <meta property="og:description" content="Auban : AUBAN ADVISORY (M&amp;A · Transactions · Corporate Finance) et AUBAN TECHNOLOGY (Cyber Defence · Cloud · Data &amp; IA · Ops). London · Paris · Amsterdam · Bruxelles · Lille.">
+  <meta property="og:description" content="Auban : AUBAN ADVISORY (M&amp;A · Transacties · Corporate Finance) en AUBAN TECHNOLOGY (Cyber Defence · Cloud · Data &amp; IA · Ops). Amsterdam · London · Paris · Brussel · Lille.">
+  <meta property="og:image" content="https://auban.fr/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Auban — Advisory &amp; Technology (London · Paris · Amsterdam · Bruxelles · Lille)">
+
+  <!-- Twitter / X Card Protocol -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AUBAN ADVISORY : M&amp;A · TRANSACTIONS · CORPORATE FINANCE ┃ AUBAN TECHNOLOGY : CYBER DEFENCE · CLOUD · DATA &amp; IA · OPS">
+  <meta name="twitter:description" content="Auban : AUBAN ADVISORY (M&amp;A · Transacties · Corporate Finance) en AUBAN TECHNOLOGY (Cyber Defence · Cloud · Data &amp; IA · Ops). Amsterdam · London · Paris · Brussel · Lille.">
+  <meta name="twitter:image" content="https://auban.fr/og-image.png">
+
+  <!-- Institutional Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://auban.fr/#organization",
+        "name": "Auban",
+        "alternateName": "Auban Advisory & Technology",
+        "url": "https://auban.fr/",
+        "logo": "https://auban.fr/og-image.png",
+        "image": "https://auban.fr/og-image.png",
+        "description": "Strategisch technologie- en adviesbureau dat Auban Advisory (M&A, Transacties, Corporate Finance) en Auban Technology (Cyber Defence, Soevereine Cloud, Data & AI, 24/7 Beheer) verenigt.",
+        "email": "info@auban.fr",
+        "telephone": "+33758585705",
+        "address": [
+          { "@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB" },
+          { "@type": "PostalAddress", "addressLocality": "Paris", "addressCountry": "FR" },
+          { "@type": "PostalAddress", "addressLocality": "Amsterdam", "addressCountry": "NL" },
+          { "@type": "PostalAddress", "addressLocality": "Bruxelles", "addressCountry": "BE" },
+          { "@type": "PostalAddress", "addressLocality": "Lille", "addressCountry": "FR" }
+        ],
+        "areaServed": ["GB", "FR", "NL", "BE", "EU"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://auban.fr/#website",
+        "url": "https://auban.fr/",
+        "name": "Auban",
+        "publisher": { "@id": "https://auban.fr/#organization" },
+        "inLanguage": ["fr-FR", "en-GB", "nl-NL"]
+      }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..900;1,9..40,300..900&family=JetBrains+Mono:wght@400;600;700;800&family=Manrope:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -3062,15 +3114,15 @@
     const mandateMap = {
       mna: "Due Diligence M&A & Carve-Out",
       finance: "Corporate Finance & Exit Readiness",
-      dora: "Conformité DORA & NIS2",
-      cyber: "Cybersécurité & Résilience",
-      cloud: "Cloud & Modernisation Core",
-      ai: "Data, IA & Automatisation"
+      dora: "DORA & NIS2 Naleving & Toezicht",
+      cyber: "Cyberveiligheid & Operationele Weerbaarheid",
+      cloud: "Soevereine Cloud & Core Modernisering",
+      ai: "Enterprise Data, AI & Automatisering"
     };
     const divisionMap = {
       advisory: "Auban Advisory : M&A · Transactions · Corporate Finance",
       technology: "Auban Technology : Cyber Defence · Cloud · Data & IA · Ops",
-      integrated: "Programme Intégré (Auban Advisory + Auban Technology)"
+      integrated: "Geïntegreerd Programma (Auban Advisory + Auban Technology)"
     };
     const sizeMap = {
       mid: "Middelgrote Onderneming (€50M - €1Mrd)",
