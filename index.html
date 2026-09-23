@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Auban — AUBAN ADVISORY : CONSEIL STRATÉGIQUE CORPORATE &amp; TECH M&amp;A ┃ AUBAN TECHNOLOGY : CYBER DEFENCE · CLOUD · DATA &amp; IA · OPS (London · Paris · Luxembourg · Amsterdam · Bruxelles · Lille)</title>
-  <meta name="description" content="Auban : Le cabinet technologique unifié pour le conseil corporate et l'ingénierie critique. AUBAN ADVISORY (Conseil Stratégique d'Entreprise · Tech M&amp;A · Due Diligence) et AUBAN TECHNOLOGY (Cyber Defence · Cloud Souverain · Data &amp; IA · Ops 24/7). Présent à London, Paris, Luxembourg, Amsterdam, Bruxelles et Lille.">
+  <title>Auban | Conseil stratégique, transactions &amp; ingénierie technologique</title>
+  <meta name="description" content="Auban relie conseil en transactions, cybersécurité, cloud, data et ingénierie. De la diligence technologique à la mise en œuvre et aux contrôles.">
   <link rel="canonical" href="https://auban.fr/">
   <link rel="alternate" hreflang="fr" href="https://auban.fr/">
   <link rel="alternate" hreflang="en" href="https://auban.fr/en.html">
@@ -70,172 +70,7 @@
     ]
   }
   
-    // ========================================================
-    // 7. OUTLOOK POPOUT SYSTEM (ADVISORY & TECHNOLOGY)
-    // ========================================================
-    let currentModalTemplateText = "";
-
-    function openOutlookPopout(division, customSubject) {
-      const modal = document.getElementById('outlookPopoutModal');
-      const box = document.getElementById('outlookModalBox');
-      const badge = document.getElementById('modalDivisionBadge');
-      const title = document.getElementById('modalTitle');
-      const sub = document.getElementById('modalSubtitle');
-      const recipient = document.getElementById('modalRecipient');
-      const subject = document.getElementById('modalSubject');
-      const bodyArea = document.getElementById('modalBriefingBody');
-      const desktopBtn = document.getElementById('modalDesktopBtn');
-      const webBtn = document.getElementById('modalWebBtn');
-
-      if (!modal) return;
-
-      const isAdvisory = (division === 'advisory');
-
-      if (isAdvisory) {
-        box.classList.remove('mode-tech');
-        badge.className = 'division-badge badge-brass';
-        badge.textContent = 'AUBAN ADVISORY';
-        title.textContent = 'Auban Advisory // Briefing Mandat Corporate';
-        sub.textContent = 'Conseil Stratégique d\'Entreprise, Tech M&A et Due Diligence Technologique.';
-        
-        const toEmail = 'advisory@auban.fr';
-        const subjText = customSubject || '[Auban Advisory] Mandat Conseil Corporate & Diligence Technologique';
-        const bodyText = [
-          "À l'attention de la Direction Auban Advisory,",
-          "",
-          "- Organisation / Fonds : [Nom de votre organisation]",
-          "- Nature de l'opération : [Conseil Stratégique / Tech M&A / Due Diligence / Carve-Out SI / DORA]",
-          "- Hub d'échange souhaité : [London / Paris / Luxembourg / Amsterdam / Bruxelles / Lille]",
-          "- Calendrier & Horizon : [Ex: Sous 15 jours / Trimestre en cours]",
-          "",
-          "Synthèse de la situation / Enjeu :",
-          "[Précisez le contexte du mandat ou de la transaction]",
-          "",
-          "Contact direct : [Nom, Rôle, Ligne Téléphonique Directe]"
-        ].join('\n');
-
-        recipient.textContent = toEmail;
-        subject.textContent = subjText;
-        bodyArea.value = bodyText;
-        currentModalTemplateText = bodyText;
-
-        const mailtoUrl = `mailto:${toEmail}?cc=info@auban.fr&subject=${encodeURIComponent(subjText)}&body=${encodeURIComponent(bodyText)}`;
-        const webOutlookUrl = `https://outlook.office.com/mail/deeplink/compose?to=${toEmail}&cc=info@auban.fr&subject=${encodeURIComponent(subjText)}&body=${encodeURIComponent(bodyText)}`;
-
-        desktopBtn.setAttribute('href', mailtoUrl);
-        desktopBtn.className = 'btn btn-brass modal-action-btn';
-        webBtn.setAttribute('href', webOutlookUrl);
-      } else {
-        box.classList.add('mode-tech');
-        badge.className = 'division-badge badge-tech';
-        badge.textContent = 'AUBAN TECHNOLOGY';
-        title.textContent = 'Auban Technology // Squad Cyber Defence & Ops';
-        sub.textContent = 'Cyber Defence Zero Trust, Sovereign Cloud, Data & IA, MCO 24/7.';
-        
-        const toEmail = 'technology@auban.fr';
-        const subjText = customSubject || '[Auban Technology] Mobilisation Squad Cyber Defence & Ops';
-        const bodyText = [
-          "À l'attention du Commandement Auban Technology,",
-          "",
-          "- Organisation : [Nom de l'entreprise ou institution]",
-          "- Périmètre d'intervention : [Cyber Defence / Sovereign Cloud / Modernisation Core / LLMOps / MCO 24/7]",
-          "- Niveau d'urgence : [Immédiat (< 48h) / Sous 30 jours / Cadrage amont]",
-          "- Hub d'échange souhaité : [London / Paris / Luxembourg / Amsterdam / Bruxelles / Lille]",
-          "",
-          "Périmètre technique ou contrainte opérationnelle :",
-          "[Précisez les technologies, les actifs critiques et les objectifs d'intervention]",
-          "",
-          "Contact direct : [Nom, Rôle, Ligne Téléphonique Directe]"
-        ].join('\n');
-
-        recipient.textContent = toEmail;
-        subject.textContent = subjText;
-        bodyArea.value = bodyText;
-        currentModalTemplateText = bodyText;
-
-        const mailtoUrl = `mailto:${toEmail}?cc=info@auban.fr&subject=${encodeURIComponent(subjText)}&body=${encodeURIComponent(bodyText)}`;
-        const webOutlookUrl = `https://outlook.office.com/mail/deeplink/compose?to=${toEmail}&cc=info@auban.fr&subject=${encodeURIComponent(subjText)}&body=${encodeURIComponent(bodyText)}`;
-
-        desktopBtn.setAttribute('href', mailtoUrl);
-        desktopBtn.className = 'btn btn-phosphor modal-action-btn';
-        webBtn.setAttribute('href', webOutlookUrl);
-      }
-
-      modal.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeOutlookPopout() {
-      const modal = document.getElementById('outlookPopoutModal');
-      if (modal) modal.style.display = 'none';
-      document.body.style.overflow = '';
-    }
-
-    function handleModalOverlayClick(e) {
-      if (e.target && e.target.id === 'outlookPopoutModal') {
-        closeOutlookPopout();
-      }
-    }
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeOutlookPopout();
-    });
-
-    function copyModalTemplate() {
-      if (!navigator.clipboard) return;
-      navigator.clipboard.writeText(currentModalTemplateText).then(() => {
-        const textSpan = document.getElementById('copyBtnText');
-        const iconSpan = document.getElementById('copyBtnIcon');
-        textSpan.textContent = 'Texte copié dans le presse-papier !';
-        iconSpan.textContent = '✓';
-        setTimeout(() => {
-          textSpan.textContent = 'Copier le texte du mandat';
-          iconSpan.textContent = '📋';
-        }, 2200);
-      });
-    }
-
-    // ========================================================
-    // 8. INTERACTIVE ENQUIRY FORM LOGIC
-    // ========================================================
-    function handleEnquirySubmit(e) {
-      e.preventDefault();
-      const name = document.getElementById('enqName').value;
-      const email = document.getElementById('enqEmail').value;
-      const org = document.getElementById('enqOrg').value;
-      const phone = document.getElementById('enqPhone').value || 'Non renseigné';
-      const subject = document.getElementById('enqSubject').value;
-      const hub = document.getElementById('enqHub').value;
-      const msg = document.getElementById('enqMessage').value;
-
-      const isAdv = subject.startsWith('advisory') || subject === 'partnership';
-      const destEmail = isAdv ? 'advisory@auban.fr' : 'technology@auban.fr';
-      const subjTitle = `[Demande Enquiries] ${org} — Hub ${hub}`;
-
-      const mailBody = `Nom : ${name}\nEmail : ${email}\nTéléphone : ${phone}\nOrganisation : ${org}\nObjet : ${subject}\nHub de rattachement : ${hub}\n\nMessage :\n${msg}`;
-
-      const mailtoUrl = `mailto:${destEmail}?cc=info@auban.fr&subject=${encodeURIComponent(subjTitle)}&body=${encodeURIComponent(mailBody)}`;
-
-      const feedback = document.getElementById('enqFeedback');
-      feedback.style.display = 'block';
-      feedback.textContent = 'Ouverture de votre client de messagerie chiffré... Demande transmise aux associés du hub ' + hub + '.';
-
-      window.location.href = mailtoUrl;
-    }
-
-    function triggerOutlookFromForm() {
-      const org = document.getElementById('enqOrg').value || '[Votre Organisation]';
-      const subjectVal = document.getElementById('enqSubject').value;
-      const isAdv = subjectVal.startsWith('advisory') || subjectVal === 'partnership' || subjectVal === 'careers';
-      const division = isAdv ? 'advisory' : 'technology';
-      openOutlookPopout(division, `[Cadrage Enquiries] ${org}`);
-    }
-
-    function handleEnquirySubjectChange(val) {
-      // Optional auto-switching styling or suggestions
-    }
-    
-  </script>
+      </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..900;1,9..40,300..900&family=JetBrains+Mono:wght@400;600;700;800&family=Manrope:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -2356,6 +2191,64 @@
       border-color: var(--ink-muted);
     }
     
+
+    /* Editorial photo, decision map, regulatory context and responsive layouts */
+    .editorial-section { background:#080e0b; padding:42px 0 0; }
+    .editorial-frame { position:relative; min-height:420px; overflow:hidden; border:1px solid rgba(147,197,253,.26); border-radius:18px; }
+    .editorial-frame img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 48%; }
+    .editorial-frame::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(5,8,6,.93),rgba(5,8,6,.65) 42%,rgba(5,8,6,.1) 85%),linear-gradient(0deg,rgba(5,8,6,.65),transparent 50%); }
+    .editorial-content { position:relative; z-index:1; display:flex; flex-direction:column; justify-content:flex-end; min-height:420px; max-width:690px; padding:clamp(28px,5vw,64px); }
+    .editorial-content .eyebrow { color:#bfdbfe; font:800 11px var(--font-mono); letter-spacing:.15em; text-transform:uppercase; }
+    .editorial-content h2 { color:white; font-size:clamp(31px,4vw,56px); line-height:1.08; margin:18px 0; }
+    .editorial-content p { color:#e2e8f0; font-size:17px; line-height:1.6; margin:0; max-width:570px; }
+    .editorial-caption { padding:10px 2px 0; font-size:11px; color:var(--ink-muted); }
+    .bridge-cards-grid { position:relative; }
+    .bridge-cards-grid::before { content:""; position:absolute; top:-19px; left:8%; right:8%; height:1px; background:linear-gradient(90deg,#93c5fd,#38bdf8,#a3e635); }
+    .bridge-step-card { position:relative; }
+    .bridge-step-card::before { content:""; position:absolute; top:-25px; left:34px; width:12px; height:12px; border-radius:50%; background:#93c5fd; border:3px solid #070c08; box-shadow:0 0 0 1px #93c5fd; }
+    .bridge-step-card:nth-child(2)::before { background:#38bdf8; box-shadow:0 0 0 1px #38bdf8; }
+    .bridge-step-card:nth-child(3)::before { background:#a3e635; box-shadow:0 0 0 1px #a3e635; }
+    .bridge-output { display:block; margin-top:14px; padding:12px 14px; background:rgba(147,197,253,.07); border-left:2px solid #93c5fd; color:#dbeafe; font-size:13px; line-height:1.5; }
+    .bridge-step-card:nth-child(2) .bridge-output { border-color:#38bdf8; }
+    .bridge-step-card:nth-child(3) .bridge-output { border-color:#a3e635; }
+    .insight-section { background:#0b130e; border-bottom:1px solid var(--line); }
+    .insight-heading { max-width:760px; margin-bottom:34px; }
+    .insight-heading h2 { color:white; margin:12px 0 16px; }
+    .insight-heading p { color:var(--ink-soft); max-width:720px; }
+    .insight-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
+    .insight-card { padding:28px; border:1px solid rgba(147,197,253,.2); background:#101a14; border-radius:12px; }
+    .insight-card .insight-code { color:#93c5fd; font:700 11px var(--font-mono); letter-spacing:.11em; }
+    .insight-card h3 { color:#fff; font-size:21px; line-height:1.25; margin:18px 0 12px; }
+    .insight-card p { color:var(--ink-soft); font-size:14px; line-height:1.65; margin:0 0 18px; }
+    .insight-card a { color:#bfdbfe; font-size:13px; text-decoration:underline; text-underline-offset:4px; }
+    .insight-note { color:var(--ink-muted); font-size:12px; margin:20px 0 0; }
+    .diag-badge { position:relative; margin:0 18px 8px; }
+    .diag-top,.diag-bottom { top:auto; bottom:auto; left:auto; right:auto; }
+    @media(max-width:1100px) { .hero-grid { grid-template-columns:minmax(0,1fr); } .hero-content,.execution-visual-box { min-width:0; } .bridge-cards-grid::before,.bridge-step-card::before { display:none; } }
+    @media(max-width:960px) { .enquiry-layout,.console-grid { grid-template-columns:minmax(0,1fr); } .enquiry-card-form,.enquiry-card-channels,.console-controls-col,.console-terminal-col { min-width:0; } }
+    @media(max-width:900px) { .insight-grid { grid-template-columns:1fr; } }
+    @media(max-width:600px) {
+      .editorial-frame,.editorial-content { min-height:460px; }
+      .editorial-frame::after { background:linear-gradient(0deg,rgba(5,8,6,.96),rgba(5,8,6,.15) 88%); }
+      .editorial-frame img { object-position:32% center; }
+      .hero-actions .btn { max-width:100%; width:100%; white-space:normal; text-align:left; }
+      .hero-pill-cluster { max-width:100%; }
+      .visual-topbar { display:block; }
+      .visual-topbar-right { margin-top:8px; }
+      .visual-mode-tabs { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .visual-mode-tab { white-space:normal; overflow-wrap:anywhere; font-size:10px; }
+      .visual-svg-wrap { padding:8px; }
+      .footer-code,.footer-code code { min-width:0; overflow-wrap:anywhere; word-break:break-word; }
+      .visual-footer-bar { display:block; }
+      .footer-pill { margin-top:8px; }
+      .stem-card[style*="grid-column"] { grid-column:auto !important; }
+      .enquiry-card-form,.enquiry-card-channels,.console-controls-col,.console-terminal-col { padding:20px 16px; }
+      .form-row-2 { grid-template-columns:minmax(0,1fr); }
+      .form-actions-tray .btn { max-width:100%; white-space:normal; }
+      .section-head > div { min-width:0; max-width:100%; }
+      .section-head h2 { overflow-wrap:anywhere; }
+    }
+
   </style>
 </head>
 <body>
@@ -2478,12 +2371,11 @@
         </div>
 
         <h1>
-          Where deals meet <span class="highlight-military">delivery.</span>
+          La stratégie rencontre <span class="highlight-military">l'exécution.</span>
         </h1>
 
         <p class="hero-lead">
-          Auban est le cabinet technologique unifié de conseil corporate et d'ingénierie critique. 
-          Nous unissons <strong>Auban Advisory</strong> (Conseil Stratégique d'Entreprise · Tech M&amp;A · Due Diligence Technologique · Carve-Outs SI) et <strong>Auban Technology</strong> (Cyber Defence · Cloud Souverain · Data &amp; IA · Maintien Opérationnel 24/7) sous une doctrine opérationnelle d'excellence.
+          Auban relie les décisions d'investissement à leur mise en œuvre technologique. <strong>Auban Advisory</strong> éclaire les transactions, les risques et les choix de gouvernance. <strong>Auban Technology</strong> conçoit, sécurise et exploite les systèmes qui en découlent.
         </p>
 
         <div class="hero-actions">
@@ -2499,12 +2391,12 @@
           <div class="hero-subcard hero-subcard-advisory">
             <span class="hero-subcard-kicker text-brass">AUBAN ADVISORY</span>
             <strong>CONSEIL CORPORATE · TECH M&amp;A · DUE DILIGENCE</strong>
-            <p>Conseil technologique de direction, due diligence pré-acquisition, détricotage de carve-outs SI complexes, valorisation d'actifs numériques et conformité DORA/NIS2 pour fonds PE et comités de direction à London, Paris, Luxembourg, Amsterdam, Bruxelles et Lille.</p>
+            <p>Conseil aux dirigeants et investisseurs : diligence technologique avant acquisition, plan de séparation, évaluation des actifs numériques et cartographie des risques réglementaires.</p>
           </div>
           <div class="hero-subcard hero-subcard-tech">
             <span class="hero-subcard-kicker text-phosphor">AUBAN TECHNOLOGY</span>
             <strong>CYBER DEFENCE · CLOUD · DATA &amp; IA · OPS</strong>
-            <p>Architecture Zero Trust souveraine, cloud résilient, plateformes data &amp; LLMOps, résilience industrielle et maintien en condition opérationnelle (MCO 24/7) sur standard militaire.</p>
+            <p>Architecture de sécurité, plateformes cloud résilientes, ingénierie data et opérations IA, avec une responsabilité claire sur la mise en œuvre et les contrôles.</p>
           </div>
         </div>
       </div>
@@ -2513,7 +2405,7 @@
       <div class="execution-visual-box crosshair-corner" id="visualContainer">
         <div class="visual-topbar">
           <div class="visual-topbar-left">
-            <span>◆ AUBAN TACTICAL CONTROL PLANE // NATO ALLIED STANDARDS</span>
+            <span>◆ AUBAN // ADVISORY TO DELIVERY MODEL</span>
           </div>
           <div class="visual-topbar-right">
             <span class="pulse-dot" style="color:var(--phosphor-bright);"></span>
@@ -2602,7 +2494,7 @@
               <rect x="0" y="0" width="180" height="52" rx="6" fill="#0B150E" stroke="rgba(147, 197, 253, 0.4)" stroke-width="1" />
               <circle cx="16" cy="26" r="5" fill="#DBEAFE" />
               <text x="32" y="24" fill="#E2E8F0" font-size="11" font-weight="700" font-family="monospace">DORA_NIS2_AUDIT</text>
-              <text x="32" y="40" fill="#8F9F7A" font-size="9" font-family="monospace">DEFENCE ASSURANCE READY</text>
+              <text x="32" y="40" fill="#8F9F7A" font-size="9" font-family="monospace">RISK &amp; CONTROL REVIEW</text>
             </g>
 
             <!-- Node 3: Zero Trust & Cyber Core -->
@@ -2618,7 +2510,7 @@
               <rect x="0" y="0" width="180" height="52" rx="6" fill="#0B150E" stroke="#38BDF8" stroke-width="2" />
               <circle cx="16" cy="26" r="5" fill="#38BDF8" />
               <text x="32" y="24" fill="#E2E8F0" font-size="11" font-weight="700" font-family="monospace">AUDE_TELEMETRY</text>
-              <text x="32" y="40" fill="#38BDF8" font-size="9" font-family="monospace">SHA-256 PROOF ENGINE</text>
+              <text x="32" y="40" fill="#38BDF8" font-size="9" font-family="monospace">EVIDENCE &amp; TRACEABILITY</text>
             </g>
           </svg>
         </div>
@@ -2683,6 +2575,17 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+
+  <section class="editorial-section" aria-label="DU CONSEIL À L'EXÉCUTION">
+    <div class="container">
+      <figure class="editorial-frame">
+        <img src="assets/strategy-delivery.webp" width="1672" height="941" alt="" loading="lazy" decoding="async">
+        <div class="editorial-content"><span class="eyebrow">DU CONSEIL À L'EXÉCUTION</span><h2>Des décisions plus solides. Des systèmes qui tiennent.</h2><p>La valeur d'une transaction dépend aussi de la qualité de son architecture, de sa sécurité et de sa capacité à fonctionner après le closing.</p></div>
+      </figure>
+      <p class="editorial-caption">Visuel éditorial créé pour illustrer la collaboration entre stratégie et ingénierie.</p>
     </div>
   </section>
 
@@ -2852,6 +2755,7 @@
             <p>
               Avant d'engager du capital dans une acquisition, un carve-out ou un investissement lourd, nous évaluons la viabilité technique, la dette cyber, la conformité réglementaire et le coût réel de séparation.
             </p>
+            <span class="bridge-output"><strong>Livrable:</strong> risques, dépendances et options de décision.</span>
           </div>
           <div class="bridge-meta">
             MANDAT ADVISORY : DUE DILIGENCE TECH &amp; CYBER
@@ -2865,6 +2769,7 @@
             <p>
               Dès la décision prise ou le deal signé, nous engageons les squads d'ingénierie pour exécuter la trajectoire : scission Day 1, migration cloud, remédiation Zero Trust et déploiement de produits numériques.
             </p>
+            <span class="bridge-output"><strong>Livrable:</strong> architecture cible, priorités et plan de transition.</span>
           </div>
           <div class="bridge-meta">
             MANDAT TECHNOLOGY : SPRINT D'INGÉNIERIE &amp; PMI
@@ -2876,14 +2781,28 @@
             <span class="bridge-num">ÉTAPE 03 // DURABILITÉ</span>
             <h3>Opérer avec confiance</h3>
             <p>
-              Nous ancrons la performance dans la durée : détection de dérive automatisée, éléments de preuve infalsifiables via Aude pour auditeurs et assureurs, et transfert complet aux équipes internes.
+              Nous ancrons la performance dans la durée : détection de dérive automatisée, éléments de preuve traçables via Aude pour auditeurs et assureurs, et transfert complet aux équipes internes.
             </p>
+            <span class="bridge-output"><strong>Livrable:</strong> contrôles, suivi des écarts et transfert des connaissances.</span>
           </div>
           <div class="bridge-meta">
             AUDE PLATFORMS : ASSURANCE CONTINUE &amp; EVIDENCE
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+
+  <section class="section-pad insight-section" id="regulatory-context">
+    <div class="container">
+      <div class="insight-heading"><div class="eyebrow eyebrow-brass"><span class="eyebrow-rule"></span>REPÈRES RÉGLEMENTAIRES</div><h2>Des exigences à traduire en décisions concrètes.</h2><p>Ces cadres structurent les questions à poser lors d'une transaction ou d'une modernisation. Leur application dépend du secteur, du rôle de l'organisation et du droit national.</p></div>
+      <div class="insight-grid">
+        <article class="insight-card"><span class="insight-code">01 / FINANCE</span><h3>DORA : démontrer la résilience</h3><p>Depuis le 17 janvier 2025, DORA s'applique aux entités financières concernées. Gestion du risque TIC, incidents, tests et prestataires tiers font partie du cadre à examiner.</p><a href="https://www.eba.europa.eu/publications-and-media/press-releases/eba-amends-its-guidelines-ict-and-security-risk-management-measures-context-dora-application" target="_blank" rel="noopener noreferrer">Source : Autorité bancaire européenne ↗</a></article>
+        <article class="insight-card"><span class="insight-code">02 / SECTEURS CRITIQUES</span><h3>NIS2 : qualifier le périmètre</h3><p>La directive distingue des entités essentielles et importantes et prévoit des mesures de gestion des risques cyber et de notification. Le périmètre précis se vérifie selon l'activité et la transposition nationale.</p><a href="https://eur-lex.europa.eu/eli/dir/2022/2555/oj/eng" target="_blank" rel="noopener noreferrer">Source : EUR-Lex, directive NIS2 ↗</a></article>
+        <article class="insight-card"><span class="insight-code">03 / INTELLIGENCE ARTIFICIELLE</span><h3>AI Act : classer les usages</h3><p>Le calendrier d'application est progressif. Inventorier les systèmes, préciser le rôle de l'organisation et qualifier les risques aide à prioriser la gouvernance et les contrôles.</p><a href="https://digital-strategy.ec.europa.eu/en/faqs/navigating-ai-act" target="_blank" rel="noopener noreferrer">Source : Commission européenne ↗</a></article>
+      </div>
+      <p class="insight-note">Repères généraux, consultés en septembre 2026. Le cadrage d'un mandat exige une analyse adaptée à l'organisation.</p>
     </div>
   </section>
 
@@ -3655,7 +3574,7 @@
             Partenariats de déploiement et d'audit indépendant avec les fournisseurs de clouds qualifiés SecNumCloud, constructeurs de HSM souverains et concepteurs de briques Zero Trust d'origine européenne.
           </p>
           <div class="partnership-benefit">
-            <span>◆ Bénéfice clé :</span> Neutralité fiduciaire garantie sans rétrocommission, intégration conforme aux exigences militaires.
+            <span>◆ Bénéfice clé :</span> Gouvernance des fournisseurs et choix techniques documentés.
           </div>
         </article>
 
