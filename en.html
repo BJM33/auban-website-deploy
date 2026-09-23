@@ -2327,6 +2327,39 @@
     @media(max-width:900px) { .field-stories-head { display:block; } .field-stories-head p { margin-top:18px; } .evidence-track { grid-template-columns:repeat(2,minmax(0,1fr)); row-gap:28px; } .evidence-track::before { display:none; } }
     @media(max-width:700px) { .field-story-grid,.evidence-track { grid-template-columns:1fr; } .field-stories-head h2 { overflow-wrap:anywhere; } .field-story figcaption { padding:20px; } .evidence-flow { padding:22px 18px; } .evidence-step { padding:0; display:grid; grid-template-columns:44px minmax(0,1fr); column-gap:16px; } .evidence-step .flow-dot { grid-row:span 2; margin-bottom:0; } .evidence-step h4 { align-self:end; } }
 
+
+    /* Second editorial spread and a distinct, readable evidence timeline */
+    .field-stories-section { background:#09110d; border-top:1px solid rgba(147,197,253,.12); border-bottom:1px solid rgba(147,197,253,.12); }
+    .field-stories-head { display:flex; justify-content:space-between; align-items:end; gap:36px; margin-bottom:36px; }
+    .field-stories-head > div { max-width:740px; }
+    .field-stories-head .field-kicker { color:#93c5fd; font:800 11px var(--font-mono); letter-spacing:.12em; text-transform:uppercase; }
+    .field-stories-head h2 { color:white; font-size:clamp(30px,3.5vw,50px); line-height:1.14; margin:14px 0 0; }
+    .field-stories-head p { color:var(--ink-soft); font-size:17px; line-height:1.65; max-width:520px; margin:0; }
+    .field-story-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; }
+    .field-story { margin:0; min-width:0; background:#101a14; border:1px solid rgba(147,197,253,.22); border-radius:14px; overflow:hidden; }
+    .field-story img { width:100%; height:auto; aspect-ratio:16/9; display:block; object-fit:cover; }
+    .field-story figcaption { padding:24px 28px 28px; }
+    .field-story .field-index { display:block; color:#93c5fd; font:800 11px var(--font-mono); letter-spacing:.11em; text-transform:uppercase; margin-bottom:10px; }
+    .field-story h3 { color:white; font-size:22px; line-height:1.25; margin:0 0 8px; }
+    .field-story p { color:var(--ink-soft); font-size:15.5px; line-height:1.6; margin:0; }
+    .field-stories-note { color:var(--ink-muted); font-size:12px; margin:16px 0 0; }
+    .evidence-flow { margin:0 0 40px; padding:32px; background:rgba(4,10,8,.72); border:1px solid rgba(56,189,248,.26); border-radius:16px; }
+    .evidence-flow figcaption { max-width:780px; margin-bottom:30px; }
+    .evidence-flow .flow-kicker { color:#7dd3fc; font:800 11px var(--font-mono); letter-spacing:.12em; text-transform:uppercase; }
+    .evidence-flow h3 { color:white; font-size:clamp(25px,2.6vw,35px); line-height:1.2; margin:11px 0 10px; }
+    .evidence-flow figcaption p { color:#cbd5ce; font-size:16px; line-height:1.6; margin:0; }
+    .evidence-track { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:24px; position:relative; }
+    .evidence-track::before { content:""; position:absolute; top:22px; left:5%; right:5%; height:2px; background:linear-gradient(90deg,#93c5fd,#38bdf8,#a3e635); }
+    .evidence-step { position:relative; z-index:1; min-width:0; padding:0 10px; }
+    .evidence-step .flow-dot { display:grid; place-items:center; width:44px; height:44px; border-radius:50%; background:#0c1712; border:2px solid #93c5fd; color:#bfdbfe; font:800 13px var(--font-mono); margin-bottom:18px; }
+    .evidence-step:nth-child(2) .flow-dot { border-color:#7dd3fc; }
+    .evidence-step:nth-child(3) .flow-dot { border-color:#38bdf8; }
+    .evidence-step:nth-child(4) .flow-dot { border-color:#a3e635; color:#d9f99d; }
+    .evidence-step h4 { color:white; font-size:18px; margin:0 0 8px; }
+    .evidence-step p { color:#cbd5ce; font-size:14px; line-height:1.55; margin:0; }
+    @media(max-width:900px) { .field-stories-head { display:block; } .field-stories-head p { margin-top:18px; } .evidence-track { grid-template-columns:repeat(2,minmax(0,1fr)); row-gap:28px; } .evidence-track::before { display:none; } }
+    @media(max-width:700px) { .field-story-grid,.evidence-track { grid-template-columns:1fr; } .field-stories-head h2 { overflow-wrap:anywhere; } .field-story figcaption { padding:20px; } .evidence-flow { padding:22px 18px; } .evidence-step { padding:0; display:grid; grid-template-columns:44px minmax(0,1fr); column-gap:16px; } .evidence-step .flow-dot { grid-row:span 2; margin-bottom:0; } .evidence-step h4 { align-self:end; } }
+
   </style>
 </head>
 <body>
@@ -3229,6 +3262,24 @@
     </div>
   </section>
 
+
+  <section class="section-pad field-stories-section">
+    <div class="container">
+      <div class="field-stories-head"><div><span class="field-kicker">ACROSS REAL SYSTEMS</span><h2>Decisions that reach every environment.</h2></div><p>From data platforms to laboratories, dependable architecture makes strategic choices possible.</p></div>
+      <div class="field-story-grid">
+        <figure class="field-story">
+          <img src="assets/data-collaboration.webp" width="1672" height="941" alt="A data engineering team working together in an office." loading="lazy" decoding="async">
+          <figcaption><span class="field-index">03 / DATA & AI</span><h3>Governed data</h3><p>Connect teams, use cases and controls within one architecture.</p></figcaption>
+        </figure>
+        <figure class="field-story">
+          <img src="assets/life-sciences-lab.webp" width="1672" height="941" alt="Researchers working in a contemporary laboratory." loading="lazy" decoding="async">
+          <figcaption><span class="field-index">04 / HEALTH & SCIENCE</span><h3>Sensitive environments</h3><p>The quality of data flows and access matters as much as system performance.</p></figcaption>
+        </figure>
+      </div>
+      <p class="field-stories-note">Illustrative editorial images created for the site.</p>
+    </div>
+  </section>
+
   <!-- AUDE PLATFORM CONSOLE -->
   <section class="section-pad aude-section" id="aude">
     <div class="container">
@@ -3239,15 +3290,25 @@
             PRODUITS &amp; ACCÉLÉRATEURS AUDE
           </div>
           <h2 style="color:white;">
-            La gamme logicielle Aude :
+            The Aude software suite:
             <br>
-            <span class="highlight-military">preuve continue, visibilité et résilience.</span>
+            <span class="highlight-military">continuous evidence, visibility and resilience.</span>
           </h2>
         </div>
         <p style="color:#9cb0a0;">
-          Aude est notre gamme de produits technologiques. Elle ingère les diagnostics de vos environnements existants pour certifier l'application des contrôles de sécurité et éclairer les décisions d'arbitrage.
+          Aude is our technology product suite. It brings together evidence from existing systems to assess defined controls and support decisions.
         </p>
       </div>
+
+      <figure class="evidence-flow" aria-label="From evidence to decisions.">
+        <figcaption><span class="flow-kicker">CONTROL WORKFLOW</span><h3>From evidence to decisions.</h3><p>An example workflow for making a control understandable, traceable and actionable.</p></figcaption>
+        <div class="evidence-track">
+          <div class="evidence-step"><span class="flow-dot">01</span><h4>Collect</h4><p>Bring together existing configurations, logs and results.</p></div>
+          <div class="evidence-step"><span class="flow-dot">02</span><h4>Assess</h4><p>Compare the evidence with a defined control.</p></div>
+          <div class="evidence-step"><span class="flow-dot">03</span><h4>Record</h4><p>Retain findings and their verification dates.</p></div>
+          <div class="evidence-step"><span class="flow-dot">04</span><h4>Prioritise</h4><p>Assign gaps and track decisions.</p></div>
+        </div>
+      </figure>
 
       <figure class="evidence-flow" aria-label="From evidence to decisions.">
         <figcaption><span class="flow-kicker">CONTROL WORKFLOW</span><h3>From evidence to decisions.</h3><p>An example workflow for making a control understandable, traceable and actionable.</p></figcaption>
@@ -3263,26 +3324,26 @@
         <article class="product-card">
           <div class="product-card-kicker">
             <span>AUDE CONTROL</span>
-            <span class="product-status">DISPONIBLE EN PILOTE</span>
+            <span class="product-status">PILOT AVAILABLE</span>
           </div>
           <h3>Continuous Controls</h3>
-          <p>Collecte d'éléments de preuve, évaluation déterministe des contrôles critiques et registre immuable SHA-256 pour auditeurs et régulateurs.</p>
+          <p>Evidence collection, assessment of critical controls and traceable records for audit review.</p>
         </article>
         <article class="product-card">
           <div class="product-card-kicker">
             <span>AUDE HORIZON</span>
-            <span class="product-status">ROADMAP ANNÉE 2</span>
+            <span class="product-status">YEAR 2 ROADMAP</span>
           </div>
           <h3>Technology Intelligence</h3>
-          <p>Cartographie des dépendances d'actifs, évaluation de la dette technique de code et modélisation des coûts d'infrastructure cloud.</p>
+          <p>Map asset dependencies, assess technical debt and model cloud infrastructure costs.</p>
         </article>
         <article class="product-card">
           <div class="product-card-kicker">
             <span>AUDE RESPONSE</span>
-            <span class="product-status">ROADMAP ANNÉE 3</span>
+            <span class="product-status">YEAR 3 ROADMAP</span>
           </div>
           <h3>Resilience Operations</h3>
-          <p>Orchestration des plans de reprise, conformité aux délais de notification de crise (72h NIS2 / 24h DORA) et retours d'expérience.</p>
+          <p>Coordinate recovery plans, review reporting timelines and capture lessons from exercises.</p>
         </article>
       </div>
 
