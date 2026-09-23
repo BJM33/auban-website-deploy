@@ -1,0 +1,2987 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auban — Transactions · Technology · Transformation | Advisory &amp; Ingénierie STEM (London · Paris · Lille · Bruxelles)</title>
+  <meta name="description" content="Auban est le cabinet d'advisory et d'ingénierie technologique pour les industries STEM : M&amp;A, corporate finance, due diligence, cybersécurité, cloud souverain, data &amp; IA, et résilience opérationnelle. Présent à Londres, Paris, Lille et Bruxelles.">
+  <link rel="canonical" href="https://auban.fr/">
+  <meta name="theme-color" content="#070c08">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://auban.fr/">
+  <meta property="og:title" content="Auban — Transactions · Technology · Transformation | London · Paris · Lille">
+  <meta property="og:description" content="Le cabinet technologique pour les transactions, la défense et le déploiement. Auban Advisory &amp; Auban Technology.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..900;1,9..40,300..900&family=JetBrains+Mono:wght@400;600;700;800&family=Manrope:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Tactical Military & Olive Corporate Palette */
+      --mil-night: #060a07;
+      --mil-deep: #080d09;
+      --mil-bg: #0c140e;
+      --mil-surface: #111c13;
+      --mil-surface-elevated: #16241a;
+      --mil-card: rgba(17, 28, 20, 0.90);
+      --mil-card-border: rgba(132, 204, 22, 0.20);
+      --mil-card-border-brass: rgba(197, 160, 89, 0.28);
+
+      --ink: #070c08;
+      --ink-soft: #2e3e31;
+      --ink-muted: #5e7062;
+      --paper: #ffffff;
+      --canvas: #f2f4ec;        /* Military field canvas / light khaki-ivory */
+      --canvas-surface: #e7ebd9;
+      --canvas-subtle: #edf0e6;
+      --line: #c5d0c2;
+      --line-subtle: #dbe4d8;
+
+      /* Tactical Olive Drab & Ranger Greens */
+      --olive-drab: #4d5d36;
+      --olive-deep: #26331a;
+      --olive-light: #708552;
+      --olive-sage: #8f9f7a;
+      --olive-slate: #586b5b;
+
+      /* Technology & Cyber Accent: Tactical Radar Phosphor Green */
+      --phosphor: #84cc16;
+      --phosphor-bright: #a3e635;
+      --phosphor-dark: #3f6212;
+      --phosphor-glow: rgba(163, 230, 53, 0.38);
+
+      /* Advisory & Capital Accent: Military Command Brass / Khaki Gold */
+      --brass: #c5a059;
+      --brass-light: #dfc27e;
+      --brass-deep: #967534;
+      --brass-glow: rgba(197, 160, 89, 0.38);
+
+      /* Operational Alert Colors */
+      --alert-amber: #f59e0b;
+      --alert-red: #ef4444;
+
+      --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-display: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+      font-size: 16px;
+    }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* Container */
+    .container {
+      width: min(100% - 48px, 1340px);
+      margin-inline: auto;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5 {
+      font-family: var(--font-display);
+      letter-spacing: -0.035em;
+      color: var(--ink);
+      font-weight: 850;
+      margin-top: 0;
+    }
+    h1 {
+      font-size: clamp(44px, 5.4vw, 84px);
+      line-height: 1.02;
+    }
+    h2 {
+      font-size: clamp(32px, 3.8vw, 56px);
+      line-height: 1.1;
+    }
+    h3 {
+      font-size: clamp(22px, 2.2vw, 32px);
+      line-height: 1.25;
+    }
+    p {
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      margin-top: 0;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; border: none; }
+    :focus-visible { outline: 3px solid var(--phosphor-bright); outline-offset: 3px; }
+    .skip-link {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 500;
+      padding: 10px 16px;
+      border-radius: 8px;
+      background: var(--phosphor-bright);
+      color: var(--mil-night);
+      font-weight: 800;
+      transform: translateY(-160%);
+      transition: transform 0.2s ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    /* Highlights & Military Gradients */
+    .text-brass { color: var(--brass) !important; }
+    .text-phosphor { color: var(--phosphor-bright) !important; }
+    .text-olive { color: var(--olive-light) !important; }
+    .text-white { color: #ffffff !important; }
+    .text-muted { color: var(--ink-muted) !important; }
+
+    .highlight-brass {
+      background: linear-gradient(120deg, #f2f4ec 0%, var(--brass) 55%, var(--brass-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .highlight-phosphor {
+      background: linear-gradient(120deg, #ffffff 0%, var(--phosphor-bright) 60%, var(--phosphor) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .highlight-military {
+      background: linear-gradient(120deg, var(--brass-light) 0%, var(--brass) 40%, var(--phosphor-bright) 75%, #ffffff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Badges & Eyebrows */
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 14px;
+      font-family: var(--font-mono);
+    }
+    .eyebrow-brass { color: var(--brass); }
+    .eyebrow-phosphor { color: var(--phosphor-bright); }
+    .eyebrow-rule {
+      width: 7px;
+      height: 7px;
+      border-radius: 2px;
+      background: currentColor;
+    }
+
+    /* Buttons: Military Tactical System */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 28px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 13.5px;
+      letter-spacing: 0.02em;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      text-align: center;
+      font-family: var(--font-display);
+      text-transform: uppercase;
+    }
+    .btn-brass {
+      background: var(--brass);
+      color: #060a07;
+      box-shadow: 0 4px 20px var(--brass-glow);
+      border: 1px solid var(--brass-light);
+    }
+    .btn-brass:hover {
+      background: var(--brass-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(197, 160, 89, 0.55);
+    }
+    .btn-phosphor {
+      background: var(--phosphor-bright);
+      color: #060a07;
+      box-shadow: 0 4px 20px var(--phosphor-glow);
+      border: 1px solid var(--phosphor-bright);
+    }
+    .btn-phosphor:hover {
+      background: #bbf246;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(163, 230, 53, 0.6);
+    }
+    .btn-glass {
+      background: rgba(255, 255, 255, 0.06);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(12px);
+    }
+    .btn-glass:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.35);
+      transform: translateY(-2px);
+    }
+    .btn-outline-brass {
+      background: transparent;
+      color: var(--brass-light);
+      border: 1px solid var(--brass);
+    }
+    .btn-outline-brass:hover {
+      background: rgba(197, 160, 89, 0.15);
+      transform: translateY(-2px);
+    }
+    .btn-outline-phosphor {
+      background: transparent;
+      color: var(--phosphor-bright);
+      border: 1px solid var(--phosphor);
+    }
+    .btn-outline-phosphor:hover {
+      background: rgba(132, 204, 22, 0.15);
+      transform: translateY(-2px);
+    }
+
+    /* Pulse Dots */
+    .pulse-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: currentColor;
+      display: inline-block;
+      animation: pulseAnim 2.2s infinite ease-in-out;
+    }
+    @keyframes pulseAnim {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.3; transform: scale(0.75); }
+    }
+
+    /* Tactical Crosshair Markers */
+    .crosshair-corner {
+      position: relative;
+    }
+    .crosshair-corner::before {
+      content: "+";
+      position: absolute;
+      top: 6px;
+      left: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: rgba(132, 204, 22, 0.4);
+      pointer-events: none;
+    }
+    .crosshair-corner::after {
+      content: "+";
+      position: absolute;
+      bottom: 6px;
+      right: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: rgba(132, 204, 22, 0.4);
+      pointer-events: none;
+    }
+
+    /* ========================================================
+       TOP HEADER & TICKER
+       ======================================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(6, 10, 7, 0.95);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(132, 204, 22, 0.15);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 84px;
+      gap: 24px;
+    }
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: white;
+    }
+
+    /* Tactical AU Monogram: Olive & Military Feel */
+    .au-monogram-svg {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+    }
+    .brand-text-block {
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-text-title {
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      color: #ffffff;
+      line-height: 1;
+    }
+    .brand-text-sub {
+      font-size: 9px;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--brass-light);
+      margin-top: 4px;
+    }
+    .brand-location-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: var(--phosphor-bright);
+      padding: 4px 10px;
+      background: rgba(132, 204, 22, 0.08);
+      border-radius: 4px;
+      border: 1px solid rgba(132, 204, 22, 0.25);
+    }
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .nav-link {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #cbd5ce;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: #ffffff; }
+    .nav-link.nav-advisory:hover { color: var(--brass-light); }
+    .nav-link.nav-tech:hover { color: var(--phosphor-bright); }
+
+    .header-dual-cta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .header-cta-advisory {
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 11.5px;
+      font-weight: 800;
+      background: rgba(197, 160, 89, 0.14);
+      color: var(--brass-light);
+      border: 1px solid var(--brass);
+      transition: all 0.2s;
+      letter-spacing: 0.04em;
+    }
+    .header-cta-advisory:hover {
+      background: var(--brass);
+      color: #060a07;
+    }
+    .header-cta-tech {
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 11.5px;
+      font-weight: 800;
+      background: rgba(132, 204, 22, 0.14);
+      color: var(--phosphor-bright);
+      border: 1px solid var(--phosphor);
+      transition: all 0.2s;
+      letter-spacing: 0.04em;
+    }
+    .header-cta-tech:hover {
+      background: var(--phosphor-bright);
+      color: #060a07;
+    }
+    .mobile-nav { display: none; }
+
+    /* ========================================================
+       HERO SECTION: TACTICAL DEFENSE & TRANSACTIONS
+       ======================================================== */
+    .hero {
+      position: relative;
+      background: radial-gradient(circle at 82% 16%, #172618 0%, var(--mil-night) 70%);
+      color: white;
+      padding: 70px 0 90px;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(132, 204, 22, 0.16);
+    }
+    .hero-halo {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 85% 50%, rgba(197, 160, 89, 0.14), transparent 60%),
+                  radial-gradient(ellipse at 18% 85%, rgba(132, 204, 22, 0.16), transparent 55%),
+                  radial-gradient(circle at 50% 20%, rgba(77, 93, 54, 0.25), transparent 70%);
+      pointer-events: none;
+    }
+    .hero-grid-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(132, 204, 22, 0.04) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(132, 204, 22, 0.04) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.95) 0%, transparent 80%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      align-items: center;
+      gap: 56px;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-pill-cluster {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: #e2e8f0;
+      font-family: var(--font-mono);
+    }
+    .hero-pill-advisory {
+      color: var(--brass-light);
+      border-color: rgba(197, 160, 89, 0.4);
+      background: rgba(197, 160, 89, 0.08);
+    }
+    .hero-pill-tech {
+      color: var(--phosphor-bright);
+      border-color: rgba(132, 204, 22, 0.4);
+      background: rgba(132, 204, 22, 0.08);
+    }
+    .hero-pill-london {
+      color: #cbd5ce;
+      border-color: rgba(112, 133, 82, 0.5);
+      background: rgba(77, 93, 54, 0.2);
+    }
+
+    .hero h1 {
+      color: white;
+      margin-bottom: 20px;
+    }
+    .hero-lead {
+      font-size: 19.5px;
+      line-height: 1.65;
+      color: #cbd5ce;
+      max-width: 640px;
+      margin-bottom: 34px;
+    }
+    .hero-lead strong { color: #ffffff; }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    /* Dual Platform Cards in Hero */
+    .hero-dual-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      padding: 20px;
+      background: rgba(14, 24, 16, 0.85);
+      border: 1px solid rgba(132, 204, 22, 0.18);
+      border-radius: 12px;
+      backdrop-filter: blur(14px);
+    }
+    .hero-subcard {
+      padding: 16px;
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: all 0.2s ease;
+    }
+    .hero-subcard-advisory {
+      border-left: 3px solid var(--brass);
+    }
+    .hero-subcard-tech {
+      border-left: 3px solid var(--phosphor-bright);
+    }
+    .hero-subcard:hover {
+      background: rgba(255, 255, 255, 0.05);
+      transform: translateY(-2px);
+    }
+    .hero-subcard-kicker {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .hero-subcard strong {
+      display: block;
+      font-size: 15px;
+      color: white;
+      margin-bottom: 4px;
+    }
+    .hero-subcard p {
+      font-size: 12.5px;
+      color: #9cb0a0;
+      line-height: 1.45;
+      margin: 0;
+    }
+
+    /* ========================================================
+       INTERACTIVE MILITARY/TACTICAL RADAR BLUEPRINT
+       ======================================================== */
+    .execution-visual-box {
+      background: var(--mil-bg);
+      border: 1px solid rgba(132, 204, 22, 0.25);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+      position: relative;
+    }
+    .visual-topbar {
+      background: #040805;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(132, 204, 22, 0.15);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      font-family: var(--font-mono);
+    }
+    .visual-topbar-left { color: #cbd5ce; display: flex; align-items: center; gap: 8px; }
+    .visual-topbar-right { color: var(--phosphor-bright); display: flex; align-items: center; gap: 8px; }
+
+    .visual-mode-tabs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: #040805;
+      border-bottom: 1px solid rgba(132, 204, 22, 0.12);
+      padding: 6px;
+      gap: 6px;
+    }
+    .visual-mode-tab {
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      padding: 8px 6px;
+      color: #8f9f7a;
+      font-size: 11px;
+      font-weight: 750;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      text-align: center;
+      font-family: var(--font-mono);
+    }
+    .visual-mode-tab:hover { color: white; background: rgba(255, 255, 255, 0.05); }
+    .visual-mode-tab.active {
+      background: rgba(22, 36, 26, 0.95);
+      color: var(--brass-light);
+      border-color: rgba(197, 160, 89, 0.5);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+    }
+    .visual-mode-tab.tab-tech.active {
+      color: var(--phosphor-bright);
+      border-color: rgba(132, 204, 22, 0.5);
+    }
+
+    .visual-svg-wrap {
+      position: relative;
+      padding: 24px;
+    }
+    .visual-svg-wrap svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Floating Diagnostic Badges (HUD Style) */
+    .diag-badge {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(11, 19, 13, 0.94);
+      border: 1px solid rgba(132, 204, 22, 0.25);
+      border-radius: 8px;
+      padding: 12px 18px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      z-index: 5;
+    }
+    .diag-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.04);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      font-size: 15px;
+      border: 1px solid rgba(132, 204, 22, 0.2);
+    }
+    .diag-badge strong { display: block; font-size: 13px; color: white; }
+    .diag-badge span { display: block; font-size: 11px; color: #9cb0a0; }
+    .diag-top { top: 48px; left: 24px; }
+    .diag-bottom { bottom: 58px; right: 24px; }
+
+    .visual-footer-bar {
+      background: #040805;
+      padding: 12px 20px;
+      border-top: 1px solid rgba(132, 204, 22, 0.15);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      font-family: var(--font-mono);
+    }
+    .footer-code { color: var(--phosphor-bright); display: flex; align-items: center; gap: 8px; }
+    .footer-prompt { color: var(--brass-light); font-weight: 900; }
+    .footer-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--brass-light);
+      font-weight: 800;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+    }
+
+    /* ========================================================
+       CONVICTION STRIP: TACTICAL DEFENSE & VALUATION
+       ======================================================== */
+    .belief-strip {
+      background: var(--canvas);
+      border-bottom: 1px solid var(--line);
+      padding: 38px 0;
+    }
+    .belief-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 36px;
+      flex-wrap: wrap;
+    }
+    .belief-headline { max-width: 440px; }
+    .belief-headline span {
+      display: block;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      color: var(--olive-drab);
+      margin-bottom: 6px;
+      font-family: var(--font-mono);
+    }
+    .belief-headline p {
+      font-size: 20px;
+      line-height: 1.4;
+      color: var(--mil-night);
+      margin: 0;
+      font-weight: 800;
+    }
+    .belief-badges {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .belief-badge-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .badge-glyph {
+      width: 30px;
+      height: 30px;
+      border-radius: 6px;
+      background: var(--mil-night);
+      color: var(--brass-light);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 11.5px;
+      flex-shrink: 0;
+      font-family: var(--font-mono);
+      border: 1px solid rgba(197, 160, 89, 0.4);
+    }
+    .badge-glyph-tech {
+      color: var(--phosphor-bright);
+      border-color: rgba(132, 204, 22, 0.4);
+    }
+    .belief-badge-item strong { display: block; font-size: 15px; color: var(--mil-night); font-weight: 800; }
+    .belief-badge-item span { display: block; font-size: 12.5px; color: var(--ink-soft); }
+
+    /* ========================================================
+       THE TWO DIVISIONS: TACTICAL & STRATEGIC SPLIT
+       ======================================================== */
+    .section-pad {
+      padding: 100px 0;
+      position: relative;
+    }
+    .divisions-section {
+      background: #ffffff;
+      border-bottom: 1px solid var(--line);
+    }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+    .section-head h2 { color: inherit; }
+    .section-head p {
+      max-width: 580px;
+      margin-bottom: 0;
+      color: var(--ink-soft);
+      font-size: 17px;
+    }
+
+    .dual-division-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+    }
+    .division-card {
+      border-radius: 18px;
+      padding: 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Advisory Card: Command Slate-Olive with Brass Highlights */
+    .card-advisory {
+      background: linear-gradient(160deg, #131c15 0%, #070d09 100%);
+      color: white;
+      border: 1px solid var(--mil-card-border-brass);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    }
+    .card-advisory:hover {
+      border-color: var(--brass);
+      box-shadow: 0 24px 60px rgba(197, 160, 89, 0.22);
+    }
+    .card-advisory h3 { color: #ffffff; }
+
+    /* Technology Card: Military Defense Olive with Phosphor Highlights */
+    .card-tech {
+      background: linear-gradient(160deg, #112015 0%, #070e09 100%);
+      color: white;
+      border: 1px solid var(--mil-card-border);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    }
+    .card-tech:hover {
+      border-color: var(--phosphor-bright);
+      box-shadow: 0 24px 60px rgba(132, 204, 22, 0.22);
+    }
+    .card-tech h3 { color: #ffffff; }
+
+    .division-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+      margin-bottom: 20px;
+    }
+    .badge-brass {
+      background: rgba(197, 160, 89, 0.16);
+      color: var(--brass-light);
+      border: 1px solid var(--brass);
+    }
+    .badge-phosphor {
+      background: rgba(132, 204, 22, 0.16);
+      color: var(--phosphor-bright);
+      border: 1px solid var(--phosphor);
+    }
+
+    .division-tagline {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .card-advisory .division-tagline { color: var(--brass-light); }
+    .card-tech .division-tagline { color: var(--phosphor-bright); }
+
+    .division-desc {
+      font-size: 16px;
+      color: #cbd5ce;
+      line-height: 1.65;
+      margin-bottom: 30px;
+    }
+
+    .service-pillars-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 36px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .pillar-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .pillar-bullet {
+      width: 22px;
+      height: 22px;
+      border-radius: 4px;
+      display: grid;
+      place-items: center;
+      font-size: 11px;
+      font-weight: 900;
+      font-family: var(--font-mono);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .card-advisory .pillar-bullet {
+      background: rgba(197, 160, 89, 0.2);
+      color: var(--brass-light);
+      border: 1px solid var(--brass);
+    }
+    .card-tech .pillar-bullet {
+      background: rgba(132, 204, 22, 0.2);
+      color: var(--phosphor-bright);
+      border: 1px solid var(--phosphor);
+    }
+    .pillar-item strong {
+      display: block;
+      font-size: 15px;
+      color: white;
+      margin-bottom: 3px;
+    }
+    .pillar-item p {
+      font-size: 13px;
+      color: #9cb0a0;
+      line-height: 1.45;
+      margin: 0;
+    }
+
+    .division-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      flex-wrap: wrap;
+    }
+    .buyers-label {
+      font-size: 11px;
+      font-family: var(--font-mono);
+      color: #8f9f7a;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* ========================================================
+       THE OPERATIONAL BRIDGE: "ONE FIRM FOR THE DECISION"
+       ======================================================== */
+    .bridge-section {
+      background: var(--mil-night);
+      color: white;
+      border-bottom: 1px solid rgba(132, 204, 22, 0.15);
+    }
+    .bridge-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 40px;
+    }
+    .bridge-step-card {
+      background: rgba(17, 28, 20, 0.85);
+      border: 1px solid rgba(132, 204, 22, 0.18);
+      border-radius: 14px;
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s;
+    }
+    .bridge-step-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--brass);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    }
+    .bridge-num {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--brass-light);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .bridge-step-card h3 {
+      color: white;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .bridge-step-card p {
+      font-size: 15px;
+      color: #cbd5ce;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .bridge-meta {
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 11.5px;
+      font-family: var(--font-mono);
+      color: var(--phosphor-bright);
+      letter-spacing: 0.04em;
+    }
+
+    /* ========================================================
+       STEM-BASED INDUSTRIES (LONDON, PARIS, BENELUX FOCUS)
+       ======================================================== */
+    .industry-section {
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
+    .stem-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .stem-card {
+      background: var(--canvas);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s;
+    }
+    .stem-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--olive-drab);
+      box-shadow: 0 16px 36px rgba(7, 12, 8, 0.12);
+    }
+    .stem-badge-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .stem-code {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 900;
+      color: var(--mil-night);
+      padding: 3px 8px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+    }
+    .stem-trigger {
+      font-size: 10px;
+      font-family: var(--font-mono);
+      font-weight: 800;
+      color: var(--olive-deep);
+    }
+    .stem-card h3 {
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+    .stem-card p {
+      font-size: 14px;
+      color: var(--ink-soft);
+      line-height: 1.55;
+      margin: 0;
+    }
+    .stem-mandate-split {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .mandate-adv { color: var(--brass-deep); font-weight: 750; }
+    .mandate-tech { color: var(--olive-deep); font-weight: 750; }
+
+    /* ========================================================
+       COMMERCIAL PACKAGES (ENTRY OFFERS)
+       ======================================================== */
+    .packages-section {
+      background: var(--canvas-subtle);
+      border-bottom: 1px solid var(--line);
+    }
+    .package-tabs {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+    .pkg-tab-btn {
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--ink-soft);
+      background: white;
+      border: 1px solid var(--line);
+      transition: all 0.2s;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+    }
+    .pkg-tab-btn:hover { background: #e0e5d6; color: var(--ink); }
+    .pkg-tab-btn.active {
+      background: var(--mil-night);
+      color: white;
+      border-color: var(--mil-night);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+    .pkg-tab-btn.active.tab-pkg-adv { color: var(--brass-light); }
+    .pkg-tab-btn.active.tab-pkg-tech { color: var(--phosphor-bright); }
+
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .package-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s;
+    }
+    .package-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(7, 12, 8, 0.12);
+      border-color: var(--olive-drab);
+    }
+    .pkg-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .pkg-dur {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--ink-muted);
+      font-weight: 700;
+    }
+    .pkg-band {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--mil-night);
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: var(--canvas);
+      border: 1px solid var(--line);
+    }
+    .package-card h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+    .package-card p {
+      font-size: 14px;
+      color: var(--ink-soft);
+      line-height: 1.55;
+      margin-bottom: 20px;
+    }
+    .pkg-deliverables {
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .pkg-deliv-item {
+      font-size: 12px;
+      color: var(--ink);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pkg-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--olive-drab);
+      flex-shrink: 0;
+    }
+
+    /* ========================================================
+       AUDE PLATFORM VERIFICATION CONSOLE
+       ======================================================== */
+    .aude-section {
+      background: var(--mil-night);
+      color: white;
+      border-bottom: 1px solid rgba(132, 204, 22, 0.15);
+    }
+    .aude-console-card {
+      background: #09110b;
+      border: 1px solid rgba(132, 204, 22, 0.22);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.75);
+    }
+    .console-header {
+      background: #040805;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(132, 204, 22, 0.15);
+    }
+    .console-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 800;
+      color: white;
+    }
+    .console-version {
+      background: rgba(197, 160, 89, 0.18);
+      color: var(--brass-light);
+      border: 1px solid var(--brass);
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+    }
+    .console-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+    }
+    .console-controls-col {
+      padding: 32px;
+      border-right: 1px solid rgba(132, 204, 22, 0.12);
+    }
+    .control-picker {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .control-choice-btn {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 14px 18px;
+      text-align: left;
+      color: white;
+      transition: all 0.2s;
+    }
+    .control-choice-btn:hover { background: rgba(255, 255, 255, 0.06); border-color: rgba(132, 204, 22, 0.3); }
+    .control-choice-btn.active {
+      background: rgba(22, 36, 25, 0.95);
+      border-color: var(--brass);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    }
+    .control-choice-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+    .choice-code { font-family: var(--font-mono); font-size: 12px; font-weight: 750; color: var(--brass-light); }
+    .choice-status { font-size: 11px; font-weight: 800; color: var(--phosphor-bright); }
+    .choice-title { font-size: 14px; color: #cbd5ce; font-weight: 600; }
+
+    .console-terminal-col {
+      background: #030704;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 12px;
+    }
+    .terminal-output {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .terminal-line { color: #8f9f7a; }
+    .terminal-highlight { color: var(--phosphor-bright); }
+    .terminal-success { color: var(--phosphor-bright); font-weight: 700; }
+    .terminal-json {
+      background: rgba(132, 204, 22, 0.04);
+      border: 1px solid rgba(132, 204, 22, 0.15);
+      border-radius: 6px;
+      padding: 14px;
+      color: #cbd5ce;
+      white-space: pre-wrap;
+      overflow-x: auto;
+      margin-top: 10px;
+      line-height: 1.5;
+    }
+
+    /* Product Portfolio Triad */
+    .product-portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+    .product-card {
+      background: rgba(22, 36, 25, 0.7);
+      border: 1px solid rgba(132, 204, 22, 0.16);
+      border-radius: 14px;
+      padding: 26px;
+    }
+    .product-card-kicker {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      color: var(--brass-light);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+    }
+    .product-status {
+      color: #cbd5ce;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 4px;
+      padding: 3px 8px;
+      font-size: 10px;
+    }
+    .product-card h3 { color: #fff; font-size: 22px; margin-bottom: 8px; }
+    .product-card p { color: #9cb0a0; font-size: 14.5px; line-height: 1.6; margin: 0; }
+
+    /* ========================================================
+       EXECUTIVE SCOPER: DUAL-PATHWAY CONSULTATION PLANNER
+       ======================================================== */
+    .scoper-section {
+      background: var(--canvas);
+      border-bottom: 1px solid var(--line);
+    }
+    .scoper-box {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 44px;
+      box-shadow: 0 16px 40px rgba(7, 12, 8, 0.08);
+    }
+    .scoper-step {
+      margin-bottom: 32px;
+    }
+    .scoper-step-title {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--mil-night);
+      letter-spacing: 0.14em;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .scoper-options-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .scoper-btn {
+      background: var(--canvas-subtle);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      text-align: left;
+      transition: all 0.2s;
+    }
+    .scoper-btn:hover { border-color: var(--olive-drab); background: #e3e8dc; }
+    .scoper-btn.active {
+      background: var(--mil-night);
+      color: white;
+      border-color: var(--mil-night);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    }
+    .scoper-btn strong { display: block; font-size: 14.5px; margin-bottom: 4px; }
+    .scoper-btn.active strong { color: var(--brass-light); }
+    .scoper-btn span { display: block; font-size: 12px; color: var(--ink-muted); line-height: 1.4; }
+    .scoper-btn.active span { color: #cbd5ce; }
+
+    .scoper-summary-tray {
+      background: var(--canvas-subtle);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 36px;
+    }
+    .summary-text-block strong { display: block; font-size: 16px; color: var(--mil-night); }
+    .summary-text-block p { font-size: 13px; color: var(--ink-soft); margin: 4px 0 0; }
+
+    /* ========================================================
+       SERIOUS BOARD-LEVEL FAQ
+       ======================================================== */
+    .faq-section {
+      background: #ffffff;
+      border-bottom: 1px solid var(--line);
+    }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+    .faq-card {
+      background: var(--canvas);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 30px;
+    }
+    .faq-card h4 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: var(--mil-night);
+    }
+    .faq-card p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      margin: 0;
+    }
+
+    /* ========================================================
+       CONTACT BAND & SITE FOOTER (LONDON · LILLE · PARIS)
+       ======================================================== */
+    .contact-band {
+      background: linear-gradient(135deg, #111e14 0%, var(--mil-night) 100%);
+      color: white;
+      padding: 80px 0;
+      border-bottom: 1px solid rgba(132, 204, 22, 0.15);
+    }
+    .contact-band-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .contact-band-copy h2 { color: white; margin-bottom: 12px; }
+    .contact-band-copy p { color: #cbd5ce; font-size: 18px; max-width: 640px; margin: 0; }
+    .contact-dual-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .site-footer {
+      background: var(--mil-night);
+      color: #8f9f7a;
+      padding: 60px 0 40px;
+      font-size: 13.5px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+    .footer-brand h4 { color: white; font-size: 18px; margin-bottom: 10px; }
+    .footer-brand p { font-size: 13.5px; color: #9cb0a0; max-width: 340px; }
+    .footer-col h5 {
+      color: white;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 16px;
+      font-family: var(--font-mono);
+    }
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    .footer-links a { color: #cbd5ce; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--phosphor-bright); }
+    .footer-bottom-strip {
+      border-top: 1px solid rgba(132, 204, 22, 0.12);
+      padding-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: #6c7c6e;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    /* Scroll progress & reveal animations */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--brass), var(--olive-light), var(--phosphor-bright));
+      z-index: 200;
+      box-shadow: 0 0 14px var(--phosphor-glow);
+      transition: width 0.12s ease-out;
+    }
+
+    .reveal-el {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+      transition-delay: var(--reveal-delay, 0s);
+    }
+    .reveal-el.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1100px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .dual-division-grid { grid-template-columns: 1fr; }
+      .stem-grid { grid-template-columns: repeat(2, 1fr); }
+      .packages-grid { grid-template-columns: repeat(2, 1fr); }
+      .bridge-cards-grid { grid-template-columns: 1fr; }
+      .console-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .scoper-options-grid { grid-template-columns: 1fr; }
+      .product-portfolio-grid { grid-template-columns: 1fr; }
+      .brand-location-tag { display: none; }
+    }
+    @media (max-width: 768px) {
+      .header-nav, .header-dual-cta { display: none; }
+      .container { width: min(100% - 32px, 1340px); }
+      .stem-grid { grid-template-columns: 1fr; }
+      .packages-grid { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-dual-cards { grid-template-columns: 1fr; }
+      .visual-mode-tabs { grid-template-columns: repeat(2, 1fr); }
+      .diag-badge { display: none; }
+      .section-head { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .mobile-nav { display: block; position: relative; }
+      .mobile-nav summary {
+        list-style: none;
+        cursor: pointer;
+        color: white;
+        border: 1px solid rgba(132, 204, 22, 0.3);
+        border-radius: 6px;
+        padding: 8px 12px;
+        font-size: 13px;
+        font-weight: 800;
+      }
+      .mobile-nav summary::-webkit-details-marker { display: none; }
+      .mobile-nav-panel {
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+        min-width: 240px;
+        padding: 14px;
+        display: grid;
+        gap: 6px;
+        background: #060a07;
+        border: 1px solid rgba(132, 204, 22, 0.25);
+        border-radius: 8px;
+        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.8);
+      }
+      .mobile-nav-panel a { color: #cbd5ce; padding: 8px 10px; border-radius: 4px; font-weight: 700; font-size: 13.5px; }
+      .mobile-nav-panel a:hover { background: rgba(132, 204, 22, 0.12); color: var(--phosphor-bright); }
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- STICKY HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-wrap">
+        <a href="#" class="brand-logo" aria-label="Auban Accueil">
+          <!-- The Two-Sided Coin AU Monogram: Tactical Olive & Military Colors -->
+          <svg class="au-monogram-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="3" width="94" height="94" rx="20" stroke="url(#tacticalCoinBorder)" stroke-width="3.5" fill="#070C08"/>
+            <!-- Upper A-Structure: Tactical Command Brass (Advisory / Capital / Strategic Direction) -->
+            <path d="M 50 18 L 74 54 L 62 54 L 50 34 L 38 54 L 26 54 Z" fill="url(#brassMilGrad)"/>
+            <!-- Clean Central Separation: Tactical Division / Governance -->
+            <line x1="24" y1="58" x2="76" y2="58" stroke="#4D5D36" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- Lower U-Foundation: Tactical Olive & Radar Phosphor Green (Technology / Defense / Engineering) -->
+            <path d="M 32 64 L 41 64 L 41 74 C 41 79 45 82 50 82 C 55 82 59 79 59 74 L 59 64 L 68 64 L 68 74 C 68 84 60 90 50 90 C 40 90 32 84 32 74 Z" fill="url(#phosphorMilGrad)"/>
+            <defs>
+              <linearGradient id="tacticalCoinBorder" x1="0" y1="0" x2="100" y2="100">
+                <stop offset="0%" stop-color="#C5A059"/>
+                <stop offset="45%" stop-color="#4D5D36"/>
+                <stop offset="100%" stop-color="#84CC16"/>
+              </linearGradient>
+              <linearGradient id="brassMilGrad" x1="26" y1="18" x2="74" y2="54">
+                <stop offset="0%" stop-color="#DFC27E"/>
+                <stop offset="100%" stop-color="#C5A059"/>
+              </linearGradient>
+              <linearGradient id="phosphorMilGrad" x1="32" y1="64" x2="68" y2="90">
+                <stop offset="0%" stop-color="#A3E635"/>
+                <stop offset="50%" stop-color="#84CC16"/>
+                <stop offset="100%" stop-color="#4D5D36"/>
+              </linearGradient>
+            </defs>
+          </svg>
+
+          <div class="brand-text-block">
+            <span class="brand-text-title">AUBAN</span>
+            <span class="brand-text-sub">ADVISORY + TECHNOLOGY</span>
+          </div>
+        </a>
+        <span class="brand-location-tag">LONDON // LILLE // PARIS // BRUXELLES</span>
+      </div>
+
+      <nav class="header-nav" aria-label="Navigation principale">
+        <a href="#divisions" class="nav-link nav-advisory">Advisory</a>
+        <a href="#divisions" class="nav-link nav-tech">Technology</a>
+        <a href="#secteurs" class="nav-link">Secteurs STEM</a>
+        <a href="#packages" class="nav-link">Offres</a>
+        <a href="#aude" class="nav-link">Plateforme Aude</a>
+        <a href="#cadrage" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-dual-cta">
+        <a href="#cadrage" class="header-cta-advisory" onclick="setScoperDivision('advisory')">Advisory Mandates</a>
+        <a href="#cadrage" class="header-cta-tech" onclick="setScoperDivision('tech')">Tech &amp; Cyber Squads</a>
+      </div>
+
+      <details class="mobile-nav">
+        <summary>Menu</summary>
+        <nav class="mobile-nav-panel" aria-label="Navigation mobile">
+          <a href="#divisions">Auban Advisory (M&amp;A / Strategy)</a>
+          <a href="#divisions">Auban Technology (Cyber / Cloud / AI)</a>
+          <a href="#bridge">Le Pont Opérationnel</a>
+          <a href="#secteurs">Industries STEM</a>
+          <a href="#packages">Offres Clés en Main</a>
+          <a href="#aude">Plateforme Logicielle Aude</a>
+          <a href="#cadrage">Cadrer une intervention</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <main id="main-content">
+  <!-- HERO SECTION: TACTICAL DEFENSE & TRANSACTIONS -->
+  <section class="hero">
+    <div class="hero-halo" aria-hidden="true"></div>
+    <div class="hero-grid-pattern" aria-hidden="true"></div>
+
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-pill-cluster">
+          <span class="hero-pill hero-pill-advisory">
+            <span class="pulse-dot" style="color:var(--brass-light);"></span>
+            AUBAN ADVISORY : M&amp;A · TRANSACTIONS · CORPORATE FINANCE
+          </span>
+          <span class="hero-pill hero-pill-tech">
+            <span class="pulse-dot" style="color:var(--phosphor-bright);"></span>
+            AUBAN TECHNOLOGY : CYBER DEFENCE · CLOUD · DATA &amp; IA · OPS
+          </span>
+          <span class="hero-pill hero-pill-london">
+            LONDON · LILLE · PARIS · BRUXELLES
+          </span>
+        </div>
+
+        <h1>
+          Where deals meet <span class="highlight-military">delivery.</span>
+        </h1>
+
+        <p class="hero-lead">
+          Auban est le cabinet technologique pour les transactions, la défense et le déploiement. 
+          Nous combinons <strong>l'advisory transactionnel d'élite</strong> (M&amp;A, corporate finance, due diligence, conformité DORA/NIS2) et <strong>l'ingénierie technologique militaire et critique</strong> (cybersécurité Zero Trust, cloud souverain, data &amp; IA, opérations continues).
+        </p>
+
+        <div class="hero-actions">
+          <a href="#cadrage" class="btn btn-brass" onclick="setScoperDivision('advisory')">
+            Parler à l'Advisory (M&amp;A &amp; Capital) →
+          </a>
+          <a href="#cadrage" class="btn btn-phosphor" onclick="setScoperDivision('tech')">
+            Mobiliser la Technology (Cyber &amp; Défense) →
+          </a>
+        </div>
+
+        <div class="hero-dual-cards">
+          <div class="hero-subcard hero-subcard-advisory">
+            <span class="hero-subcard-kicker text-brass">AUBAN ADVISORY</span>
+            <strong>Capital, M&amp;A &amp; Direction</strong>
+            <p>Due diligence tech/cyber pré-deal, carve-outs, intégration 100 jours, conformité DORA et gouvernance IA pour fonds PE et directions générales à Londres, Paris et Lille.</p>
+          </div>
+          <div class="hero-subcard hero-subcard-tech">
+            <span class="hero-subcard-kicker text-phosphor">AUBAN TECHNOLOGY</span>
+            <strong>Socle Numérique &amp; Exécution</strong>
+            <p>Architecture Zero Trust, modernisation legacy, plateformes data &amp; LLMOps, résilience industrielle et maintien de la conformité en continu sur le standard militaire.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE MILITARY RADAR BLUEPRINT -->
+      <div class="execution-visual-box crosshair-corner" id="visualContainer">
+        <div class="visual-topbar">
+          <div class="visual-topbar-left">
+            <span>◆ AUBAN TACTICAL CONTROL PLANE // NATO ALLIED STANDARDS</span>
+          </div>
+          <div class="visual-topbar-right">
+            <span class="pulse-dot" style="color:var(--phosphor-bright);"></span>
+            <span>DEALS × DEFENCE × DELIVERY</span>
+          </div>
+        </div>
+
+        <div class="visual-mode-tabs" role="tablist">
+          <button type="button" class="visual-mode-tab active" data-mode="dual">01. Modèle Intégré</button>
+          <button type="button" class="visual-mode-tab" data-mode="advisory">02. Advisory / M&amp;A</button>
+          <button type="button" class="visual-mode-tab tab-tech" data-mode="technology">03. Tech &amp; Cyber</button>
+          <button type="button" class="visual-mode-tab tab-tech" data-mode="evidence">04. Preuve Aude</button>
+        </div>
+
+        <div class="visual-svg-wrap">
+          <svg viewBox="0 0 740 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="visBrass" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#DFC27E" />
+                <stop offset="100%" stop-color="#C5A059" />
+              </linearGradient>
+              <linearGradient id="visPhosphor" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#A3E635" />
+                <stop offset="100%" stop-color="#4D5D36" />
+              </linearGradient>
+              <filter id="glowMil" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="6" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+
+            <!-- Coordinate Grid & Radar Rings -->
+            <g stroke="#4D5D36" stroke-opacity="0.35" stroke-width="1">
+              <line x1="40" y1="250" x2="700" y2="250" stroke-dasharray="4 6" />
+              <line x1="370" y1="30" x2="370" y2="470" stroke-dasharray="4 6" />
+              <circle cx="370" cy="250" r="160" stroke-dasharray="6 8" />
+              <circle cx="370" cy="250" r="100" stroke-dasharray="3 6" stroke-opacity="0.2" />
+            </g>
+
+            <!-- Tactical Crosshair Markings -->
+            <g stroke="#84CC16" stroke-opacity="0.4" stroke-width="1.5">
+              <line x1="360" y1="250" x2="380" y2="250" />
+              <line x1="370" y1="240" x2="370" y2="260" />
+            </g>
+
+            <!-- Interconnect Lines -->
+            <path id="busAdv1" d="M 150 110 L 250 110 L 310 200 L 370 200" stroke="#C5A059" stroke-width="2.5" fill="none" stroke-linecap="round" />
+            <path id="busAdv2" d="M 590 110 L 490 110 L 430 200 L 370 200" stroke="#4D5D36" stroke-width="1.5" fill="none" stroke-linecap="round" />
+            <path id="busTech1" d="M 150 390 L 250 390 L 310 300 L 370 300" stroke="#4D5D36" stroke-width="1.5" fill="none" stroke-linecap="round" />
+            <path id="busTech2" d="M 590 390 L 490 390 L 430 300 L 370 300" stroke="#84CC16" stroke-width="2.5" fill="none" stroke-linecap="round" />
+
+            <!-- Tactical Hub: Two-Sided Military Coin -->
+            <g transform="translate(370, 250)">
+              <circle cx="0" cy="0" r="68" fill="#0A120C" stroke="#C5A059" stroke-width="2" filter="url(#glowMil)" />
+              <circle cx="0" cy="0" r="54" stroke="#84CC16" stroke-width="1.5" stroke-dasharray="4 4" />
+              <!-- Upper A (Command Brass) & Lower U (Tactical Olive/Phosphor) -->
+              <path d="M 0 -36 L 18 -6 L 8 -6 L 0 -22 L -8 -6 L -18 -6 Z" fill="url(#visBrass)" />
+              <line x1="-22" y1="-2" x2="22" y2="-2" stroke="#4D5D36" stroke-width="2"/>
+              <path d="M -14 6 L -6 6 L -6 20 C -6 24 -2 27 0 27 C 2 27 6 24 6 20 L 6 6 L 14 6 L 14 20 C 14 30 6 34 0 34 C -6 34 -14 30 -14 20 Z" fill="url(#visPhosphor)" />
+            </g>
+
+            <!-- Node 1: M&A / Transaction Services -->
+            <g transform="translate(70, 85)">
+              <rect x="0" y="0" width="180" height="52" rx="6" fill="#0B150E" stroke="#C5A059" stroke-width="2" />
+              <circle cx="16" cy="26" r="5" fill="#C5A059" />
+              <text x="32" y="24" fill="#E2E8F0" font-size="11" font-weight="700" font-family="monospace">TECH_DILIGENCE()</text>
+              <text x="32" y="40" fill="#DFC27E" font-size="9" font-family="monospace">VALUATION &amp; CARVE-OUT</text>
+            </g>
+
+            <!-- Node 2: DORA / Regulatory Compliance -->
+            <g transform="translate(490, 85)">
+              <rect x="0" y="0" width="180" height="52" rx="6" fill="#0B150E" stroke="rgba(197, 160, 89, 0.4)" stroke-width="1" />
+              <circle cx="16" cy="26" r="5" fill="#DFC27E" />
+              <text x="32" y="24" fill="#E2E8F0" font-size="11" font-weight="700" font-family="monospace">DORA_NIS2_AUDIT</text>
+              <text x="32" y="40" fill="#8F9F7A" font-size="9" font-family="monospace">DEFENCE ASSURANCE READY</text>
+            </g>
+
+            <!-- Node 3: Zero Trust & Cyber Core -->
+            <g transform="translate(70, 365)">
+              <rect x="0" y="0" width="180" height="52" rx="6" fill="#0B150E" stroke="rgba(132, 204, 22, 0.4)" stroke-width="1" />
+              <circle cx="16" cy="26" r="5" fill="#84CC16" />
+              <text x="32" y="24" fill="#E2E8F0" font-size="11" font-weight="700" font-family="monospace">ZERO_TRUST_CORE</text>
+              <text x="32" y="40" fill="#8F9F7A" font-size="9" font-family="monospace">AIRGAP_IMMUTABLE_PRA</text>
+            </g>
+
+            <!-- Node 4: Aude Evidence Telemetry -->
+            <g transform="translate(490, 365)">
+              <rect x="0" y="0" width="180" height="52" rx="6" fill="#0B150E" stroke="#84CC16" stroke-width="2" />
+              <circle cx="16" cy="26" r="5" fill="#84CC16" />
+              <text x="32" y="24" fill="#E2E8F0" font-size="11" font-weight="700" font-family="monospace">AUDE_TELEMETRY</text>
+              <text x="32" y="40" fill="#A3E635" font-size="9" font-family="monospace">SHA-256 PROOF ENGINE</text>
+            </g>
+          </svg>
+        </div>
+
+        <div class="diag-badge diag-top">
+          <div class="diag-icon text-brass">⚔️</div>
+          <div>
+            <strong id="diagTopTitle">Auban Advisory // Transactions</strong>
+            <span id="diagTopSub">M&amp;A, Tech Diligence &amp; Corporate Finance</span>
+          </div>
+        </div>
+
+        <div class="diag-badge diag-bottom">
+          <div class="diag-icon text-phosphor">🛡️</div>
+          <div>
+            <strong id="diagBottomTitle">Auban Technology // Exécution</strong>
+            <span id="diagBottomSub">Cybersécurité, Défense &amp; Plateforme Aude</span>
+          </div>
+        </div>
+
+        <div class="visual-footer-bar">
+          <div class="footer-code">
+            <span class="footer-prompt">&gt;</span>
+            <code id="visualCodeLine">auban.deploy({ command: "deals_and_capital", defense: "critical_resilience_delivery", hq: "LONDON_LILLE_PARIS" });</code>
+          </div>
+          <div class="footer-pill">
+            <span class="pulse-dot" style="color:var(--phosphor-bright);"></span>
+            <span id="visualStatusText">TACTICAL READINESS : ACTIVE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONVICTION STRIP -->
+  <section class="belief-strip">
+    <div class="container belief-inner">
+      <div class="belief-headline">
+        <span>LA FIRME DES INDUSTRIES STEM &amp; DÉFENSE</span>
+        <p>Conseiller la décision, protéger l'actif, bâtir la capacité opérationnelle.</p>
+      </div>
+      <div class="belief-badges">
+        <div class="belief-badge-item">
+          <div class="badge-glyph">GS</div>
+          <div>
+            <strong>Auban Advisory</strong>
+            <span>M&amp;A, Corporate Finance, Tech Due Diligence &amp; Conformité</span>
+          </div>
+        </div>
+        <div class="belief-badge-item">
+          <div class="badge-glyph badge-glyph-tech">DL</div>
+          <div>
+            <strong>Auban Technology</strong>
+            <span>Cybersécurité, Cloud Souverain, Data &amp; IA, Opérations</span>
+          </div>
+        </div>
+        <div class="belief-badge-item">
+          <div class="badge-glyph">AU</div>
+          <div>
+            <strong>Plateforme Aude</strong>
+            <span>Éléments de preuve continus, traçabilité et contrôle de dérive</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE TWO DIVISIONS IN DETAIL -->
+  <section class="section-pad divisions-section" id="divisions">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow eyebrow-brass">
+            <span class="eyebrow-rule"></span>
+            ARCHI-STRUCTURE COMMERCIALE
+          </div>
+          <h2>
+            Deux plateformes d'élite.
+            <br>
+            <span style="color:var(--ink-muted);">Une seule responsabilité sur les résultats.</span>
+          </h2>
+        </div>
+        <p>
+          La plupart des cabinets conseillent sans savoir bâtir. Les ESN exécutent sans comprendre les enjeux de valorisation. Auban unifie l'advisory financier et l'ingénierie technologique sous une gouvernance unique opérant depuis Londres, Paris et Lille.
+        </p>
+      </div>
+
+      <div class="dual-division-grid">
+        <!-- DIVISION 1: AUBAN ADVISORY -->
+        <article class="division-card card-advisory crosshair-corner">
+          <div>
+            <span class="division-badge badge-brass">DIVISION 01 // CAPITAL &amp; DIRECTION</span>
+            <h3>Auban Advisory</h3>
+            <div class="division-tagline">Capital, transactions et stratégie pour entreprises technologiques</div>
+            <p class="division-desc">
+              Nous conseillons les conseils d'administration, investisseurs, fondateurs et directions générales dans les moments de vérité : fusions-acquisitions, levées de fonds, audits réglementaires et restructurations de portefeuille.
+            </p>
+
+            <div class="service-pillars-list">
+              <div class="pillar-item">
+                <span class="pillar-bullet">01</span>
+                <div>
+                  <strong>M&amp;A &amp; Transaction Advisory</strong>
+                  <p>Accompagnement buy-side et sell-side, ciblage stratégique, évaluation des synergies et structuration de deals STEM à Londres et Paris.</p>
+                </div>
+              </div>
+              <div class="pillar-item">
+                <span class="pillar-bullet">02</span>
+                <div>
+                  <strong>Corporate Finance &amp; Levées Stratégiques</strong>
+                  <p>Préparation au capital, modélisation financière, dossiers investisseurs et préparation à l'exit pour sociétés tech.</p>
+                </div>
+              </div>
+              <div class="pillar-item">
+                <span class="pillar-bullet">03</span>
+                <div>
+                  <strong>Transaction Services (Due Diligence Tech &amp; Cyber)</strong>
+                  <p>Audits pré-acquisition d'architecture, dette technique, code source, cyber-exposition, plans 100 jours et architecture de carve-out.</p>
+                </div>
+              </div>
+              <div class="pillar-item">
+                <span class="pillar-bullet">04</span>
+                <div>
+                  <strong>Réglementation &amp; Conformité Stratégique</strong>
+                  <p>Gouvernance DORA (risques TIC tiers), NIS2 / ReCyF ANSSI, conformité EU AI Act et souveraineté des données.</p>
+                </div>
+              </div>
+              <div class="pillar-item">
+                <span class="pillar-bullet">05</span>
+                <div>
+                  <strong>Conseil de Direction &amp; Modèles Opérationnels (TOM)</strong>
+                  <p>Stratégie technologique d'entreprise, optimisation des budgets d'investissement et Value Management Office (VMO).</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="division-card-footer">
+            <span class="buyers-label">Interlocuteurs : Conseils · DG · Fonds PE · CFOs</span>
+            <a href="#cadrage" class="btn btn-brass" onclick="setScoperDivision('advisory')">
+              Consulter Auban Advisory →
+            </a>
+          </div>
+        </article>
+
+        <!-- DIVISION 2: AUBAN TECHNOLOGY -->
+        <article class="division-card card-tech crosshair-corner">
+          <div>
+            <span class="division-badge badge-phosphor">DIVISION 02 // DÉFENSE &amp; INGÉNIERIE</span>
+            <h3>Auban Technology</h3>
+            <div class="division-tagline">Sécuriser le socle. Construire ce qui vient. Opérer dans la durée.</div>
+            <p class="division-desc">
+              Nous concevons, modernisons et exploitons les systèmes critiques dont dépendent la valeur et la pérennité de l'entreprise : architecture cyber Zero Trust, cloud résilient, IA gouvernée et services managés.
+            </p>
+
+            <div class="service-pillars-list">
+              <div class="pillar-item">
+                <span class="pillar-bullet">01</span>
+                <div>
+                  <strong>Cybersécurité, Risques &amp; Défense</strong>
+                  <p>Stratégie Zero Trust, IAM résistante au phishing (FIDO2), sécurité cloud, tests PRA isolés et clôture vérifiée KEV.</p>
+                </div>
+              </div>
+              <div class="pillar-item">
+                <span class="pillar-bullet">02</span>
+                <div>
+                  <strong>Cloud, Plateformes &amp; Digital Core</strong>
+                  <p>Architectures hybrides et souveraines (SecNumCloud), modernisation du legacy, platform engineering et FinOps rigoureux.</p>
+                </div>
+              </div>
+              <div class="pillar-item">
+                <span class="pillar-bullet">03</span>
+                <div>
+                  <strong>Data d'Entreprise, IA &amp; Automatisation</strong>
+                  <p>Plateformes de données sécurisées, LLMOps, RAG d'entreprise, agents autonomes et gouvernance des algorithmes.</p>
+                </div>
+              </div>
+              <div class="pillar-item">
+                <span class="pillar-bullet">04</span>
+                <div>
+                  <strong>Digital Engineering &amp; Systèmes Critiques</strong>
+                  <p>Ingénierie logicielle avancée, APIs modernes, pipelines DevSecOps industrialisés et observabilité SRE 24/7.</p>
+                </div>
+              </div>
+              <div class="pillar-item">
+                <span class="pillar-bullet">05</span>
+                <div>
+                  <strong>Opérations Technologiques &amp; Assurance Continue</strong>
+                  <p>Services opérés, pilotage par SLOs, surveillance continue de dérive via Aude et transfert de compétences aux équipes.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="division-card-footer">
+            <span class="buyers-label">Interlocuteurs : CIOs · CTOs · CISOs · COOs</span>
+            <a href="#cadrage" class="btn btn-phosphor" onclick="setScoperDivision('tech')">
+              Mobiliser Auban Technology →
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE OPERATIONAL BRIDGE -->
+  <section class="section-pad bridge-section" id="bridge">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow eyebrow-brass">
+            <span class="eyebrow-rule"></span>
+            LE PONT OPÉRATIONNEL AUBAN
+          </div>
+          <h2 style="color:white;">
+            Un cabinet unique pour la décision
+            <br>
+            <span class="highlight-military">et ses conséquences opérationnelles.</span>
+          </h2>
+        </div>
+        <p style="color:#9cb0a0;">
+          Une transaction crée un passif caché si l'infrastructure est vulnérable ou impossible à scinder. Une transformation technologique détruit de la valeur si les arbitrages financiers sont déconnectés. Auban relie les deux mondes.
+        </p>
+      </div>
+
+      <div class="bridge-cards-grid">
+        <div class="bridge-step-card">
+          <div>
+            <span class="bridge-num">ÉTAPE 01 // DÉCISION</span>
+            <h3>Investir avec clarté</h3>
+            <p>
+              Avant d'engager du capital dans une acquisition, un carve-out ou un investissement lourd, nous évaluons la viabilité technique, la dette cyber, la conformité réglementaire et le coût réel de séparation.
+            </p>
+          </div>
+          <div class="bridge-meta">
+            MANDAT ADVISORY : DUE DILIGENCE TECH &amp; CYBER
+          </div>
+        </div>
+
+        <div class="bridge-step-card">
+          <div>
+            <span class="bridge-num">ÉTAPE 02 // DÉPLOIEMENT</span>
+            <h3>Exécuter avec contrôle</h3>
+            <p>
+              Dès la décision prise ou le deal signé, nous engageons les squads d'ingénierie pour exécuter la trajectoire : scission Day 1, migration cloud, remédiation Zero Trust et déploiement de produits numériques.
+            </p>
+          </div>
+          <div class="bridge-meta">
+            MANDAT TECHNOLOGY : SPRINT D'INGÉNIERIE &amp; PMI
+          </div>
+        </div>
+
+        <div class="bridge-step-card">
+          <div>
+            <span class="bridge-num">ÉTAPE 03 // DURABILITÉ</span>
+            <h3>Opérer avec confiance</h3>
+            <p>
+              Nous ancrons la performance dans la durée : détection de dérive automatisée, éléments de preuve infalsifiables via Aude pour auditeurs et assureurs, et transfert complet aux équipes internes.
+            </p>
+          </div>
+          <div class="bridge-meta">
+            AUDE PLATFORMS : ASSURANCE CONTINUE &amp; EVIDENCE
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEM-BASED INDUSTRIES (7 VERTICALS) -->
+  <section class="section-pad industry-section" id="secteurs">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow eyebrow-brass">
+            <span class="eyebrow-rule"></span>
+            INDUSTRIES STEM &amp; TECHNOLOGIQUES
+          </div>
+          <h2>
+            Conçu pour les secteurs où la technologie
+            <br>
+            <span style="color:var(--ink-muted);">est l'actif, le risque et l'avantage compétitif.</span>
+          </h2>
+        </div>
+        <p>
+          Nous ne prétendons pas être généralistes. Notre présence est focalisée sur les industries à forte intensité scientifique, technologique et capitalistique à Londres, Paris, Lille et Bruxelles.
+        </p>
+      </div>
+
+      <div class="stem-grid">
+        <!-- 1. Software & AI -->
+        <article class="stem-card">
+          <div>
+            <div class="stem-badge-row">
+              <span class="stem-code">S1</span>
+              <span class="stem-trigger">M&amp;A · IP · VALUATION</span>
+            </div>
+            <h3>Logiciels, IA &amp; Infra</h3>
+            <p>Éditeurs SaaS, scale-ups IA, infrastructures cloud et télécoms confrontés à des audits de code et des exigences de scalabilité.</p>
+          </div>
+          <div class="stem-mandate-split">
+            <span class="mandate-adv">Advisory : Tech DD, valorisation IP, exit</span>
+            <span class="mandate-tech">Technology : LLMOps, Platform Eng, DevSecOps</span>
+          </div>
+        </article>
+
+        <!-- 2. Cyber & Defense -->
+        <article class="stem-card">
+          <div>
+            <div class="stem-badge-row">
+              <span class="stem-code">S2</span>
+              <span class="stem-trigger">SOUVERAINETÉ · DÉFENSE</span>
+            </div>
+            <h3>Cyber &amp; Défense Tech</h3>
+            <p>Technologies de souveraineté, systèmes duals et chaînes de sous-traitance sensibles sous agrément et contrôle étatique (UK MoD / DGA).</p>
+          </div>
+          <div class="stem-mandate-split">
+            <span class="mandate-adv">Advisory : Réglementation souveraine, M&amp;A</span>
+            <span class="mandate-tech">Technology : Zero Trust strict, air-gap, PAM</span>
+          </div>
+        </article>
+
+        <!-- 3. FinTech & Regulated -->
+        <article class="stem-card">
+          <div>
+            <div class="stem-badge-row">
+              <span class="stem-code">S3</span>
+              <span class="stem-trigger">DORA · FCA · ACPR</span>
+            </div>
+            <h3>Fintech &amp; Finance</h3>
+            <p>Banques, assurances, gestion d'actifs (City de Londres &amp; Paris) et fintechs soumises à la réglementation européenne DORA et FCA.</p>
+          </div>
+          <div class="stem-mandate-split">
+            <span class="mandate-adv">Advisory : Dossiers DORA, risque tiers TIC</span>
+            <span class="mandate-tech">Technology : Résilience opérationnelle, tests PRA</span>
+          </div>
+        </article>
+
+        <!-- 4. Industrial & OT -->
+        <article class="stem-card">
+          <div>
+            <div class="stem-badge-row">
+              <span class="stem-code">S4</span>
+              <span class="stem-trigger">IT/OT · NIS2 · USINES</span>
+            </div>
+            <h3>Industrie &amp; OT</h3>
+            <p>Automatisation industrielle, supply chain, usines 4.0 et logistique où un ransomware stoppe directement la production.</p>
+          </div>
+          <div class="stem-mandate-split">
+            <span class="mandate-adv">Advisory : Carve-out industriel, audit NIS2</span>
+            <span class="mandate-tech">Technology : Cloisonnement IT/OT, IoT, reprise</span>
+          </div>
+        </article>
+
+        <!-- 5. Energy & Critical Infra -->
+        <article class="stem-card">
+          <div>
+            <div class="stem-badge-row">
+              <span class="stem-code">S5</span>
+              <span class="stem-trigger">ENTITÉS ESSENTIELLES</span>
+            </div>
+            <h3>Énergie &amp; Réseaux</h3>
+            <p>Opérateurs de réseaux, énergies renouvelables et infrastructures critiques classées sous NIS2 et directives résilience.</p>
+          </div>
+          <div class="stem-mandate-split">
+            <span class="mandate-adv">Advisory : Conseil de capital, conformité NIS2</span>
+            <span class="mandate-tech">Technology : Durcissement SCADA, cloud résilient</span>
+          </div>
+        </article>
+
+        <!-- 6. Healthtech & Life Sciences -->
+        <article class="stem-card">
+          <div>
+            <div class="stem-badge-row">
+              <span class="stem-code">S6</span>
+              <span class="stem-trigger">HDS · IA SANTÉ · PHARMA</span>
+            </div>
+            <h3>Santé &amp; Life Sciences</h3>
+            <p>Biotechnologies, dispositifs médicaux et données cliniques protégées par la certification HDS et le RGPD santé.</p>
+          </div>
+          <div class="stem-mandate-split">
+            <span class="mandate-adv">Advisory : Due diligence pharma, data room</span>
+            <span class="mandate-tech">Technology : Cloud HDS, pipelines IA certifiés</span>
+          </div>
+        </article>
+
+        <!-- 7. Private Equity & VC -->
+        <article class="stem-card" style="grid-column: span 2;">
+          <div>
+            <div class="stem-badge-row">
+              <span class="stem-code">S7</span>
+              <span class="stem-trigger">100-JOURS · PMI · CREATION DE VALEUR</span>
+            </div>
+            <h3>Private Equity &amp; Investisseurs Technologiques (London / Paris)</h3>
+            <p>Fonds d'investissement mid-market et family offices réalisant des acquisitions de plateformes, des add-ons, des carve-outs complexes et des plans de création de valeur sur 3 à 5 ans.</p>
+          </div>
+          <div class="stem-mandate-split">
+            <span class="mandate-adv">Advisory : Tech &amp; Cyber DD pré-deal, plan 100 jours, architecture de scission (TSA), valorisation</span>
+            <span class="mandate-tech">Technology : Socle de sécurité du portefeuille, rationalisation des plateformes, découplage technique</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMERCIAL ENTRY PACKAGES -->
+  <section class="section-pad packages-section" id="packages">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow eyebrow-brass">
+            <span class="eyebrow-rule"></span>
+            PACKAGES D'ENGAGEMENT STANDARDS
+          </div>
+          <h2>
+            Des points d'entrée concrets.
+            <br>
+            <span style="color:var(--ink-muted);">Des délais maîtrisés et des livrables exploitables.</span>
+          </h2>
+        </div>
+        <p>
+          Nos interventions débutent par des sprints cadrés et délimités, produisant des artefacts de décision pour la direction et des feuilles de route pour l'ingénierie.
+        </p>
+      </div>
+
+      <div class="package-tabs">
+        <button type="button" class="pkg-tab-btn active tab-pkg-adv" data-pkg="advisory">Offres Auban Advisory</button>
+        <button type="button" class="pkg-tab-btn tab-pkg-tech" data-pkg="tech">Offres Auban Technology</button>
+      </div>
+
+      <!-- ADVISORY PACKAGES -->
+      <div class="packages-grid" id="pkgGridAdvisory">
+        <div class="package-card">
+          <div>
+            <div class="pkg-top">
+              <span class="pkg-dur">2 à 4 semaines</span>
+              <span class="pkg-band">M&amp;A / PE</span>
+            </div>
+            <h3>Due Diligence Tech &amp; Cyber</h3>
+            <p>Audit pré-acquisition : dette technique, scalabilité de l'architecture, licences, exposition cyber et plan 100 jours.</p>
+            <div class="pkg-deliverables">
+              <div class="pkg-deliv-item"><span class="pkg-dot"></span> Mémorandum de décision d'investissement</div>
+              <div class="pkg-deliv-item"><span class="pkg-dot"></span> Évaluation chiffrée de la dette technique</div>
+              <div class="pkg-deliv-item"><span class="pkg-dot"></span> Cartographie de l'exposition cyber pré-closing</div>
+            </div>
+          </div>
+          <a href="#cadrage" class="btn btn-outline-brass" style="font-size:12px; padding:10px 16px;" onclick="selectPackageScope('Due Diligence Tech & Cyber')">Cadrer la diligence →</a>
+        </div>
+
+        <div class="package-card">
+          <div>
+            <div class="pkg-top">
+              <span class="pkg-dur">4 à 8 semaines</span>
+              <span class="pkg-band">TRANSACTIONS</span>
+            </div>
+            <h3>Carve-Out &amp; Scission SI</h3>
+            <p>Architecture de séparation : modèle opérationnel cible, matrice des dépendances et rédaction des contrats TSA.</p>
+            <div class="pkg-deliverables">
+              <div class="pkg-deliv-item"><span class="pkg-dot"></span> Architecture cible autonome Day 1</div>
+              <div class="pkg-deliv-item"><span class="pkg-dot"></span> Grille de coûts &amp; calendrier des TSA</div>
+              <div class="pkg-deliv-item"><span class="pkg-dot"></span> Plan de partitionnement des données</div>
+            </div>
+          </div>
+          <a href="#cadrage" class="btn btn-outline-brass" style="font-size:12px; padding:10px 16px;" onclick="selectPackageScope('Carve-Out & Scission SI')">Préparer le carve-out →</a>
+        </div>
+
+        <div class="package-card">
+          <div>
+            <div class="pkg-top">
+              <span class="pkg-dur">3 à 6 semaines</span>
+              <span class="pkg-band">GROWTH / EXIT</span>
+            </div>
+            <h3>Capital &amp; Exit Readiness</h3>
+            <p>Préparation à la levée de fonds ou à la cession : valorisation des actifs technologiques, audit pré-dataroom et conformité IA.</p>
+            <div class="pkg-deliverables">
+              <div class="pkg-deliv-item"><span class="pkg-dot"></span> Equity Story technique pour investisseurs</div>
+              <div class="pkg-deliv-item"><span class="pkg-dot"></span> Audit blanc pré-emptif de dataroom</div>
+              <div class="pkg-deliv-item"><span class="pkg-dot"></span> Attestation de gouvernance &amp; conformité</div>
+            </div>
+          </div>
+          <a href="#cadrage" class="btn btn-outline-brass" style="font-size:12px; padding:10px 16px;" onclick="selectPackageScope('Capital & Exit Readiness')">Structurer l'exit →</a>
+        </div>
+
+        <div class="package-card">
+          <div>
+            <div class="pkg-top">
+              <span class="pkg-dur">2 à 3 semaines</span>
+              <span class="pkg-band">BOARD / COMEX</span>
+            </div>
+            <h3>Board Briefing Risques &amp; IA</h3>
+            <p>Synthèse exécutive pour comité d'audit et conseil : exposition DORA, NIS2, risques IA et arbitrages d'investissement.</p>
+            <div class="pkg-deliverables">
+              <div class="pkg-deliv-item"><span class="pkg-dot"></span> Heatmap des risques critiques du Comex</div>
+              <div class="pkg-deliv-item"><span class="pkg-dot"></span> Trajectoire de mise en conformité réglementaire</div>
+              <div class="pkg-deliv-item"><span class="pkg-dot"></span> Recommandations d'allocation de capital</div>
+            </div>
+          </div>
+          <a href="#cadrage" class="btn btn-outline-brass" style="font-size:12px; padding:10px 16px;" onclick="selectPackageScope('Board Briefing Risques')">Planifier le briefing →</a>
+        </div>
+      </div>
+
+      <!-- TECHNOLOGY PACKAGES -->
+      <div class="packages-grid" id="pkgGridTech" style="display:none;">
+        <div class="package-card">
+          <div>
+            <div class="pkg-top">
+              <span class="pkg-dur">3 à 4 semaines</span>
+              <span class="pkg-band">TECH CORE</span>
+            </div>
+            <h3>Executive Tech Review (ETRR)</h3>
+            <p>Diagnostic d'infrastructure, cloud et cyber : inventaire factuel, vulnérabilités critiques et feuille de route 12 mois.</p>
+            <div class="pkg-deliverables">
+              <div class="pkg-deliv-item"><span class="pkg-dot"></span> Diagnostic factuel de l'architecture</div>
+              <div class="pkg-deliv-item"><span class="pkg-dot"></span> Vérification MFA &amp; comptes à privilèges</div>
+              <div class="pkg-deliv-item"><span class="pkg-dot"></span> Feuille de route d'ingénierie priorisée</div>
+            </div>
+          </div>
+          <a href="#cadrage" class="btn btn-outline-phosphor" style="font-size:12px; padding:10px 16px;" onclick="selectPackageScope('Executive Tech Review (ETRR)')">Lancer l'ETRR →</a>
+        </div>
+
+        <div class="package-card">
+          <div>
+            <div class="pkg-top">
+              <span class="pkg-dur">4 à 8 semaines</span>
+              <span class="pkg-band">RÉGLEMENTATION</span>
+            </div>
+            <h3>Sprint NIS2 / DORA Readiness</h3>
+            <p>Mise en conformité opérationnelle : écarts ANSSI ReCyF / DORA, gestion des tiers TIC et tests de reprise isolés.</p>
+            <div class="pkg-deliverables">
+              <div class="pkg-deliv-item"><span class="pkg-dot"></span> Grille d'objectifs ReCyF / DORA validée</div>
+              <div class="pkg-deliv-item"><span class="pkg-dot"></span> Exercice de crise &amp; validation PRA isolée</div>
+              <div class="pkg-deliv-item"><span class="pkg-dot"></span> Dossier de preuve auditable généré par Aude</div>
+            </div>
+          </div>
+          <a href="#cadrage" class="btn btn-outline-phosphor" style="font-size:12px; padding:10px 16px;" onclick="selectPackageScope('Sprint NIS2 / DORA')">Cadrer la résilience →</a>
+        </div>
+
+        <div class="package-card">
+          <div>
+            <div class="pkg-top">
+              <span class="pkg-dur">4 à 6 semaines</span>
+              <span class="pkg-band">DATA &amp; IA</span>
+            </div>
+            <h3>Sprint Modèle Opérationnel IA</h3>
+            <p>Industrialisation de l'IA : portefeuille de cas d'usage, classification des risques EU AI Act et architecture LLMOps.</p>
+            <div class="pkg-deliverables">
+              <div class="pkg-deliv-item"><span class="pkg-dot"></span> Portefeuille de cas d'usage priorisés par ROI</div>
+              <div class="pkg-deliv-item"><span class="pkg-dot"></span> Cadre de gouvernance &amp; conformité AI Act</div>
+              <div class="pkg-deliv-item"><span class="pkg-dot"></span> Architecture de pipeline de données sécurisée</div>
+            </div>
+          </div>
+          <a href="#cadrage" class="btn btn-outline-phosphor" style="font-size:12px; padding:10px 16px;" onclick="selectPackageScope('Sprint IA & Gouvernance')">Industrialiser l'IA →</a>
+        </div>
+
+        <div class="package-card">
+          <div>
+            <div class="pkg-top">
+              <span class="pkg-dur">Abonnement Annuel</span>
+              <span class="pkg-band">AUDE CONTINUOUS</span>
+            </div>
+            <h3>Assurance Continue Aude</h3>
+            <p>Contrôles continus et télémétrie : surveillance 24/7 des dérives de configuration, coffre-fort de preuves et revues trimestrielles.</p>
+            <div class="pkg-deliverables">
+              <div class="pkg-deliv-item"><span class="pkg-dot"></span> Détection automatisée de dérive cloud/cyber</div>
+              <div class="pkg-deliv-item"><span class="pkg-dot"></span> Rapports trimestriels pour comités et assureurs</div>
+              <div class="pkg-deliv-item"><span class="pkg-dot"></span> Heures d'advisory technique réservées</div>
+            </div>
+          </div>
+          <a href="#cadrage" class="btn btn-outline-phosphor" style="font-size:12px; padding:10px 16px;" onclick="selectPackageScope('Assurance Continue Aude')">Souscrire à l'assurance →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUDE PLATFORM CONSOLE -->
+  <section class="section-pad aude-section" id="aude">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow eyebrow-phosphor">
+            <span class="eyebrow-rule"></span>
+            PRODUITS &amp; ACCÉLÉRATEURS AUDE
+          </div>
+          <h2 style="color:white;">
+            La gamme logicielle Aude :
+            <br>
+            <span class="highlight-military">preuve continue, visibilité et résilience.</span>
+          </h2>
+        </div>
+        <p style="color:#9cb0a0;">
+          Aude est notre gamme de produits technologiques. Elle ingère les diagnostics de vos environnements existants pour certifier l'application des contrôles de sécurité et éclairer les décisions d'arbitrage.
+        </p>
+      </div>
+
+      <div class="product-portfolio-grid">
+        <article class="product-card">
+          <div class="product-card-kicker">
+            <span>AUDE CONTROL</span>
+            <span class="product-status">DISPONIBLE EN PILOTE</span>
+          </div>
+          <h3>Continuous Controls</h3>
+          <p>Collecte d'éléments de preuve, évaluation déterministe des contrôles critiques et registre immuable SHA-256 pour auditeurs et régulateurs.</p>
+        </article>
+        <article class="product-card">
+          <div class="product-card-kicker">
+            <span>AUDE HORIZON</span>
+            <span class="product-status">ROADMAP ANNÉE 2</span>
+          </div>
+          <h3>Technology Intelligence</h3>
+          <p>Cartographie des dépendances d'actifs, évaluation de la dette technique de code et modélisation des coûts d'infrastructure cloud.</p>
+        </article>
+        <article class="product-card">
+          <div class="product-card-kicker">
+            <span>AUDE RESPONSE</span>
+            <span class="product-status">ROADMAP ANNÉE 3</span>
+          </div>
+          <h3>Resilience Operations</h3>
+          <p>Orchestration des plans de reprise, conformité aux délais de notification de crise (72h NIS2 / 24h DORA) et retours d'expérience.</p>
+        </article>
+      </div>
+
+      <div class="aude-console-card crosshair-corner">
+        <div class="console-header">
+          <div class="console-title">
+            <span>⚡ AUDE CONTROL // CONSOLE DE DÉMONSTRATION DÉTERMINISTE</span>
+            <span class="console-version">PILOTE AUDITABLE</span>
+          </div>
+          <div style="color:var(--phosphor-bright); font-size:11px; font-family:var(--font-mono);">
+            ● SIMULATEUR D'INVARIANCE TACTIQUE
+          </div>
+        </div>
+
+        <div class="console-grid">
+          <div class="console-controls-col">
+            <h4 style="color:white; margin-bottom:6px;">Sélectionnez un contrôle d'intégrité</h4>
+            <p style="color:#9cb0a0; font-size:14px; margin-bottom:20px;">Observez comment Aude valide un invariant technique sans recourir à un scanner intrusif :</p>
+
+            <div class="control-picker">
+              <button type="button" class="control-choice-btn active" data-control="mna">
+                <div class="control-choice-head">
+                  <span class="choice-code">M&amp;A_CARVE_OUT_ISOLATION</span>
+                  <span class="choice-status">TRANSACTION</span>
+                </div>
+                <div class="choice-title">Vérification de l'étanchéité des identités et du partitionnement data</div>
+              </button>
+
+              <button type="button" class="control-choice-btn" data-control="dora">
+                <div class="control-choice-head">
+                  <span class="choice-code">DORA_ART28_THIRD_PARTY_ICT</span>
+                  <span class="choice-status">RÉGULATION</span>
+                </div>
+                <div class="choice-title">Audit des dépendances critiques de fournisseurs cloud et clauses de sortie</div>
+              </button>
+
+              <button type="button" class="control-choice-btn" data-control="nis2">
+                <div class="control-choice-head">
+                  <span class="choice-code">NIS2_ART21_MFA_FIDO2</span>
+                  <span class="choice-status">DÉFENSE</span>
+                </div>
+                <div class="choice-title">Authentification résistante au phishing et Zéro Privilège Permanent</div>
+              </button>
+
+              <button type="button" class="control-choice-btn" data-control="pra">
+                <div class="control-choice-head">
+                  <span class="choice-code">PRA_IMMUTABLE_BACKUP_AIRGAP</span>
+                  <span class="choice-status">RÉSILIENCE</span>
+                </div>
+                <div class="choice-title">Validation déterministe des sauvegardes immuables et de la reprise à froid</div>
+              </button>
+            </div>
+
+            <div style="display:flex; align-items:center; gap:16px;">
+              <button type="button" class="btn btn-brass" id="btnRunVerification">
+                🔄 Recalculer l'invariance
+              </button>
+              <span id="verifyLoading" style="display:none; color:var(--phosphor-bright); font-size:12px; font-family:var(--font-mono);">
+                Vérification de la chaîne de preuves...
+              </span>
+            </div>
+          </div>
+
+          <div class="console-terminal-col">
+            <div class="terminal-output">
+              <div class="terminal-line">// AUDE ENGINE CONTINUOUS TELEMETRY STREAM</div>
+              <div class="terminal-highlight" id="termCmd">&gt; aude.verifyControl("M&amp;A_CARVE_OUT_ISOLATION");</div>
+              <div class="terminal-success" id="termResult">STATUS: CONTRÔLE VÉRIFIÉ AVEC SUCCÈS</div>
+              <div class="terminal-line" id="termHash">SHA-256: 8a4c01f92e3d489b1c7821ad58f003e</div>
+              <div class="terminal-json" id="termJson">{
+  "controlId": "M&A_CARVE_OUT_ISOLATION",
+  "method": "INGEST_EVIDENCE_DETERMINISTIC",
+  "identityTenantSeparated": true,
+  "sharedCredentialsDetected": 0,
+  "dataRetentionBoundaryValidated": true,
+  "auditEvidenceChained": true,
+  "timestamp": "2026-09-23T12:45:00Z"
+}</div>
+            </div>
+            <div style="font-size:11px; color:#708552; margin-top:14px;">
+              Données de simulation représentatives. Les éléments de preuve sont signés cryptographiquement et stockés dans un registre immuable pour audit externe.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXECUTIVE SCOPER: DUAL-PATHWAY CONSULTATION PLANNER -->
+  <section class="section-pad scoper-section" id="cadrage">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow eyebrow-brass">
+            <span class="eyebrow-rule"></span>
+            ÉCHANGE DE CADRAGE EXÉCUTIF
+          </div>
+          <h2>
+            Cadrez votre prochain mouvement.
+            <br>
+            <span style="color:var(--ink-muted);">Un échange confidentiel, direct et sans intermédiaire.</span>
+          </h2>
+        </div>
+        <p>
+          Sélectionnez votre priorité stratégique, votre division d'intervention et votre horizon. Nos associés basés à Londres, Paris et Lille prépareront l'échange.
+        </p>
+      </div>
+
+      <div class="scoper-box">
+        <!-- STEP 1: NATURE DU MANDAT -->
+        <div class="scoper-step">
+          <span class="scoper-step-title">01. NATURE DE L'INTERVENTION SOUHAITÉE</span>
+          <div class="scoper-options-grid">
+            <button type="button" class="scoper-btn active" data-step="mandate" data-val="mna">
+              <strong>Due Diligence M&amp;A &amp; Carve-Out</strong>
+              <span>Audit technique pré-deal, dette cyber, valorisation et scission</span>
+            </button>
+            <button type="button" class="scoper-btn" data-step="mandate" data-val="finance">
+              <strong>Corporate Finance &amp; Exit</strong>
+              <span>Préparation au capital, revue d'investisseurs et gouvernance IA</span>
+            </button>
+            <button type="button" class="scoper-btn" data-step="mandate" data-val="dora">
+              <strong>Conformité DORA &amp; NIS2</strong>
+              <span>Audit réglementaire ANSSI ReCyF / FCA, risque tiers TIC</span>
+            </button>
+            <button type="button" class="scoper-btn" data-step="mandate" data-val="cyber">
+              <strong>Cybersécurité &amp; Résilience</strong>
+              <span>Architecture Zero Trust, gestion de crise, PRA et clôture KEV</span>
+            </button>
+            <button type="button" class="scoper-btn" data-step="mandate" data-val="cloud">
+              <strong>Cloud &amp; Modernisation Core</strong>
+              <span>Architecture souveraine, migration, platform engineering et FinOps</span>
+            </button>
+            <button type="button" class="scoper-btn" data-step="mandate" data-val="ai">
+              <strong>Data, IA &amp; Automatisation</strong>
+              <span>Cas d'usage ROI, RAG, pipelines LLMOps et éthique des modèles</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 2: DIVISION RESPONSABLE -->
+        <div class="scoper-step">
+          <span class="scoper-step-title">02. DIVISION D'INTERVENTION PRINCIPALE</span>
+          <div class="scoper-options-grid">
+            <button type="button" class="scoper-btn active" data-step="division" data-val="advisory">
+              <strong>Auban Advisory</strong>
+              <span>M&amp;A, Corporate Finance, Diligence &amp; Conseil Stratégique</span>
+            </button>
+            <button type="button" class="scoper-btn" data-step="division" data-val="technology">
+              <strong>Auban Technology</strong>
+              <span>Squads d'ingénierie, Cyber, Cloud, Data &amp; Résilience</span>
+            </button>
+            <button type="button" class="scoper-btn" data-step="division" data-val="integrated">
+              <strong>Programme Intégré (Advisory + Tech)</strong>
+              <span>De la transaction financière au déploiement en production</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 3: PÉRIMÈTRE & TAILLE -->
+        <div class="scoper-step">
+          <span class="scoper-step-title">03. PROFIL DE L'ORGANISATION &amp; HUB</span>
+          <div class="scoper-options-grid">
+            <button type="button" class="scoper-btn active" data-step="size" data-val="mid">
+              <strong>ETI / Mid-Market (50M€ - 1Md€)</strong>
+              <span>Systèmes critiques, besoin d'expertise senior sans lourdeur</span>
+            </button>
+            <button type="button" class="scoper-btn" data-step="size" data-val="pe">
+              <strong>Fonds Private Equity / Holding</strong>
+              <span>Équipe deal (London / Paris), carve-out ou turnaround 100 jours</span>
+            </button>
+            <button type="button" class="scoper-btn" data-step="size" data-val="large">
+              <strong>Institution Financière / Grand Compte</strong>
+              <span>Environnement hautement réglementé (DORA, NIS2 Entité Essentielle)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 4: HORIZON TEMPOREL -->
+        <div class="scoper-step">
+          <span class="scoper-step-title">04. HORIZON D'ENGAGEMENT</span>
+          <div class="scoper-options-grid">
+            <button type="button" class="scoper-btn active" data-step="time" data-val="urgent">
+              <strong>Urgent (Sous 15 à 30 jours)</strong>
+              <span>Transaction en cours, audit régulateur ou incident imminent</span>
+            </button>
+            <button type="button" class="scoper-btn" data-step="time" data-val="quarter">
+              <strong>Trimestre en cours</strong>
+              <span>Projet budgété en phase de sélection d'associés</span>
+            </button>
+            <button type="button" class="scoper-btn" data-step="time" data-val="amont">
+              <strong>Cadrage Stratégique Amont</strong>
+              <span>Échange confidentiel direct avec un associé Auban</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- SUMMARY TRAY -->
+        <div class="scoper-summary-tray">
+          <div class="summary-text-block">
+            <strong>Synthèse de votre cadrage exécutif</strong>
+            <p id="scoperSummaryText">Mandat : Due Diligence M&amp;A · Division : Auban Advisory · Profil : ETI / Mid-Market · Horizon : Urgent (&lt;30j)</p>
+          </div>
+          <a href="mailto:info@auban.fr?subject=Demande%20de%20cadrage%20Auban&body=Bonjour%20%C3%A0%20l%27%C3%A9quipe%20Auban," id="scoperMailtoBtn" class="btn btn-brass">
+            Transmettre le brief confidentiel →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERIOUS BOARD-LEVEL FAQ -->
+  <section class="section-pad faq-section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow eyebrow-brass">
+            <span class="eyebrow-rule"></span>
+            QUESTIONS FRÉQUENTES
+          </div>
+          <h2>
+            Les réponses aux questions
+            <br>
+            <span style="color:var(--ink-muted);">des conseils d'administration et comités d'investissement.</span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-card">
+          <h4>Comment s'articulent Auban Advisory et Auban Technology ?</h4>
+          <p>
+            Auban est une firme à deux visages opérant sous une gouvernance unique. Auban Advisory conduit les analyses financières, les due diligences M&amp;A, la conformité réglementaire et les choix d'architecture. Auban Technology déploie les squads d'ingénierie pour sécuriser, moderniser et opérer les plateformes. Vos projets évitent ainsi toute perte de substance entre la stratégie et l'exécution.
+          </p>
+        </div>
+
+        <div class="faq-card">
+          <h4>Pouvez-vous intervenir sur des délais courts de Due Diligence M&amp;A ?</h4>
+          <p>
+            Oui. Nos équipes de transaction basées à Londres et Paris sont calibrées pour les rythmes stricts des comités d'investissement de private equity et des opérations de fusion-acquisition. Nous produisons des mémorandums Red-Flag en 10 à 15 jours ouvrés avec une quantification objective des coûts de remédiation et de dette technique.
+          </p>
+        </div>
+
+        <div class="faq-card">
+          <h4>En quoi la plateforme Aude diffère-t-elle des scanners de vulnérabilités ?</h4>
+          <p>
+            Aude ne cherche pas à remplacer vos scanners existants (Tenable, Qualys) ou vos agents de sécurité (CrowdStrike). Elle adopte une logique « Ingest-Don't-Scan » : elle ingère les rapports, configurations et logs pour vérifier déterministement la clôture réelle des risques critiques (MFA phishing-resistant, sauvegardes isolées) et certifier les preuves d'audit sous empreinte SHA-256.
+          </p>
+        </div>
+
+        <div class="faq-card">
+          <h4>Quelle est votre politique de confidentialité et de gestion des conflits ?</h4>
+          <p>
+            Chaque mandat de transaction ou de cybersécurité fait l'objet d'accords stricts de confidentialité (NDA) et d'un cloisonnement étanche des environnements de travail. Auban n'accepte aucune rémunération de revendeur ou rétrocommission d'éditeur tiers afin de préserver une indépendance fiduciaire totale.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT BAND -->
+  <section class="contact-band">
+    <div class="container contact-band-inner">
+      <div class="contact-band-copy">
+        <h2>Une transaction à sécuriser ou un socle à transformer ?</h2>
+        <p>
+          Partagez votre enjeu avec un associé Auban à Londres, Paris ou Lille. Nous organisons un échange d'arbitrage direct, sous confidentialité formelle.
+        </p>
+      </div>
+      <div class="contact-dual-actions">
+        <a href="mailto:info@auban.fr" class="btn btn-brass">Contacter un associé : info@auban.fr →</a>
+        <a href="tel:+33758585705" style="color:var(--phosphor-bright); font-family:var(--font-mono); font-size:13px; font-weight:700; display:flex; align-items:center; gap:8px;">
+          <span class="pulse-dot" style="color:var(--phosphor-bright);"></span>
+          <span>Ligne directe associée : +33 7 58 58 57 05</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <!-- SITE FOOTER (LONDON · LILLE · PARIS · BRUXELLES) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>AUBAN</h4>
+          <p>
+            Transactions · Technology · Transformation.
+            <br>
+            Le cabinet technologique pour les transactions, la défense et le déploiement dans les industries STEM.
+          </p>
+          <p style="color:var(--brass-light); font-size:12px; font-family:var(--font-mono); margin-top:12px;">
+            London · Lille · Paris · Bruxelles
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Auban Advisory</h5>
+          <div class="footer-links">
+            <a href="#divisions">M&amp;A &amp; Transaction Advisory</a>
+            <a href="#divisions">Corporate Finance &amp; Exit</a>
+            <a href="#divisions">Tech &amp; Cyber Due Diligence</a>
+            <a href="#divisions">Carve-Outs &amp; Scissions SI</a>
+            <a href="#divisions">Conformité DORA, NIS2 &amp; AI Act</a>
+            <a href="#divisions">Target Operating Models (TOM)</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Auban Technology</h5>
+          <div class="footer-links">
+            <a href="#divisions">Cybersécurité Zero Trust</a>
+            <a href="#divisions">Cloud Souverain &amp; Digital Core</a>
+            <a href="#divisions">Data d'Entreprise &amp; LLMOps</a>
+            <a href="#divisions">Digital Engineering &amp; SRE</a>
+            <a href="#packages">Sprint Résilience ETRR</a>
+            <a href="#aude">Plateforme Logicielle Aude</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Bureaux &amp; Hubs</h5>
+          <div class="footer-links">
+            <span style="color:white; font-weight:800;">London (Mayfair / St James's)</span>
+            <span style="color:white; font-weight:800;">Lille (Siège &amp; Tech Lab)</span>
+            <span style="color:white; font-weight:800;">Paris (Opéra / Vendôme)</span>
+            <a href="mailto:info@auban.fr">info@auban.fr</a>
+            <a href="tel:+33758585705">+33 7 58 58 57 05</a>
+            <span style="color:#708552; font-size:11.5px; margin-top:8px;">Mandats en UK, France, Benelux et Europe</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-strip">
+        <div>© 2026 Auban. Tous droits réservés. Transactions · Technology · Transformation.</div>
+        <div>London · Lille · Paris · Bruxelles · Europe</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTWEIGHT VANILLA JS LOGIC -->
+  <script>
+    // 1. Dual-Platform Interactive Visual Modes: Tactical Olive & Radar
+    const visualModes = {
+      dual: {
+        busAdv: '#C5A059',
+        busTech: '#84CC16',
+        code: 'auban.deploy({ command: "deals_and_capital", defense: "critical_resilience_delivery", hq: "LONDON_LILLE_PARIS" });',
+        status: "TACTICAL READINESS : ACTIVE",
+        topTitle: "Auban Advisory // Transactions",
+        topSub: "M&A, Tech Diligence & Corporate Finance",
+        bottomTitle: "Auban Technology // Exécution",
+        bottomSub: "Cybersécurité, Défense & Plateforme Aude"
+      },
+      advisory: {
+        busAdv: '#DFC27E',
+        busTech: '#4D5D36',
+        code: 'advisory.evaluateDeal({ techDebt: "quantified", carveOutTSA: "designed", londonHub: true });',
+        status: "ADVISORY & TRANSACTION PLANE",
+        topTitle: "M&A Due Diligence & Carve-Out",
+        topSub: "Évaluation de la dette technique & des risques de séparation",
+        bottomTitle: "Conformité Fiscale & DORA / FCA",
+        bottomSub: "Garanties d'auditabilité pour comités d'investissement"
+      },
+      technology: {
+        busAdv: '#4D5D36',
+        busTech: '#A3E635',
+        code: 'technology.hardenCore({ zeroTrust: true, fido2: true, airgapBackup: "verified", natoCompliant: true });',
+        status: "DIGITAL CORE & CYBER DEFENSE",
+        topTitle: "Architecture Zero Trust",
+        topSub: "Authentification résistante au phishing & élévation JIT",
+        bottomTitle: "Reprise d'Activité Isolée",
+        bottomSub: "Validation des sauvegardes immuables et tests PRA"
+      },
+      evidence: {
+        busAdv: '#C5A059',
+        busTech: '#84CC16',
+        code: 'aude.chainEvidence({ sha256: "8a4c01f92e...", standard: "CISA_SCUBA_RECYF_MIL" });',
+        status: "AUDE CONTINUOUS EVIDENCE VAULT",
+        topTitle: "Aude Control Engine",
+        topSub: "Vérification déterministe et preuve continue",
+        bottomTitle: "Registre Cryptographique SHA-256",
+        bottomSub: "Attestation formelle pour régulateurs et assureurs"
+      }
+    };
+
+    document.querySelectorAll('.visual-mode-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.visual-mode-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const modeKey = tab.getAttribute('data-mode');
+        const m = visualModes[modeKey];
+
+        document.getElementById('visualCodeLine').textContent = m.code;
+        document.getElementById('visualStatusText').textContent = m.status;
+        document.getElementById('diagTopTitle').textContent = m.topTitle;
+        document.getElementById('diagTopSub').textContent = m.topSub;
+        document.getElementById('diagBottomTitle').textContent = m.bottomTitle;
+        document.getElementById('diagBottomSub').textContent = m.bottomSub;
+
+        // Reset bus lines
+        document.getElementById('busAdv1').setAttribute('stroke', m.busAdv);
+        document.getElementById('busTech2').setAttribute('stroke', m.busTech);
+      });
+    });
+
+    // 2. Package Tab Switcher (Advisory vs Technology)
+    document.querySelectorAll('.pkg-tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.pkg-tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const pkgType = btn.getAttribute('data-pkg');
+
+        const gridAdv = document.getElementById('pkgGridAdvisory');
+        const gridTech = document.getElementById('pkgGridTech');
+
+        if (pkgType === 'advisory') {
+          gridAdv.style.display = 'grid';
+          gridTech.style.display = 'none';
+        } else {
+          gridAdv.style.display = 'none';
+          gridTech.style.display = 'grid';
+        }
+      });
+    });
+
+    // 3. Aude Verification Terminal Simulator
+    const audeControls = {
+      mna: {
+        cmd: '> aude.verifyControl("M&A_CARVE_OUT_ISOLATION");',
+        status: 'STATUS: CONTRÔLE VÉRIFIÉ AVEC SUCCÈS',
+        hash: 'SHA-256: 8a4c01f92e3d489b1c7821ad58f003e87d',
+        json: {
+          controlId: "M&A_CARVE_OUT_ISOLATION",
+          method: "INGEST_EVIDENCE_DETERMINISTIC",
+          identityTenantSeparated: true,
+          sharedCredentialsDetected: 0,
+          dataRetentionBoundaryValidated: true,
+          auditEvidenceChained: true,
+          timestamp: new Date().toISOString()
+        }
+      },
+      dora: {
+        cmd: '> aude.verifyControl("DORA_ART28_THIRD_PARTY_ICT");',
+        status: 'STATUS: CONFORMITÉ DORA & FCA VÉRIFIÉE',
+        hash: 'SHA-256: c47a192e45bf3890ab8147d3e21890bf2a',
+        json: {
+          controlId: "DORA_ART28_THIRD_PARTY_ICT",
+          criticalIctSuppliersAudited: 18,
+          exitStrategyContractualized: true,
+          subcontractorChainOfCustody: "VERIFIED",
+          concentrationRiskScore: "CONTROLLED",
+          timestamp: new Date().toISOString()
+        }
+      },
+      nis2: {
+        cmd: '> aude.verifyControl("NIS2_ART21_MFA_FIDO2");',
+        status: 'STATUS: INVARIANT EN PLACE ✓',
+        hash: 'SHA-256: 4f8e91dc3801a7bb0299f0e14c81a2e99c2',
+        json: {
+          controlId: "NIS2_ART21_MFA_FIDO2",
+          method: "HARDWARE_TOKEN_ENFORCED",
+          standingPrivileges: 0,
+          phishingResistantCoverage: "100%",
+          demonstrationStatus: "AUDIT_READY",
+          timestamp: new Date().toISOString()
+        }
+      },
+      pra: {
+        cmd: '> aude.verifyControl("PRA_IMMUTABLE_BACKUP_AIRGAP");',
+        status: 'STATUS: REPRISE VALIDÉE DÉTERMINISTE',
+        hash: 'SHA-256: b189ea734091cd52f89109a234789ebc11',
+        json: {
+          controlId: "PRA_IMMUTABLE_BACKUP_AIRGAP",
+          targetRTO_Hours: 4,
+          measuredRTO_Hours: 2.8,
+          immutableStorageVerified: true,
+          ransomwareAirgapConfirmed: true,
+          timestamp: new Date().toISOString()
+        }
+      }
+    };
+
+    let activeControlKey = 'mna';
+    document.querySelectorAll('.control-choice-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.control-choice-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeControlKey = btn.getAttribute('data-control');
+        updateAudeTerminal(activeControlKey);
+      });
+    });
+
+    function updateAudeTerminal(key) {
+      const c = audeControls[key];
+      document.getElementById('termCmd').textContent = c.cmd;
+      document.getElementById('termResult').textContent = c.status;
+      document.getElementById('termHash').textContent = c.hash;
+      document.getElementById('termJson').textContent = JSON.stringify(c.json, null, 2);
+    }
+
+    document.getElementById('btnRunVerification').addEventListener('click', () => {
+      const loading = document.getElementById('verifyLoading');
+      loading.style.display = 'inline-block';
+      setTimeout(() => {
+        loading.style.display = 'none';
+        const randomHash = 'SHA-256: ' + Array.from({length: 32}, () => Math.floor(Math.random()*16).toString(16)).join('');
+        document.getElementById('termHash').textContent = randomHash;
+        document.getElementById('termResult').textContent = 'STATUS: INVARIANCE CONFIRMÉE & RE-SIGNÉE ✓';
+      }, 500);
+    });
+
+    // 4. Interactive Scoper Engine
+    const scoperState = {
+      mandate: "Due Diligence M&A & Carve-Out",
+      division: "Auban Advisory",
+      size: "ETI / Mid-Market (50M€ - 1Md€)",
+      time: "Urgent (Sous 15 à 30 jours)"
+    };
+
+    const mandateMap = {
+      mna: "Due Diligence M&A & Carve-Out",
+      finance: "Corporate Finance & Exit Readiness",
+      dora: "Conformité DORA & NIS2",
+      cyber: "Cybersécurité & Résilience",
+      cloud: "Cloud & Modernisation Core",
+      ai: "Data, IA & Automatisation"
+    };
+    const divisionMap = {
+      advisory: "Auban Advisory",
+      technology: "Auban Technology",
+      integrated: "Programme Intégré (Advisory + Tech)"
+    };
+    const sizeMap = {
+      mid: "ETI / Mid-Market (50M€ - 1Md€)",
+      pe: "Fonds Private Equity / Holding",
+      large: "Institution Financière / Grand Compte"
+    };
+    const timeMap = {
+      urgent: "Urgent (Sous 15 à 30 jours)",
+      quarter: "Trimestre en cours",
+      amont: "Cadrage Stratégique Amont"
+    };
+
+    document.querySelectorAll('.scoper-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const step = btn.getAttribute('data-step');
+        const val = btn.getAttribute('data-val');
+
+        document.querySelectorAll(`.scoper-btn[data-step="${step}"]`).forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        if (step === 'mandate') scoperState.mandate = mandateMap[val];
+        if (step === 'division') scoperState.division = divisionMap[val];
+        if (step === 'size') scoperState.size = sizeMap[val];
+        if (step === 'time') scoperState.time = timeMap[val];
+
+        updateScoperSummary();
+      });
+    });
+
+    function updateScoperSummary() {
+      const summaryText = `Mandat : ${scoperState.mandate} · Division : ${scoperState.division} · Profil : ${scoperState.size} · Horizon : ${scoperState.time}`;
+      document.getElementById('scoperSummaryText').textContent = summaryText;
+
+      const mailSubject = encodeURIComponent(`Demande de cadrage exécutif : ${scoperState.mandate} (${scoperState.division})`);
+      const mailBody = encodeURIComponent(`Bonjour à l'équipe Auban,\n\nJe souhaite organiser un échange de cadrage confidentiel au sujet de notre organisation :\n\n- Mandat prioritaire : ${scoperState.mandate}\n- Division sollicitée : ${scoperState.division}\n- Profil d'organisation : ${scoperState.size}\n- Horizon d'engagement : ${scoperState.time}\n\nDans l'attente de notre échange,\nCordialement.`);
+      document.getElementById('scoperMailtoBtn').setAttribute('href', `mailto:info@auban.fr?subject=${mailSubject}&body=${mailBody}`);
+    }
+
+    function setScoperDivision(divKey) {
+      const btn = document.querySelector(`.scoper-btn[data-step="division"][data-val="${divKey}"]`);
+      if (btn) btn.click();
+    }
+
+    function selectPackageScope(packageName) {
+      scoperState.mandate = packageName;
+      updateScoperSummary();
+    }
+
+    // 5. Scroll Progress Indicator
+    const scrollBar = document.getElementById('scrollProgress');
+    function updateScroll() {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      if (scrollBar) scrollBar.style.width = pct + '%';
+    }
+    window.addEventListener('scroll', updateScroll, { passive: true });
+    updateScroll();
+
+    // 6. Reveal-on-Scroll Observer
+    const revealTargets = document.querySelectorAll('.section-head, .division-card, .bridge-step-card, .stem-card, .package-card, .product-card, .faq-card, .scoper-box');
+    revealTargets.forEach((el, idx) => {
+      el.classList.add('reveal-el');
+      el.style.setProperty('--reveal-delay', (idx % 4) * 0.07 + 's');
+    });
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      revealTargets.forEach(el => observer.observe(el));
+    } else {
+      revealTargets.forEach(el => el.classList.add('in-view'));
+    }
+  </script>
+</body>
+</html>

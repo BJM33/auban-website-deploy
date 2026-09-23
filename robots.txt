@@ -1,0 +1,5 @@
+# Auban Robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://auban.fr/sitemap.xml
