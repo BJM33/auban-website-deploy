@@ -10,7 +10,8 @@
   <link rel="alternate" hreflang="en" href="https://auban.fr/en.html">
   <link rel="alternate" hreflang="nl" href="https://auban.fr/nl.html">
   <link rel="alternate" hreflang="x-default" href="https://auban.fr/en.html">
-  <meta name="theme-color" content="#070c08">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="theme-color" content="#364323">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="nl_NL">
   <meta property="og:url" content="https://auban.fr/">
@@ -1663,31 +1664,43 @@
     <div class="container header-inner">
       <div class="brand-wrap">
         <a href="#" class="brand-logo" aria-label="Auban Startpagina">
-          <!-- The Two-Sided Coin AU Monogram: Tactical Olive & Military Colors -->
+          <!-- The Two-Sided Coin AU Monogram: Yellow A & Lime U with Olive Background -->
           <svg class="au-monogram-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="3" y="3" width="94" height="94" rx="20" stroke="url(#tacticalCoinBorder)" stroke-width="3.5" fill="#070C08"/>
-            <!-- Upper A-Structure: Tactical Command Brass (Advisory / Capital / Strategic Direction) -->
-            <path d="M 50 18 L 74 54 L 62 54 L 50 34 L 38 54 L 26 54 Z" fill="url(#brassMilGrad)"/>
-            <!-- Clean Central Separation: Tactical Division / Governance -->
-            <line x1="24" y1="58" x2="76" y2="58" stroke="#4D5D36" stroke-width="2.5" stroke-linecap="round"/>
-            <!-- Lower U-Foundation: Tactical Olive & Radar Phosphor Green (Technology / Defense / Engineering) -->
-            <path d="M 32 64 L 41 64 L 41 74 C 41 79 45 82 50 82 C 55 82 59 79 59 74 L 59 64 L 68 64 L 68 74 C 68 84 60 90 50 90 C 40 90 32 84 32 74 Z" fill="url(#phosphorMilGrad)"/>
             <defs>
-              <linearGradient id="tacticalCoinBorder" x1="0" y1="0" x2="100" y2="100">
-                <stop offset="0%" stop-color="#C5A059"/>
-                <stop offset="45%" stop-color="#4D5D36"/>
-                <stop offset="100%" stop-color="#84CC16"/>
+              <!-- Tactical Olive Background Gradient -->
+              <linearGradient id="auOliveBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#46572E"/>
+                <stop offset="100%" stop-color="#2D3A1D"/>
               </linearGradient>
-              <linearGradient id="brassMilGrad" x1="26" y1="18" x2="74" y2="54">
-                <stop offset="0%" stop-color="#DFC27E"/>
-                <stop offset="100%" stop-color="#C5A059"/>
+              <!-- Tactical Coin Border: Yellow to Olive to Lime -->
+              <linearGradient id="tacticalCoinBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FACC15"/>
+                <stop offset="50%" stop-color="#657A44"/>
+                <stop offset="100%" stop-color="#A3E635"/>
               </linearGradient>
-              <linearGradient id="phosphorMilGrad" x1="32" y1="64" x2="68" y2="90">
-                <stop offset="0%" stop-color="#A3E635"/>
-                <stop offset="50%" stop-color="#84CC16"/>
-                <stop offset="100%" stop-color="#4D5D36"/>
+              <!-- Upper A: Tactical Command Yellow -->
+              <linearGradient id="yellowAGrad" x1="26" y1="18" x2="74" y2="54" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#FEF08A"/>
+                <stop offset="45%" stop-color="#FACC15"/>
+                <stop offset="100%" stop-color="#EAB308"/>
+              </linearGradient>
+              <!-- Lower U: Tactical Radar Lime Green -->
+              <linearGradient id="limeUGrad" x1="32" y1="64" x2="68" y2="90" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#D9F99D"/>
+                <stop offset="50%" stop-color="#A3E635"/>
+                <stop offset="100%" stop-color="#65A30D"/>
               </linearGradient>
             </defs>
+            <!-- Tactical Olive Drab Coin Body -->
+            <rect x="3" y="3" width="94" height="94" rx="20" stroke="url(#tacticalCoinBorder)" stroke-width="3.5" fill="url(#auOliveBg)"/>
+            <!-- Inner Hairline Border -->
+            <rect x="7" y="7" width="86" height="86" rx="16" stroke="rgba(217, 249, 157, 0.25)" stroke-width="1" fill="none"/>
+            <!-- Upper A-Structure: Vibrant Yellow -->
+            <path d="M 50 18 L 74 54 L 62 54 L 50 34 L 38 54 L 26 54 Z" fill="url(#yellowAGrad)"/>
+            <!-- Tactical Center Separation Line: Deep Olive -->
+            <line x1="22" y1="58" x2="78" y2="58" stroke="#1C2412" stroke-width="3" stroke-linecap="round"/>
+            <!-- Lower U-Foundation: Electric Radar Lime -->
+            <path d="M 32 64 L 41 64 L 41 74 C 41 79 45 82 50 82 C 55 82 59 79 59 74 L 59 64 L 68 64 L 68 74 C 68 84 60 90 50 90 C 40 90 32 84 32 74 Z" fill="url(#limeUGrad)"/>
           </svg>
 
           <div class="brand-text-block">
@@ -1816,6 +1829,18 @@
         <div class="visual-svg-wrap">
           <svg viewBox="0 0 740 500" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
+              <linearGradient id="visYellowA" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FEF08A" />
+                <stop offset="100%" stop-color="#FACC15" />
+              </linearGradient>
+              <linearGradient id="visLimeU" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#D9F99D" />
+                <stop offset="100%" stop-color="#A3E635" />
+              </linearGradient>
+              <linearGradient id="visOliveBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#46572E" />
+                <stop offset="100%" stop-color="#2D3A1D" />
+              </linearGradient>
               <linearGradient id="visBrass" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stop-color="#DFC27E" />
                 <stop offset="100%" stop-color="#C5A059" />
@@ -1853,14 +1878,14 @@
             <path id="busTech1" d="M 150 390 L 250 390 L 310 300 L 370 300" stroke="#4D5D36" stroke-width="1.5" fill="none" stroke-linecap="round" />
             <path id="busTech2" d="M 590 390 L 490 390 L 430 300 L 370 300" stroke="#84CC16" stroke-width="2.5" fill="none" stroke-linecap="round" />
 
-            <!-- Tactical Hub: Two-Sided Military Coin -->
+            <!-- Tactical Hub: Two-Sided Military Coin (Yellow A & Lime U with Olive Background) -->
             <g transform="translate(370, 250)">
-              <circle cx="0" cy="0" r="68" fill="#0A120C" stroke="#C5A059" stroke-width="2" filter="url(#glowMil)" />
-              <circle cx="0" cy="0" r="54" stroke="#84CC16" stroke-width="1.5" stroke-dasharray="4 4" />
-              <!-- Upper A (Command Brass) & Lower U (Tactical Olive/Phosphor) -->
-              <path d="M 0 -36 L 18 -6 L 8 -6 L 0 -22 L -8 -6 L -18 -6 Z" fill="url(#visBrass)" />
-              <line x1="-22" y1="-2" x2="22" y2="-2" stroke="#4D5D36" stroke-width="2"/>
-              <path d="M -14 6 L -6 6 L -6 20 C -6 24 -2 27 0 27 C 2 27 6 24 6 20 L 6 6 L 14 6 L 14 20 C 14 30 6 34 0 34 C -6 34 -14 30 -14 20 Z" fill="url(#visPhosphor)" />
+              <circle cx="0" cy="0" r="68" fill="url(#visOliveBg)" stroke="#FACC15" stroke-width="2.5" filter="url(#glowMil)" />
+              <circle cx="0" cy="0" r="54" stroke="#A3E635" stroke-width="1.5" stroke-dasharray="4 4" />
+              <!-- Upper A (Command Yellow) & Lower U (Radar Lime) with Olive Background -->
+              <path d="M 0 -36 L 18 -6 L 8 -6 L 0 -22 L -8 -6 L -18 -6 Z" fill="url(#visYellowA)" />
+              <line x1="-22" y1="-2" x2="22" y2="-2" stroke="#1C2412" stroke-width="2.5"/>
+              <path d="M -14 6 L -6 6 L -6 20 C -6 24 -2 27 0 27 C 2 27 6 24 6 20 L 6 6 L 14 6 L 14 20 C 14 30 6 34 0 34 C -6 34 -14 30 -14 20 Z" fill="url(#visLimeU)" />
             </g>
 
             <!-- Node 1: M&A / Transaction Services -->
