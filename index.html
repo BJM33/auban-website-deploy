@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Auban — Transactions · Technology · Transformation | Advisory &amp; Ingénierie STEM (London · Paris · Lille · Bruxelles)</title>
-  <meta name="description" content="Auban est le cabinet d'advisory et d'ingénierie technologique pour les industries STEM : M&amp;A, corporate finance, due diligence, cybersécurité, cloud souverain, data &amp; IA, et résilience opérationnelle. Présent à Londres, Paris, Lille et Bruxelles.">
+  <title>Auban — AUBAN ADVISORY : M&amp;A · TRANSACTIONS · CORPORATE FINANCE ┃ AUBAN TECHNOLOGY : CYBER DEFENCE · CLOUD · DATA &amp; IA · OPS (London · Paris · Amsterdam · Bruxelles · Lille)</title>
+  <meta name="description" content="Auban : AUBAN ADVISORY (M&amp;A · Transactions · Corporate Finance) et AUBAN TECHNOLOGY (Cyber Defence · Cloud · Data &amp; IA · Ops). Présent à London, Paris, Amsterdam, Bruxelles et Lille.">
   <link rel="canonical" href="https://auban.fr/">
   <meta name="theme-color" content="#070c08">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:url" content="https://auban.fr/">
-  <meta property="og:title" content="Auban — Transactions · Technology · Transformation | London · Paris · Lille">
-  <meta property="og:description" content="Le cabinet technologique pour les transactions, la défense et le déploiement. Auban Advisory &amp; Auban Technology.">
+  <meta property="og:title" content="AUBAN ADVISORY : M&amp;A · TRANSACTIONS · CORPORATE FINANCE ┃ AUBAN TECHNOLOGY : CYBER DEFENCE · CLOUD · DATA &amp; IA · OPS">
+  <meta property="og:description" content="Auban : AUBAN ADVISORY (M&amp;A · Transactions · Corporate Finance) et AUBAN TECHNOLOGY (Cyber Defence · Cloud · Data &amp; IA · Ops). London · Paris · Amsterdam · Bruxelles · Lille.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..900;1,9..40,300..900&family=JetBrains+Mono:wght@400;600;700;800&family=Manrope:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -281,6 +281,67 @@
       font-size: 11px;
       color: rgba(132, 204, 22, 0.4);
       pointer-events: none;
+    }
+
+    /* ========================================================
+       TOP TACTICAL COMMAND RIBBON
+       ======================================================== */
+    .top-command-ribbon {
+      background: #040705;
+      border-bottom: 1px solid rgba(132, 204, 22, 0.18);
+      padding: 7px 0;
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      letter-spacing: 0.08em;
+      position: relative;
+      z-index: 101;
+    }
+    .command-ribbon-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .ribbon-unit {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .ribbon-kicker {
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 10px;
+      letter-spacing: 0.06em;
+    }
+    .kicker-advisory {
+      background: rgba(197, 160, 89, 0.16);
+      color: var(--brass-light);
+      border: 1px solid rgba(197, 160, 89, 0.45);
+    }
+    .kicker-tech {
+      background: rgba(132, 204, 22, 0.14);
+      color: var(--phosphor-bright);
+      border: 1px solid rgba(132, 204, 22, 0.45);
+    }
+    .ribbon-desc {
+      color: #cbd5ce;
+      font-weight: 700;
+    }
+    .ribbon-sep {
+      color: rgba(132, 204, 22, 0.35);
+      font-size: 11px;
+    }
+    .ribbon-hubs {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--olive-sage);
+      font-weight: 750;
+      letter-spacing: 0.1em;
+    }
+    @media (max-width: 960px) {
+      .top-command-ribbon { display: none; }
     }
 
     /* ========================================================
@@ -1532,6 +1593,26 @@
   <a class="skip-link" href="#main-content">Aller au contenu principal</a>
   <div class="scroll-progress" id="scrollProgress"></div>
 
+  <!-- TOP TACTICAL COMMAND RIBBON -->
+  <div class="top-command-ribbon">
+    <div class="container command-ribbon-inner">
+      <div class="ribbon-unit">
+        <span class="ribbon-kicker kicker-advisory">AUBAN ADVISORY</span>
+        <span class="ribbon-desc">M&amp;A · TRANSACTIONS · CORPORATE FINANCE</span>
+      </div>
+      <div class="ribbon-sep">┃</div>
+      <div class="ribbon-unit">
+        <span class="ribbon-kicker kicker-tech">AUBAN TECHNOLOGY</span>
+        <span class="ribbon-desc">CYBER DEFENCE · CLOUD · DATA &amp; IA · OPS</span>
+      </div>
+      <div class="ribbon-sep">┃</div>
+      <div class="ribbon-hubs">
+        <span class="pulse-dot" style="color:var(--phosphor-bright);"></span>
+        <span>LONDON · PARIS · AMSTERDAM · BRUXELLES · LILLE</span>
+      </div>
+    </div>
+  </div>
+
   <!-- STICKY HEADER -->
   <header class="site-header">
     <div class="container header-inner">
@@ -1566,31 +1647,32 @@
 
           <div class="brand-text-block">
             <span class="brand-text-title">AUBAN</span>
-            <span class="brand-text-sub">ADVISORY + TECHNOLOGY</span>
+            <span class="brand-text-sub">ADVISORY &amp; TECHNOLOGY</span>
           </div>
         </a>
-        <span class="brand-location-tag">LONDON // LILLE // PARIS // BRUXELLES</span>
+        <span class="brand-location-tag">LONDON // PARIS // AMSTERDAM // BRUXELLES // LILLE</span>
       </div>
 
       <nav class="header-nav" aria-label="Navigation principale">
-        <a href="#divisions" class="nav-link nav-advisory">Advisory</a>
-        <a href="#divisions" class="nav-link nav-tech">Technology</a>
+        <a href="#divisions" class="nav-link nav-advisory" onclick="setScoperDivision('advisory')">Auban Advisory (M&amp;A)</a>
+        <a href="#divisions" class="nav-link nav-tech" onclick="setScoperDivision('tech')">Auban Technology (Cyber / Ops)</a>
+        <a href="#bridge" class="nav-link">Le Pont Opérationnel</a>
         <a href="#secteurs" class="nav-link">Secteurs STEM</a>
-        <a href="#packages" class="nav-link">Offres</a>
+        <a href="#packages" class="nav-link">Offres Clés en Main</a>
         <a href="#aude" class="nav-link">Plateforme Aude</a>
         <a href="#cadrage" class="nav-link">Contact</a>
       </nav>
 
       <div class="header-dual-cta">
-        <a href="#cadrage" class="header-cta-advisory" onclick="setScoperDivision('advisory')">Advisory Mandates</a>
+        <a href="#cadrage" class="header-cta-advisory" onclick="setScoperDivision('advisory')">Advisory Mandates (M&amp;A)</a>
         <a href="#cadrage" class="header-cta-tech" onclick="setScoperDivision('tech')">Tech &amp; Cyber Squads</a>
       </div>
 
       <details class="mobile-nav">
         <summary>Menu</summary>
         <nav class="mobile-nav-panel" aria-label="Navigation mobile">
-          <a href="#divisions">Auban Advisory (M&amp;A / Strategy)</a>
-          <a href="#divisions">Auban Technology (Cyber / Cloud / AI)</a>
+          <a href="#divisions">AUBAN ADVISORY : M&amp;A · TRANSACTIONS · CORPORATE FINANCE</a>
+          <a href="#divisions">AUBAN TECHNOLOGY : CYBER DEFENCE · CLOUD · DATA &amp; IA · OPS</a>
           <a href="#bridge">Le Pont Opérationnel</a>
           <a href="#secteurs">Industries STEM</a>
           <a href="#packages">Offres Clés en Main</a>
@@ -1619,7 +1701,7 @@
             AUBAN TECHNOLOGY : CYBER DEFENCE · CLOUD · DATA &amp; IA · OPS
           </span>
           <span class="hero-pill hero-pill-london">
-            LONDON · LILLE · PARIS · BRUXELLES
+            LONDON · PARIS · AMSTERDAM · BRUXELLES · LILLE
           </span>
         </div>
 
@@ -1629,28 +1711,28 @@
 
         <p class="hero-lead">
           Auban est le cabinet technologique pour les transactions, la défense et le déploiement. 
-          Nous combinons <strong>l'advisory transactionnel d'élite</strong> (M&amp;A, corporate finance, due diligence, conformité DORA/NIS2) et <strong>l'ingénierie technologique militaire et critique</strong> (cybersécurité Zero Trust, cloud souverain, data &amp; IA, opérations continues).
+          Nous combinons <strong>Auban Advisory</strong> (M&amp;A · Transactions · Corporate Finance · Due Diligence) et <strong>Auban Technology</strong> (Cyber Defence · Cloud · Data &amp; IA · Ops · Maintien Opérationnel 24/7).
         </p>
 
         <div class="hero-actions">
           <a href="#cadrage" class="btn btn-brass" onclick="setScoperDivision('advisory')">
-            Parler à l'Advisory (M&amp;A &amp; Capital) →
+            Consulter Auban Advisory (M&amp;A &amp; Capital) →
           </a>
           <a href="#cadrage" class="btn btn-phosphor" onclick="setScoperDivision('tech')">
-            Mobiliser la Technology (Cyber &amp; Défense) →
+            Mobiliser Auban Technology (Cyber Defence &amp; Ops) →
           </a>
         </div>
 
         <div class="hero-dual-cards">
           <div class="hero-subcard hero-subcard-advisory">
             <span class="hero-subcard-kicker text-brass">AUBAN ADVISORY</span>
-            <strong>Capital, M&amp;A &amp; Direction</strong>
-            <p>Due diligence tech/cyber pré-deal, carve-outs, intégration 100 jours, conformité DORA et gouvernance IA pour fonds PE et directions générales à Londres, Paris et Lille.</p>
+            <strong>M&amp;A · TRANSACTIONS · CORPORATE FINANCE</strong>
+            <p>Due diligence tech &amp; cyber pré-deal, carve-outs complexes, structuration M&amp;A, levées de fonds et conformité DORA/NIS2 pour fonds PE et directions générales à London, Paris, Amsterdam et Lille.</p>
           </div>
           <div class="hero-subcard hero-subcard-tech">
             <span class="hero-subcard-kicker text-phosphor">AUBAN TECHNOLOGY</span>
-            <strong>Socle Numérique &amp; Exécution</strong>
-            <p>Architecture Zero Trust, modernisation legacy, plateformes data &amp; LLMOps, résilience industrielle et maintien de la conformité en continu sur le standard militaire.</p>
+            <strong>CYBER DEFENCE · CLOUD · DATA &amp; IA · OPS</strong>
+            <p>Architecture Zero Trust souveraine, cloud résilient, plateformes data &amp; LLMOps, résilience industrielle et maintien en condition opérationnelle (MCO 24/7) sur standard militaire.</p>
           </div>
         </div>
       </div>
@@ -1669,9 +1751,9 @@
 
         <div class="visual-mode-tabs" role="tablist">
           <button type="button" class="visual-mode-tab active" data-mode="dual">01. Modèle Intégré</button>
-          <button type="button" class="visual-mode-tab" data-mode="advisory">02. Advisory / M&amp;A</button>
-          <button type="button" class="visual-mode-tab tab-tech" data-mode="technology">03. Tech &amp; Cyber</button>
-          <button type="button" class="visual-mode-tab tab-tech" data-mode="evidence">04. Preuve Aude</button>
+          <button type="button" class="visual-mode-tab" data-mode="advisory">02. Auban Advisory (M&amp;A)</button>
+          <button type="button" class="visual-mode-tab tab-tech" data-mode="technology">03. Auban Technology (Cyber / Ops)</button>
+          <button type="button" class="visual-mode-tab tab-tech" data-mode="evidence">04. Preuve Aude (Audit)</button>
         </div>
 
         <div class="visual-svg-wrap">
@@ -1761,23 +1843,23 @@
         <div class="diag-badge diag-top">
           <div class="diag-icon text-brass">⚔️</div>
           <div>
-            <strong id="diagTopTitle">Auban Advisory // Transactions</strong>
-            <span id="diagTopSub">M&amp;A, Tech Diligence &amp; Corporate Finance</span>
+            <strong id="diagTopTitle">Auban Advisory : M&amp;A · Transactions · Corporate Finance</strong>
+            <span id="diagTopSub">Due Diligence, Carve-Outs, Valuations &amp; Restructurations</span>
           </div>
         </div>
 
         <div class="diag-badge diag-bottom">
           <div class="diag-icon text-phosphor">🛡️</div>
           <div>
-            <strong id="diagBottomTitle">Auban Technology // Exécution</strong>
-            <span id="diagBottomSub">Cybersécurité, Défense &amp; Plateforme Aude</span>
+            <strong id="diagBottomTitle">Auban Technology : Cyber Defence · Cloud · Data &amp; IA · Ops</strong>
+            <span id="diagBottomSub">Zero Trust, Cloud Souverain, LLMOps &amp; Résilience Continue</span>
           </div>
         </div>
 
         <div class="visual-footer-bar">
           <div class="footer-code">
             <span class="footer-prompt">&gt;</span>
-            <code id="visualCodeLine">auban.deploy({ command: "deals_and_capital", defense: "critical_resilience_delivery", hq: "LONDON_LILLE_PARIS" });</code>
+            <code id="visualCodeLine">auban.deploy({ advisory: "deals_and_capital", technology: "cyber_defence_cloud_ia_ops", hubs: "LONDON_PARIS_AMSTERDAM_BRUXELLES_LILLE" });</code>
           </div>
           <div class="footer-pill">
             <span class="pulse-dot" style="color:var(--phosphor-bright);"></span>
@@ -1797,21 +1879,21 @@
       </div>
       <div class="belief-badges">
         <div class="belief-badge-item">
-          <div class="badge-glyph">GS</div>
+          <div class="badge-glyph">ADV</div>
           <div>
             <strong>Auban Advisory</strong>
-            <span>M&amp;A, Corporate Finance, Tech Due Diligence &amp; Conformité</span>
+            <span>M&amp;A · Transactions · Corporate Finance · Diligence &amp; Conformité</span>
           </div>
         </div>
         <div class="belief-badge-item">
-          <div class="badge-glyph badge-glyph-tech">DL</div>
+          <div class="badge-glyph badge-glyph-tech">TECH</div>
           <div>
             <strong>Auban Technology</strong>
-            <span>Cybersécurité, Cloud Souverain, Data &amp; IA, Opérations</span>
+            <span>Cyber Defence · Cloud · Data &amp; IA · Ops &amp; Résilience</span>
           </div>
         </div>
         <div class="belief-badge-item">
-          <div class="badge-glyph">AU</div>
+          <div class="badge-glyph">AUDE</div>
           <div>
             <strong>Plateforme Aude</strong>
             <span>Éléments de preuve continus, traçabilité et contrôle de dérive</span>
@@ -1837,7 +1919,7 @@
           </h2>
         </div>
         <p>
-          La plupart des cabinets conseillent sans savoir bâtir. Les ESN exécutent sans comprendre les enjeux de valorisation. Auban unifie l'advisory financier et l'ingénierie technologique sous une gouvernance unique opérant depuis Londres, Paris et Lille.
+          La plupart des cabinets conseillent sans savoir bâtir. Les ESN exécutent sans comprendre les enjeux de valorisation. Auban unifie l'advisory financier et l'ingénierie technologique sous une gouvernance unique opérant depuis London, Paris, Amsterdam, Bruxelles et Lille.
         </p>
       </div>
 
@@ -1845,9 +1927,9 @@
         <!-- DIVISION 1: AUBAN ADVISORY -->
         <article class="division-card card-advisory crosshair-corner">
           <div>
-            <span class="division-badge badge-brass">DIVISION 01 // CAPITAL &amp; DIRECTION</span>
+            <span class="division-badge badge-brass">DIVISION 01 // AUBAN ADVISORY</span>
             <h3>Auban Advisory</h3>
-            <div class="division-tagline">Capital, transactions et stratégie pour entreprises technologiques</div>
+            <div class="division-tagline">AUBAN ADVISORY : M&amp;A · TRANSACTIONS · CORPORATE FINANCE</div>
             <p class="division-desc">
               Nous conseillons les conseils d'administration, investisseurs, fondateurs et directions générales dans les moments de vérité : fusions-acquisitions, levées de fonds, audits réglementaires et restructurations de portefeuille.
             </p>
@@ -1857,14 +1939,14 @@
                 <span class="pillar-bullet">01</span>
                 <div>
                   <strong>M&amp;A &amp; Transaction Advisory</strong>
-                  <p>Accompagnement buy-side et sell-side, ciblage stratégique, évaluation des synergies et structuration de deals STEM à Londres et Paris.</p>
+                  <p>Accompagnement buy-side et sell-side, ciblage stratégique, évaluation des synergies et structuration de deals STEM à London, Paris et Amsterdam.</p>
                 </div>
               </div>
               <div class="pillar-item">
                 <span class="pillar-bullet">02</span>
                 <div>
                   <strong>Corporate Finance &amp; Levées Stratégiques</strong>
-                  <p>Préparation au capital, modélisation financière, dossiers investisseurs et préparation à l'exit pour sociétés tech.</p>
+                  <p>Préparation au capital, modélisation financière, dossiers investisseurs et préparation à l'exit pour sociétés technologiques européennes.</p>
                 </div>
               </div>
               <div class="pillar-item">
@@ -1884,8 +1966,8 @@
               <div class="pillar-item">
                 <span class="pillar-bullet">05</span>
                 <div>
-                  <strong>Conseil de Direction &amp; Modèles Opérationnels (TOM)</strong>
-                  <p>Stratégie technologique d'entreprise, optimisation des budgets d'investissement et Value Management Office (VMO).</p>
+                  <strong>Conseil de Direction &amp; Stratégie Technologique</strong>
+                  <p>Stratégie technologique d'entreprise, optimisation des budgets d'investissement, Target Operating Models (TOM) et Value Management Office (VMO).</p>
                 </div>
               </div>
             </div>
@@ -1902,32 +1984,32 @@
         <!-- DIVISION 2: AUBAN TECHNOLOGY -->
         <article class="division-card card-tech crosshair-corner">
           <div>
-            <span class="division-badge badge-phosphor">DIVISION 02 // DÉFENSE &amp; INGÉNIERIE</span>
+            <span class="division-badge badge-phosphor">DIVISION 02 // AUBAN TECHNOLOGY</span>
             <h3>Auban Technology</h3>
-            <div class="division-tagline">Sécuriser le socle. Construire ce qui vient. Opérer dans la durée.</div>
+            <div class="division-tagline">AUBAN TECHNOLOGY : CYBER DEFENCE · CLOUD · DATA &amp; IA · OPS</div>
             <p class="division-desc">
-              Nous concevons, modernisons et exploitons les systèmes critiques dont dépendent la valeur et la pérennité de l'entreprise : architecture cyber Zero Trust, cloud résilient, IA gouvernée et services managés.
+              Nous concevons, modernisons et exploitons les systèmes critiques dont dépendent la valeur et la pérennité de l'entreprise : architecture cyber Zero Trust, cloud résilient, IA gouvernée et maintien en condition opérationnelle (MCO 24/7).
             </p>
 
             <div class="service-pillars-list">
               <div class="pillar-item">
                 <span class="pillar-bullet">01</span>
                 <div>
-                  <strong>Cybersécurité, Risques &amp; Défense</strong>
+                  <strong>Cybersécurité, Zero Trust &amp; Cyber Defence</strong>
                   <p>Stratégie Zero Trust, IAM résistante au phishing (FIDO2), sécurité cloud, tests PRA isolés et clôture vérifiée KEV.</p>
                 </div>
               </div>
               <div class="pillar-item">
                 <span class="pillar-bullet">02</span>
                 <div>
-                  <strong>Cloud, Plateformes &amp; Digital Core</strong>
+                  <strong>Cloud Souverain, Plateformes &amp; Digital Core</strong>
                   <p>Architectures hybrides et souveraines (SecNumCloud), modernisation du legacy, platform engineering et FinOps rigoureux.</p>
                 </div>
               </div>
               <div class="pillar-item">
                 <span class="pillar-bullet">03</span>
                 <div>
-                  <strong>Data d'Entreprise, IA &amp; Automatisation</strong>
+                  <strong>Data d'Entreprise, IA &amp; LLMOps</strong>
                   <p>Plateformes de données sécurisées, LLMOps, RAG d'entreprise, agents autonomes et gouvernance des algorithmes.</p>
                 </div>
               </div>
@@ -1941,8 +2023,8 @@
               <div class="pillar-item">
                 <span class="pillar-bullet">05</span>
                 <div>
-                  <strong>Opérations Technologiques &amp; Assurance Continue</strong>
-                  <p>Services opérés, pilotage par SLOs, surveillance continue de dérive via Aude et transfert de compétences aux équipes.</p>
+                  <strong>Opérations Technologiques (Ops) &amp; MCO Continu</strong>
+                  <p>Maintien en condition opérationnelle 24/7, pilotage par SLOs, surveillance continue de dérive via Aude et transfert de compétences.</p>
                 </div>
               </div>
             </div>
@@ -2146,7 +2228,7 @@
               <span class="stem-code">S7</span>
               <span class="stem-trigger">100-JOURS · PMI · CREATION DE VALEUR</span>
             </div>
-            <h3>Private Equity &amp; Investisseurs Technologiques (London / Paris)</h3>
+            <h3>Private Equity &amp; Investisseurs Technologiques (London / Paris / Amsterdam)</h3>
             <p>Fonds d'investissement mid-market et family offices réalisant des acquisitions de plateformes, des add-ons, des carve-outs complexes et des plans de création de valeur sur 3 à 5 ans.</p>
           </div>
           <div class="stem-mandate-split">
@@ -2179,8 +2261,8 @@
       </div>
 
       <div class="package-tabs">
-        <button type="button" class="pkg-tab-btn active tab-pkg-adv" data-pkg="advisory">Offres Auban Advisory</button>
-        <button type="button" class="pkg-tab-btn tab-pkg-tech" data-pkg="tech">Offres Auban Technology</button>
+        <button type="button" class="pkg-tab-btn active tab-pkg-adv" data-pkg="advisory">Auban Advisory : M&amp;A · Transactions · Corporate Finance</button>
+        <button type="button" class="pkg-tab-btn tab-pkg-tech" data-pkg="tech">Auban Technology : Cyber Defence · Cloud · Data &amp; IA · Ops</button>
       </div>
 
       <!-- ADVISORY PACKAGES -->
@@ -2475,7 +2557,7 @@
           </h2>
         </div>
         <p>
-          Sélectionnez votre priorité stratégique, votre division d'intervention et votre horizon. Nos associés basés à Londres, Paris et Lille prépareront l'échange.
+          Sélectionnez votre priorité stratégique, votre division d'intervention et votre horizon. Nos associés basés à London, Paris, Amsterdam, Bruxelles et Lille prépareront l'échange.
         </p>
       </div>
 
@@ -2517,15 +2599,15 @@
           <div class="scoper-options-grid">
             <button type="button" class="scoper-btn active" data-step="division" data-val="advisory">
               <strong>Auban Advisory</strong>
-              <span>M&amp;A, Corporate Finance, Diligence &amp; Conseil Stratégique</span>
+              <span>M&amp;A · TRANSACTIONS · CORPORATE FINANCE</span>
             </button>
             <button type="button" class="scoper-btn" data-step="division" data-val="technology">
               <strong>Auban Technology</strong>
-              <span>Squads d'ingénierie, Cyber, Cloud, Data &amp; Résilience</span>
+              <span>CYBER DEFENCE · CLOUD · DATA &amp; IA · OPS</span>
             </button>
             <button type="button" class="scoper-btn" data-step="division" data-val="integrated">
-              <strong>Programme Intégré (Advisory + Tech)</strong>
-              <span>De la transaction financière au déploiement en production</span>
+              <strong>Programme Intégré (Advisory + Technology)</strong>
+              <span>De la transaction financière à l'ingénierie et au MCO en production</span>
             </button>
           </div>
         </div>
@@ -2540,7 +2622,7 @@
             </button>
             <button type="button" class="scoper-btn" data-step="size" data-val="pe">
               <strong>Fonds Private Equity / Holding</strong>
-              <span>Équipe deal (London / Paris), carve-out ou turnaround 100 jours</span>
+              <span>Équipe deal (London / Paris / Amsterdam), carve-out ou 100 jours</span>
             </button>
             <button type="button" class="scoper-btn" data-step="size" data-val="large">
               <strong>Institution Financière / Grand Compte</strong>
@@ -2572,7 +2654,7 @@
         <div class="scoper-summary-tray">
           <div class="summary-text-block">
             <strong>Synthèse de votre cadrage exécutif</strong>
-            <p id="scoperSummaryText">Mandat : Due Diligence M&amp;A · Division : Auban Advisory · Profil : ETI / Mid-Market · Horizon : Urgent (&lt;30j)</p>
+            <p id="scoperSummaryText">Mandat : Due Diligence M&amp;A · Division : Auban Advisory : M&amp;A · Transactions · Corporate Finance · Profil : ETI / Mid-Market · Horizon : Urgent (&lt;30j)</p>
           </div>
           <a href="mailto:info@auban.fr?subject=Demande%20de%20cadrage%20Auban&body=Bonjour%20%C3%A0%20l%27%C3%A9quipe%20Auban," id="scoperMailtoBtn" class="btn btn-brass">
             Transmettre le brief confidentiel →
@@ -2637,7 +2719,7 @@
       <div class="contact-band-copy">
         <h2>Une transaction à sécuriser ou un socle à transformer ?</h2>
         <p>
-          Partagez votre enjeu avec un associé Auban à Londres, Paris ou Lille. Nous organisons un échange d'arbitrage direct, sous confidentialité formelle.
+          Partagez votre enjeu avec un associé Auban à London, Paris, Amsterdam, Bruxelles ou Lille. Nous organisons un échange d'arbitrage direct, sous confidentialité formelle.
         </p>
       </div>
       <div class="contact-dual-actions">
@@ -2651,7 +2733,7 @@
   </section>
   </main>
 
-  <!-- SITE FOOTER (LONDON · LILLE · PARIS · BRUXELLES) -->
+  <!-- SITE FOOTER (LONDON · PARIS · AMSTERDAM · BRUXELLES · LILLE) -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -2663,12 +2745,13 @@
             Le cabinet technologique pour les transactions, la défense et le déploiement dans les industries STEM.
           </p>
           <p style="color:var(--brass-light); font-size:12px; font-family:var(--font-mono); margin-top:12px;">
-            London · Lille · Paris · Bruxelles
+            London · Paris · Amsterdam · Bruxelles · Lille
           </p>
         </div>
 
         <div class="footer-col">
           <h5>Auban Advisory</h5>
+          <span style="display:block; font-family:var(--font-mono); font-size:10px; color:var(--brass-light); margin-bottom:12px; font-weight:750;">M&amp;A · TRANSACTIONS · CORPORATE FINANCE</span>
           <div class="footer-links">
             <a href="#divisions">M&amp;A &amp; Transaction Advisory</a>
             <a href="#divisions">Corporate Finance &amp; Exit</a>
@@ -2681,8 +2764,9 @@
 
         <div class="footer-col">
           <h5>Auban Technology</h5>
+          <span style="display:block; font-family:var(--font-mono); font-size:10px; color:var(--phosphor-bright); margin-bottom:12px; font-weight:750;">CYBER DEFENCE · CLOUD · DATA &amp; IA · OPS</span>
           <div class="footer-links">
-            <a href="#divisions">Cybersécurité Zero Trust</a>
+            <a href="#divisions">Cybersécurité Zero Trust &amp; Cyber Defence</a>
             <a href="#divisions">Cloud Souverain &amp; Digital Core</a>
             <a href="#divisions">Data d'Entreprise &amp; LLMOps</a>
             <a href="#divisions">Digital Engineering &amp; SRE</a>
@@ -2695,8 +2779,10 @@
           <h5>Bureaux &amp; Hubs</h5>
           <div class="footer-links">
             <span style="color:white; font-weight:800;">London (Mayfair / St James's)</span>
-            <span style="color:white; font-weight:800;">Lille (Siège &amp; Tech Lab)</span>
             <span style="color:white; font-weight:800;">Paris (Opéra / Vendôme)</span>
+            <span style="color:white; font-weight:800;">Amsterdam (Zuidas Tech District)</span>
+            <span style="color:white; font-weight:800;">Bruxelles (Quartier Européen)</span>
+            <span style="color:white; font-weight:800;">Lille (Siège &amp; Tech Lab)</span>
             <a href="mailto:info@auban.fr">info@auban.fr</a>
             <a href="tel:+33758585705">+33 7 58 58 57 05</a>
             <span style="color:#708552; font-size:11.5px; margin-top:8px;">Mandats en UK, France, Benelux et Europe</span>
@@ -2706,7 +2792,7 @@
 
       <div class="footer-bottom-strip">
         <div>© 2026 Auban. Tous droits réservés. Transactions · Technology · Transformation.</div>
-        <div>London · Lille · Paris · Bruxelles · Europe</div>
+        <div>London · Paris · Amsterdam · Bruxelles · Lille · Europe</div>
       </div>
     </div>
   </footer>
@@ -2718,12 +2804,12 @@
       dual: {
         busAdv: '#C5A059',
         busTech: '#84CC16',
-        code: 'auban.deploy({ command: "deals_and_capital", defense: "critical_resilience_delivery", hq: "LONDON_LILLE_PARIS" });',
+        code: 'auban.deploy({ advisory: "mna_transactions_corporate_finance", technology: "cyber_defence_cloud_ia_ops", hubs: "LONDON_PARIS_AMSTERDAM_BRUXELLES_LILLE" });',
         status: "TACTICAL READINESS : ACTIVE",
-        topTitle: "Auban Advisory // Transactions",
+        topTitle: "Auban Advisory : M&A · Transactions · Corporate Finance",
         topSub: "M&A, Tech Diligence & Corporate Finance",
-        bottomTitle: "Auban Technology // Exécution",
-        bottomSub: "Cybersécurité, Défense & Plateforme Aude"
+        bottomTitle: "Auban Technology : Cyber Defence · Cloud · Data & IA · Ops",
+        bottomSub: "Cybersécurité Zero Trust, Cloud Souverain & MCO 24/7"
       },
       advisory: {
         busAdv: '#DFC27E',
@@ -2886,7 +2972,7 @@
     // 4. Interactive Scoper Engine
     const scoperState = {
       mandate: "Due Diligence M&A & Carve-Out",
-      division: "Auban Advisory",
+      division: "Auban Advisory : M&A · Transactions · Corporate Finance",
       size: "ETI / Mid-Market (50M€ - 1Md€)",
       time: "Urgent (Sous 15 à 30 jours)"
     };
@@ -2900,9 +2986,9 @@
       ai: "Data, IA & Automatisation"
     };
     const divisionMap = {
-      advisory: "Auban Advisory",
-      technology: "Auban Technology",
-      integrated: "Programme Intégré (Advisory + Tech)"
+      advisory: "Auban Advisory : M&A · Transactions · Corporate Finance",
+      technology: "Auban Technology : Cyber Defence · Cloud · Data & IA · Ops",
+      integrated: "Programme Intégré (Auban Advisory + Auban Technology)"
     };
     const sizeMap = {
       mid: "ETI / Mid-Market (50M€ - 1Md€)",
