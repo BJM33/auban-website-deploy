@@ -4,11 +4,16 @@
 
 DirectoryIndex index.html
 
-# 1. Force HTTPS
+# 1. Force HTTPS & Clean Language URLs
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteCond %{HTTPS} off
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Clean multi-language routes
+  RewriteRule ^en/?$ en.html [L,QSA]
+  RewriteRule ^nl/?$ nl.html [L,QSA]
+  RewriteRule ^fr/?$ index.html [L,QSA]
 </IfModule>
 
 # 2. Institutional Security Headers
