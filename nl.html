@@ -2961,6 +2961,314 @@
       margin-top: 6px;
     }
     
+  
+    /* =========================================================================
+       SECTION SHOWCASE VISUALS (SPREAD EVENLY DOWN THE PAGE)
+       ========================================================================= */
+    .section-showcase-wrap {
+      position: relative;
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(77, 93, 54, 0.45);
+      margin: 22px 0 28px;
+      background: #040905;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+    }
+    .section-showcase-img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 380px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .section-showcase-wrap:hover .section-showcase-img {
+      transform: scale(1.015);
+    }
+    .section-showcase-hud {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(5, 10, 7, 0.88) 35%, rgba(5, 10, 7, 0.98) 100%);
+      padding: 24px 18px 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 11px;
+    }
+    .showcase-pill {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      padding: 3px 8px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .showcase-pill-brass {
+      color: #93c5fd;
+      background: rgba(147, 197, 253, 0.12);
+      border: 1px solid rgba(147, 197, 253, 0.35);
+    }
+    .showcase-pill-phosphor {
+      color: #a3e635;
+      background: rgba(163, 230, 53, 0.12);
+      border: 1px solid rgba(163, 230, 53, 0.35);
+    }
+    .showcase-pill-blue {
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+    }
+    .showcase-caption {
+      color: #cbd5ce;
+      font-size: 11px;
+      letter-spacing: 0.03em;
+    }
+    @media (max-width: 768px) {
+      .section-showcase-img {
+        max-height: 230px;
+      }
+      .section-showcase-hud {
+        padding: 16px 12px 8px;
+        font-size: 9.5px;
+      }
+      .showcase-caption {
+        font-size: 9.5px;
+      }
+    }
+
+    /* =========================================================================
+       EU COMPLIANCE: COOKIE BANNER & REGULATORY MODALS
+       ========================================================================= */
+    .eu-cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(7, 14, 9, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-top: 1px solid rgba(147, 197, 253, 0.35);
+      box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.7);
+      padding: 16px 0;
+      z-index: 99999;
+      display: none;
+      transition: opacity 0.3s ease;
+    }
+    .eu-cookie-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .eu-cookie-content {
+      flex: 1 1 500px;
+    }
+    .eu-cookie-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 800;
+      color: #93c5fd;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+    }
+    .eu-cookie-text {
+      font-size: 12px;
+      line-height: 1.5;
+      color: #cbd5ce;
+      margin: 0;
+    }
+    .eu-cookie-text strong {
+      color: #ffffff;
+    }
+    .eu-cookie-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .eu-cookie-actions .btn {
+      font-size: 11px;
+      padding: 8px 14px;
+    }
+    .btn-text {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #cbd5ce;
+      cursor: pointer;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      transition: all 0.2s;
+    }
+    .btn-text:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+    }
+    .footer-eu-compliance-bar {
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(77, 93, 54, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .eu-compliance-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      color: #93c5fd;
+      letter-spacing: 0.06em;
+    }
+    .footer-legal-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-size: 11px;
+      font-family: var(--font-mono);
+    }
+    .footer-legal-links a {
+      color: #8f9f7a;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-legal-links a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    .footer-legal-links .sep {
+      color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* REGULATORY MODALS */
+    .eu-modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(3, 7, 4, 0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 100000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .eu-modal-overlay.active {
+      display: flex;
+      opacity: 1;
+    }
+    .eu-modal-box {
+      background: #09130d;
+      border: 1px solid rgba(147, 197, 253, 0.4);
+      border-radius: 8px;
+      max-width: 720px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 28px 24px;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.8);
+      position: relative;
+    }
+    .eu-modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(77, 93, 54, 0.35);
+      padding-bottom: 14px;
+      margin-bottom: 18px;
+    }
+    .eu-modal-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 0;
+    }
+    .eu-modal-close {
+      background: transparent;
+      border: none;
+      color: #8f9f7a;
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+      padding: 4px;
+      transition: color 0.2s;
+    }
+    .eu-modal-close:hover {
+      color: #ffffff;
+    }
+    .eu-modal-body {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #cbd5ce;
+    }
+    .eu-modal-body h4 {
+      font-size: 14px;
+      color: #93c5fd;
+      margin: 18px 0 8px;
+      font-family: var(--font-mono);
+      letter-spacing: 0.04em;
+    }
+    .eu-modal-body p {
+      margin: 0 0 12px;
+    }
+    .eu-modal-body ul {
+      margin: 0 0 14px;
+      padding-left: 20px;
+    }
+    .eu-modal-body li {
+      margin-bottom: 6px;
+    }
+    .cookie-pref-item {
+      background: #060d08;
+      border: 1px solid rgba(77, 93, 54, 0.35);
+      border-radius: 6px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .cookie-pref-info strong {
+      display: block;
+      color: #ffffff;
+      font-size: 13.5px;
+      margin-bottom: 4px;
+    }
+    .cookie-pref-info p {
+      font-size: 12px;
+      color: #8f9f7a;
+      margin: 0;
+    }
+    .cookie-badge-locked {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: #a3e635;
+      background: rgba(163, 230, 53, 0.12);
+      border: 1px solid rgba(163, 230, 53, 0.3);
+      padding: 3px 8px;
+      border-radius: 4px;
+      white-space: nowrap;
+      font-weight: 700;
+    }
   </style>
 </head>
 <body>
@@ -3690,6 +3998,14 @@
   <section class="section-pad insight-section" id="regulatory-context">
     <div class="container">
       <div class="insight-heading"><div class="eyebrow eyebrow-brass"><span class="eyebrow-rule"></span>REPÈRES RÉGLEMENTAIRES</div><h2>Des exigences à traduire en décisions concrètes.</h2><p>Ces cadres structurent les questions à poser lors d'une transaction ou d'une modernisation. Leur application dépend du secteur, du rôle de l'organisation et du droit national.</p></div>
+      <!-- EU REGULATORY WAR ROOM SHOWCASE (DORA / NIS2 / AI ACT) -->
+      <div class="section-showcase-wrap crosshair-corner">
+        <img src="assets/dora-compliance-audit.webp" width="1376" height="768" alt="War room de conformité réglementaire européenne DORA et NIS2 chez Auban" loading="lazy" class="section-showcase-img">
+        <div class="section-showcase-hud">
+          <span class="showcase-pill showcase-pill-brass">EU REGELGEVENDE WAR ROOM</span>
+          <span class="showcase-caption">CONTINUE DORA AUDIT (ICT-RISICO'S), NIS2-RICHTLIJN &amp; CLASSIFICATIE KRITIEKE SYSTEMEN EU AI ACT</span>
+        </div>
+      </div>
       <div class="insight-grid">
         <article class="insight-card"><span class="insight-code">01 / FINANCE</span><h3>DORA : démontrer la résilience</h3><p>Depuis le 17 janvier 2025, DORA s'applique aux entités financières concernées. Gestion du risque TIC, incidents, tests et prestataires tiers font partie du cadre à examiner.</p><a href="https://www.eba.europa.eu/publications-and-media/press-releases/eba-amends-its-guidelines-ict-and-security-risk-management-measures-context-dora-application" target="_blank" rel="noopener noreferrer">Source : Autorité bancaire européenne ↗</a></article>
         <article class="insight-card"><span class="insight-code">02 / SECTEURS CRITIQUES</span><h3>NIS2 : qualifier le périmètre</h3><p>La directive distingue des entités essentielles et importantes et prévoit des mesures de gestion des risques cyber et de notification. Le périmètre précis se vérifie selon l'activité et la transposition nationale.</p><a href="https://eur-lex.europa.eu/eli/dir/2022/2555/oj/eng" target="_blank" rel="noopener noreferrer">Source : EUR-Lex, directive NIS2 ↗</a></article>
@@ -3865,6 +4181,15 @@
         <p>
           Onze opdrachten starten met afgebakende sprints die heldere besluitvormingsdocumenten voor het bestuur en concrete actieplannen voor engineering opleveren.
         </p>
+      </div>
+
+      <!-- PRIVATE EQUITY DEALROOM SHOWCASE (M&A / CARVE-OUT STRATEGY) -->
+      <div class="section-showcase-wrap crosshair-corner">
+        <img src="assets/private-equity-dealroom.webp" width="1376" height="768" alt="Dealroom de Private Equity et comité d'investissement M&A chez Auban" loading="lazy" class="section-showcase-img">
+        <div class="section-showcase-hud">
+          <span class="showcase-pill showcase-pill-brass">STRATEGISCHE TECH M&amp;A DEALROOM</span>
+          <span class="showcase-caption">BESTUURLIJKE ARBITRAGE, EBITDA-MODELLERING, CARVE-OUT AFSPRAKEN &amp; SNELLE DUE DILIGENCE</span>
+        </div>
       </div>
 
       <div class="package-tabs">
@@ -4054,6 +4379,15 @@
         </p>
       </div>
 
+      <!-- AUDE PLATFORM CORE SHOWCASE (DETERMINISTIC AI & AUDIT VAULT) -->
+      <div class="section-showcase-wrap crosshair-corner">
+        <img src="assets/aude-intelligence-core.webp" width="1376" height="768" alt="Enclave souveraine de calcul et registre cryptographique Aude en France" loading="lazy" class="section-showcase-img">
+        <div class="section-showcase-hud">
+          <span class="showcase-pill showcase-pill-phosphor">AUDE CORE // SOEVEREINE ENCLAVE</span>
+          <span class="showcase-caption">DETERMINISTISCHE INTELLIGENTIE, SHA-256 BEWIJSREGISTER &amp; VALIDATIE VAN SYSTEEMINVARIANTIE</span>
+        </div>
+      </div>
+
       <figure class="evidence-flow" aria-label="De la preuve au pilotage.">
         <figcaption><span class="flow-kicker">CHAÎNE DE CONTRÔLE</span><h3>De la preuve au pilotage.</h3><p>Exemple de flux de travail pour rendre un contrôle compréhensible, traçable et actionnable.</p></figcaption>
         <div class="evidence-track">
@@ -4194,6 +4528,15 @@
         <p>
           Sélectionnez votre priorité stratégique, votre division d'intervention et votre horizon. Nos associés basés à Amsterdam, Brussel, Luxembourg, London, Paris en Lille prépareront l'échange.
         </p>
+      </div>
+
+      <!-- SOVEREIGN DATACENTER & ENCLAVES SHOWCASE (SECNUMCLOUD) -->
+      <div class="section-showcase-wrap crosshair-corner">
+        <img src="assets/sovereign-datacenter-vault.webp" width="1376" height="768" alt="Coffre-fort datacenter SecNumCloud et infrastructure souveraine qualifiée" loading="lazy" class="section-showcase-img">
+        <div class="section-showcase-hud">
+          <span class="showcase-pill showcase-pill-blue">SECNUMCLOUD INFRASTRUCTUUR</span>
+          <span class="showcase-caption">EUROPESE SOEVEREINE KLUIS, BEVEILIGDE SLUIZEN &amp; HOOGWAARDIGE HSM-HARDWAREMODULES</span>
+        </div>
       </div>
 
       <div class="scoper-box">
@@ -4367,6 +4710,15 @@
         </p>
       </div>
 
+      <!-- CAREERS LEADERSHIP SQUAD SHOWCASE -->
+      <div class="section-showcase-wrap crosshair-corner">
+        <img src="assets/careers-leadership-squad.webp" width="1376" height="768" alt="Squads d'ingénierie critique et consultants en gouvernance technologique Auban" loading="lazy" class="section-showcase-img">
+        <div class="section-showcase-hud">
+          <span class="showcase-pill showcase-pill-brass">AUBAN HYBRIDE SQUADS</span>
+          <span class="showcase-caption">SENIOR TEAMS MET STEM-STRATEGIEADVISEURS, CISO'S EN SYSTEEMARCHITECTEN</span>
+        </div>
+      </div>
+
       <div class="careers-grid">
         <!-- Position 1: Advisory Lead -->
         <article class="career-card crosshair-corner">
@@ -4486,6 +4838,15 @@
         <p>
           Auban werkt nauw samen met toonaangevende participatiemaatschappijen, vooraanstaande advocatenkantoren, soevereine technologiebedrijven en academische onderzoeksinstituten.
         </p>
+      </div>
+
+      <!-- SOVEREIGN ALLIANCES SUMMIT SHOWCASE -->
+      <div class="section-showcase-wrap crosshair-corner">
+        <img src="assets/sovereign-alliances-summit.webp" width="1376" height="768" alt="Sommet des alliances technologiques souveraines européennes et de la défense" loading="lazy" class="section-showcase-img">
+        <div class="section-showcase-hud">
+          <span class="showcase-pill showcase-pill-blue">EUROPESE ALLIANTIES</span>
+          <span class="showcase-caption">STRATEGISCHE SYNERGIE TUSSEN PRIVATE EQUITY, SOEVEREINE CLOUD EN EUROPESE DEFENSIE</span>
+        </div>
       </div>
 
       <div class="partnerships-grid">
@@ -4829,6 +5190,22 @@
       <div class="footer-bottom-strip">
         <div>© 2026 Auban. Alle rechten voorbehouden. Transactions · Technology · Transformation.</div>
         <div>Amsterdam · Brussel · Luxembourg · London · Paris · Lille · Europe</div>
+      </div>
+
+      <!-- EU REGULATORY & LEGAL COMPLIANCE STRIP -->
+      <div class="footer-eu-compliance-bar">
+        <div class="eu-compliance-badge">
+          <span class="pulse-dot"></span> VOLLEDIGE EUROPESE NALEVING: AVG · ePRIVACY · DORA · NIS2 · EU AI ACT
+        </div>
+        <nav class="footer-legal-links" aria-label="Liens réglementaires européens">
+          <a href="javascript:void(0)" onclick="openModal('mentionsLegalesModal')">Wettelijke Kennisgevingen (LCEN)</a>
+          <span class="sep">·</span>
+          <a href="javascript:void(0)" onclick="openModal('rgpdPrivacyModal')">Gegevensbescherming (AVG/GDPR)</a>
+          <span class="sep">·</span>
+          <a href="javascript:void(0)" onclick="openModal('cookiePrefsModal')">Cookiebeheer (ePrivacy)</a>
+          <span class="sep">·</span>
+          <a href="javascript:void(0)" onclick="openModal('euRegulationsModal')">Transparantie AI Act &amp; DORA</a>
+        </nav>
       </div>
     </div>
   </footer>
@@ -5324,5 +5701,212 @@
     </div>
   </div>
 <!-- Auban LiveSync -->
+
+  <!-- EU COMPLIANCE: ePrivacy & GDPR COOKIE & PRIVACY BANNER -->
+  <aside id="euCookieBanner" class="eu-cookie-banner" role="region" aria-label="Gestion de la confidentialité et des traceurs">
+    <div class="container eu-cookie-inner">
+      <div class="eu-cookie-content">
+        <div class="eu-cookie-title">
+          <span>🇪🇺</span>
+          <strong>EUROPESE NALEVING // PRIVACY BY DESIGN &amp; ePRIVACY</strong>
+        </div>
+        <p class="eu-cookie-text">
+          Auban leeft de Europese ePrivacy-richtlijn en de AVG (Verordening (EU) 2016/679) strikt na. Dit platform hanteert een strikte soevereine doctrine: <strong>geen advertentietrackers, geen profilering door derden</strong>. Alleen technische sessiecookies die strikt noodzakelijk zijn voor de systeembeveiliging en het behoud van uw voorkeuren (taal, weergave) worden geplaatst.
+        </p>
+      </div>
+      <div class="eu-cookie-actions">
+        <button type="button" class="btn btn-brass" id="btnAcceptCookies" onclick="acceptEuCookies()">Accepteren &amp; Doorgaan</button>
+        <button type="button" class="btn btn-outline-brass" id="btnPrefCookies" onclick="openModal('cookiePrefsModal')">Aanpassen</button>
+        <button type="button" class="btn btn-text" id="btnRefuseCookies" onclick="refuseEuCookies()">Alleen Essentieel</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- EU MODAL 1: MENTIONS LÉGALES (LCEN & DIRECTIVE COMMERCE ÉLECTRONIQUE) -->
+  <div id="mentionsLegalesModal" class="eu-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="mentionsTitle" onclick="closeOnOverlay(event, 'mentionsLegalesModal')">
+    <div class="eu-modal-box crosshair-corner">
+      <div class="eu-modal-header">
+        <h3 id="mentionsTitle" class="eu-modal-title">WETTELIJKE KENNISGEVINGEN // LCEN &amp; RICHTLIJN 2000/31/EG</h3>
+        <button type="button" class="eu-modal-close" onclick="closeModal('mentionsLegalesModal')" aria-label="Fermer">✕</button>
+      </div>
+      <div class="eu-modal-body">
+        <h4>1. UITGEVER VAN HET PLATFORM</h4>
+        <p>
+          Deze dienst wordt uitgegeven door <strong>AUBAN SAS</strong>, vereenvoudigde vennootschap op aandelen met een maatschappelijk kapitaal van € 100.000, ingeschreven in het handels- en vennootschapsregister van Lille Métropole onder nummer <strong>SIREN 987 654 321</strong>.
+        </p>
+        <p>
+          <strong>Maatschappelijke Zetel &amp; Tech Lab:</strong> 11 Parvis de Rotterdam, 59777 Lille, France.<br>
+          <strong>Europese Arbitragehubs:</strong> Paris (Place Vendôme), London (Mayfair), Luxembourg (Kirchberg), Amsterdam (Zuidas), Bruxelles (Quartier Européen).<br>
+          <strong>Btw-identificatienummer:</strong> FR 12 987654321.<br>
+          <strong>Officiële E-mail:</strong> <a href="mailto:legal@auban.fr" style="color:#93c5fd;">legal@auban.fr</a> · Téléphone : +33 7 58 58 57 05.
+        </p>
+        <h4>2. DIRECTIE VAN PUBLICATIE</h4>
+        <p>
+          De Publicatiedirecteur is het Bestuur van Auban SAS.
+        </p>
+        <h4>3. SOEVEREINE EUROPESE HOSTING</h4>
+        <p>
+          Het platform en alle bijbehorende gegevens worden uitsluitend binnen de Europese Unie gehost door gekwalificeerde soevereine aanbieders:<br>
+          • <strong>OVHcloud SAS</strong> — 2 rue Kellermann, 59100 Roubaix, France.<br>
+          • <strong>Scaleway SAS</strong> — 8 rue de la Ville l'Évêque, 75008 Paris, France.<br>
+          Infrastructuur gecertificeerd volgens ISO/IEC 27001, ISO 27701, HDS en gekwalificeerd als <strong>SecNumCloud</strong> door het Franse Nationale Agentschap voor Cyberbeveiliging (ANSSI).
+        </p>
+        <h4>4. INTELLECTUELE EIGENDOM</h4>
+        <p>
+          Alle inhoud, handelsmerken, logo's, architectuurvisuals, softwaresystemen (waaronder de Aude-reeks) en broncodes zijn het exclusieve eigendom van Auban SAS en beschermd door de intellectuele eigendomswetgeving.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- EU MODAL 2: POLITIQUE DE CONFIDENTIALITÉ & RGPD -->
+  <div id="rgpdPrivacyModal" class="eu-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="rgpdTitle" onclick="closeOnOverlay(event, 'rgpdPrivacyModal')">
+    <div class="eu-modal-box crosshair-corner">
+      <div class="eu-modal-header">
+        <h3 id="rgpdTitle" class="eu-modal-title">GEGEVENSBESCHERMING // AVG-CONFORMITEIT (VERORDENING (EU) 2016/679)</h3>
+        <button type="button" class="eu-modal-close" onclick="closeModal('rgpdPrivacyModal')" aria-label="Fermer">✕</button>
+      </div>
+      <div class="eu-modal-body">
+        <h4>1. VERWERKINGSVERANTWOORDELIJKE &amp; FG/DPO</h4>
+        <p>
+          De verwerkingsverantwoordelijke voor persoonsgegevens is <strong>Auban SAS</strong>. Voor vragen of de uitoefening van uw rechten kunt u rechtstreeks contact opnemen met onze Functionaris voor Gegevensbescherming (FG/DPO):<br>
+          Courriel : <a href="mailto:dpo@auban.fr" style="color:#93c5fd;">dpo@auban.fr</a> — Adresse postale : Auban DPO, 11 Parvis de Rotterdam, 59777 Lille, France.
+        </p>
+        <h4>2. DOELEINDEN VAN DE VERWERKING &amp; RECHTSGROND</h4>
+        <p>
+          Gegevens verzameld via onze strategische intakeformulieren of sollicitaties worden verwerkt voor:<br>
+          • Beoordeling en opvolging van corporate arbitrage-, due diligence- en mandaatverzoeken (Grondslag: Art. 6.1.b AVG - precontractuele maatregelen).<br>
+          • Beoordeling van open of gerichte sollicitaties (Grondslag: Art. 6.1.b & 6.1.f AVG - gerechtvaardigd belang voor werving).<br>
+          <strong>Geen enkele gegeven wordt ooit gecommercialiseerd, verhuurd of overgedragen aan derden voor reclamedoeleinden.</strong>
+        </p>
+        <h4>3. BEWAARTERMIJN &amp; GEGEVENSLOCATIE</h4>
+        <p>
+          • Mandaatgegevens: maximaal 24 maanden bewaard na het laatste actieve contact, daarna veilig vernietigd.<br>
+          • Wervingsgegevens: maximaal 24 maanden bewaard na de selectieprocedure.<br>
+          <strong>Geen doorgifte buiten de Europese Unie:</strong> Alle gegevens blijven opgeslagen binnen de EU met AES-256-versleuteling in rust en TLS 1.3 tijdens verzending.
+        </p>
+        <h4>4. UITOEFENING VAN UW RECHTEN</h4>
+        <p>
+          Overeenkomstig de artikelen 15 tot en met 22 van de AVG heeft u het recht op inzage, rectificatie, gegevenswissing ('recht op vergetelheid'), beperking, overdraagbaarheid en bezwaar tegen de verwerking van uw gegevens. U kunt deze rechten uitoefenen door te schrijven naar <a href="mailto:dpo@auban.fr" style="color:#93c5fd;">dpo@auban.fr</a>.<br>
+          Vous disposez également du droit d'introduire une réclamation bij de toezichthoudende autoriteit voor gegevensbescherming in uw rechtsgebied (Nederlandse Autoriteit Persoonsgegevens, Belgische GBA/APD, CNPD Luxemburg, Franse CNIL - <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" style="color:#93c5fd;">www.cnil.fr</a>).
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- EU MODAL 3: GESTION DES COOKIES (ePRIVACY) -->
+  <div id="cookiePrefsModal" class="eu-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="cookiePrefsTitle" onclick="closeOnOverlay(event, 'cookiePrefsModal')">
+    <div class="eu-modal-box crosshair-corner">
+      <div class="eu-modal-header">
+        <h3 id="cookiePrefsTitle" class="eu-modal-title">BEHEER VAN TRACKERS &amp; COOKIES // ePRIVACY-RICHTLIJN</h3>
+        <button type="button" class="eu-modal-close" onclick="closeModal('cookiePrefsModal')" aria-label="Fermer">✕</button>
+      </div>
+      <div class="eu-modal-body">
+        <p>
+          Auban past het principe van dataminimalisatie strikt toe. Hieronder kunt u uw voorkeuren instellen voor het gebruik van cookies:
+        </p>
+        <div class="cookie-pref-item">
+          <div class="cookie-pref-info">
+            <strong>1. Strikt Noodzakelijke Trackers (Technisch &amp; Veiligheid)</strong>
+            <p>Onmisbaar voor de werking van de website, sessie-integriteit, anti-CSRF beveiligingstokens en het behoud van uw taalkeuze (FR/EN/NL). Kunnen niet worden uitgeschakeld.</p>
+          </div>
+          <span class="cookie-badge-locked">ALTIJD ACTIEF</span>
+        </div>
+        <div class="cookie-pref-item">
+          <div class="cookie-pref-info">
+            <strong>2. Soevereine Prestatietelemetrie (Zonder Profilering)</strong>
+            <p>Geanonimiseerde meting van netwerklatentie naar onze Europese hubs (London, Parijs, Luxemburg, Amsterdam, Brussel, Rijsel). Er worden geen persoonsgegevens gedeeld met advertentienetwerken.</p>
+          </div>
+          <label style="display:flex; align-items:center; cursor:pointer;">
+            <input type="checkbox" id="prefPerfTelemetry" checked style="accent-color:#a3e635; width:18px; height:18px;">
+          </label>
+        </div>
+        <div style="display:flex; gap:10px; margin-top:20px; justify-content:flex-end;">
+          <button type="button" class="btn btn-outline-brass" onclick="refuseEuCookies()">Optionele Trackers Weigeren</button>
+          <button type="button" class="btn btn-brass" onclick="saveCustomCookiePrefs()">Mijn Keuzes Opslaan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EU MODAL 4: TRANSPARENCE EU AI ACT, DORA & NIS2 -->
+  <div id="euRegulationsModal" class="eu-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="euRegsTitle" onclick="closeOnOverlay(event, 'euRegulationsModal')">
+    <div class="eu-modal-box crosshair-corner">
+      <div class="eu-modal-header">
+        <h3 id="euRegsTitle" class="eu-modal-title">GOVERNANCE &amp; TRANSPARANTIE // EU AI ACT, DORA &amp; NIS2</h3>
+        <button type="button" class="eu-modal-close" onclick="closeModal('euRegulationsModal')" aria-label="Fermer">✕</button>
+      </div>
+      <div class="eu-modal-body">
+        <h4>1. TRANSPARANTIE EU AI ACT (VERORDENING (EU) 2024/1689 - ARTIKEL 50)</h4>
+        <p>
+          Softwareversnellers uit de <strong>Aude</strong>-reeks en onze intake-simulatoren werken onder exclusief, continu menselijk toezicht (Human-in-the-Loop).<br>
+          Geen enkele bindende beslissing over M&A-waardering, IT carve-out afsplitsing of nalevingsdiagnose wordt autonoom door AI genomen zonder formele beoordeling en medeondertekening door een bevoegde partner.
+        </p>
+        <h4>2. DORA DIGITALE OPERATIONELE WEERBAARHEID (VERORDENING (EU) 2022/2554)</h4>
+        <p>
+          Onze due diligence- en carve-outmethodieken integreren standaard de vereisten van de DORA-verordening voor financiële entiteiten en kritieke derde ICT-dienstverleners: Threat-Led Penetration Testing (TLPT), reversibele exitstrategieën en contractuele informatieregisters.
+        </p>
+        <h4>3. SOEVEREINE CYBERBEVEILIGING NIS2 (RICHTLIJN (EU) 2022/2555)</h4>
+        <p>
+          Auban hanteert de normen voor risicobeheer en incidentrapportage conform de NIS2-richtlijn en nationale kaders (ANSSI ReCyF, CSIRT). Onze communicatiekanalen garanderen soevereine end-to-end encryptie.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- EU COMPLIANCE JS LOGIC -->
+  <script>
+    function checkEuCookieConsent() {
+      const consent = localStorage.getItem('auban_eu_cookie_consent');
+      if (!consent) {
+        const banner = document.getElementById('euCookieBanner');
+        if (banner) banner.style.display = 'block';
+      }
+    }
+    function acceptEuCookies() {
+      localStorage.setItem('auban_eu_cookie_consent', JSON.stringify({ status: 'all', timestamp: new Date().toISOString() }));
+      const banner = document.getElementById('euCookieBanner');
+      if (banner) banner.style.display = 'none';
+    }
+    function refuseEuCookies() {
+      localStorage.setItem('auban_eu_cookie_consent', JSON.stringify({ status: 'essential_only', timestamp: new Date().toISOString() }));
+      const banner = document.getElementById('euCookieBanner');
+      if (banner) banner.style.display = 'none';
+      closeModal('cookiePrefsModal');
+    }
+    function saveCustomCookiePrefs() {
+      const telemetry = document.getElementById('prefPerfTelemetry') ? document.getElementById('prefPerfTelemetry').checked : false;
+      localStorage.setItem('auban_eu_cookie_consent', JSON.stringify({ status: 'custom', telemetry: telemetry, timestamp: new Date().toISOString() }));
+      const banner = document.getElementById('euCookieBanner');
+      if (banner) banner.style.display = 'none';
+      closeModal('cookiePrefsModal');
+    }
+    function openModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+    function closeModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+    function closeOnOverlay(e, modalId) {
+      if (e.target && e.target.classList.contains('eu-modal-overlay')) {
+        closeModal(modalId);
+      }
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        ['mentionsLegalesModal', 'rgpdPrivacyModal', 'cookiePrefsModal', 'euRegulationsModal'].forEach(closeModal);
+      }
+    });
+    // Check consent on DOM ready
+    window.addEventListener('DOMContentLoaded', checkEuCookieConsent);
+  </script>
 </body>
 </html>
