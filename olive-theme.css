@@ -419,3 +419,104 @@ body {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* Written panels use soft olive rather than near-black. */
+.visual-story-featured,
+.visual-story-featured figcaption,
+.diagram-container,
+.pipeline-column,
+.pipeline-node,
+.technical-blueprint-card,
+.carveout-stage,
+.defense-layer-item,
+.network-topology-box,
+.hub-node {
+  background: #edf2e2;
+  border-color: rgba(70, 94, 54, .28);
+  box-shadow: 0 10px 28px rgba(43, 59, 35, .10);
+}
+.visual-story-featured figcaption,
+.pipeline-node,
+.carveout-stage,
+.defense-layer-item,
+.hub-node {
+  background: #f4f6eb;
+}
+.stage-gateway,
+.stage-target,
+.hub-node-highlight {
+  background: #e5edd9;
+}
+.visual-story-featured:hover,
+.defense-layer-item:hover,
+.hub-node:hover {
+  background: #f8faf1;
+  box-shadow: 0 14px 32px rgba(43, 59, 35, .14);
+}
+.visual-story-featured strong,
+.diagram-head-left h3,
+.pipeline-header h4,
+.pipeline-node strong,
+.nexus-label,
+.stage-title,
+.defense-layer-item strong,
+.node-city {
+  color: var(--olive-ink);
+}
+.visual-story-featured p,
+.pipeline-node p,
+.diagram-footer-caption,
+.stage-sub,
+.tactical-item-list li,
+.defense-layer-item p,
+.node-role,
+.blueprint-badge {
+  color: var(--olive-copy);
+}
+.story-kicker,
+.diagram-head-left .diagram-kicker,
+.stream-badge,
+.badge-tech-stream,
+.node-tag,
+.tag-tech,
+.blueprint-kicker,
+.blueprint-kicker-tech,
+.layer-num,
+.topology-kicker {
+  color: #315f73;
+}
+.nexus-sub,
+.diagram-pill,
+.node-metric,
+.metric-tech,
+.stage-tag,
+.tag-gateway,
+.tag-target,
+.node-ping,
+.topology-status {
+  color: #426331;
+}
+.story-badge,
+.stream-badge,
+.diagram-pill,
+.node-metric,
+.blueprint-badge,
+.node-ping {
+  background: #e2ead5;
+  border-color: var(--olive-rule);
+  color: #365b38;
+}
+.pipeline-header,
+.diagram-footer-caption,
+.blueprint-header {
+  border-color: var(--olive-rule);
+}
+.visual-story-featured figcaption {
+  background-image: none;
+}
+.stage-title.text-brass,
+.stage-title.text-phosphor,
+.enquiry-card-channels .channel-val.text-brass,
+.enquiry-card-channels .channel-val.text-phosphor {
+  color: #315f73 !important;
+}
