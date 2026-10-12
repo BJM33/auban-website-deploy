@@ -1,0 +1,198 @@
+/*
+ * Light olive page palette.
+ * Dark cards, consoles and photography remain dark to preserve their contrast.
+ */
+:root {
+  --olive-page: #e4ead4;
+  --olive-page-alt: #dbe4c8;
+  --olive-page-soft: #eef1e4;
+  --olive-ink: #25351f;
+  --olive-copy: #35452e;
+  --olive-muted: #536347;
+  --olive-rule: rgba(56, 75, 42, .22);
+}
+
+body {
+  background: var(--olive-page);
+}
+
+.hero {
+  background: radial-gradient(circle at 75% 10%, #f2f4e9 0%, #e4ead4 48%, #d4dfbf 100%);
+  color: var(--olive-ink);
+  border-bottom-color: var(--olive-rule);
+}
+.hero-halo {
+  background: radial-gradient(ellipse at 82% 45%, rgba(108, 133, 80, .14), transparent 58%);
+}
+.hero-grid-pattern {
+  opacity: .35;
+}
+.hero h1,
+.hero-lead strong {
+  color: var(--olive-ink);
+}
+.hero-lead {
+  color: var(--olive-copy);
+}
+.hero-pill {
+  background: rgba(255, 255, 255, .65);
+  border-color: var(--olive-rule);
+  color: var(--olive-ink);
+}
+.hero-pill-advisory { color: #2e5c83; }
+.hero-pill-tech { color: #126481; }
+.hero-pill-london { color: var(--olive-copy); }
+.hero .highlight-military {
+  background: linear-gradient(110deg, #405d2e, #286783);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.belief-strip,
+.editorial-section,
+.divisions-section,
+.bridge-section,
+.insight-section,
+.industry-section,
+.packages-section,
+.field-stories-section,
+.aude-section,
+.scoper-section,
+.faq-section,
+.careers-section,
+.partnerships-section,
+.enquiry-section {
+  color: var(--olive-ink);
+  border-color: var(--olive-rule);
+}
+.belief-strip,
+.divisions-section,
+.insight-section,
+.packages-section,
+.scoper-section,
+.careers-section,
+.enquiry-section {
+  background: var(--olive-page);
+}
+.editorial-section,
+.bridge-section,
+.industry-section,
+.field-stories-section,
+.aude-section,
+.faq-section,
+.partnerships-section {
+  background: var(--olive-page-alt);
+}
+
+.belief-headline p,
+.belief-badge-item strong,
+.section-pad > .container > .section-head h2,
+.insight-heading h2,
+.field-stories-head h2 {
+  color: var(--olive-ink) !important;
+}
+.belief-headline span,
+.belief-badge-item span,
+.section-pad > .container > .section-head p,
+.insight-heading p,
+.field-stories-head p {
+  color: var(--olive-copy) !important;
+}
+.section-pad > .container > .section-head h2 [style*="ink-muted"] {
+  color: var(--olive-muted) !important;
+}
+.section-pad > .container > .section-head .eyebrow,
+.insight-heading .eyebrow,
+.field-stories-head .field-kicker {
+  color: #385c31;
+}
+.bridge-section .highlight-military,
+.aude-section .highlight-military {
+  background: linear-gradient(110deg, #37572a, #26718f);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.editorial-caption,
+.insight-note,
+.visual-gallery-note,
+.field-stories-note {
+  color: var(--olive-muted);
+}
+.badge-glyph {
+  background: #f4f6ec;
+  border-color: var(--olive-rule);
+  color: #37572a;
+}
+.badge-glyph-tech { color: #206783; }
+
+/* Light panels within the olive sections, with dark copy. */
+.decision-map {
+  background: linear-gradient(135deg, #f4f6ea, #e9efdc);
+  border-color: var(--olive-rule);
+  box-shadow: 0 14px 40px rgba(42, 58, 34, .08);
+}
+.decision-map h3,
+.map-node h4 { color: var(--olive-ink); }
+.decision-map figcaption p,
+.map-node p { color: var(--olive-copy); }
+.decision-map .map-kicker,
+.map-node .map-num { color: #356482; }
+.map-result {
+  color: #355a35;
+  border-color: var(--olive-rule);
+  background: #f5f7ed;
+}
+.map-node {
+  background: #f9faf3;
+  border-color: var(--olive-rule);
+}
+.map-node .map-output {
+  color: #47672f;
+  border-top-color: var(--olive-rule);
+}
+.decision-map .map-node:not(:last-child)::after { color: #507747; }
+
+.evidence-flow {
+  background: #f5f7ed;
+  border-color: var(--olive-rule);
+  box-shadow: 0 14px 40px rgba(42, 58, 34, .08);
+}
+.evidence-flow h3,
+.evidence-step h4 { color: var(--olive-ink); }
+.evidence-flow figcaption p,
+.evidence-step p { color: var(--olive-copy); }
+.evidence-flow .flow-kicker { color: #356482; }
+.evidence-step .flow-dot {
+  background: #f5f7ed;
+  border-color: #507747;
+  color: #385c31;
+}
+
+/* Dark feature cards stay legible against the new page background. */
+.division-card,
+.bridge-step-card,
+.insight-card,
+.stem-card,
+.package-card,
+.product-card,
+.visual-story,
+.field-story,
+.scoper-box,
+.faq-card,
+.career-card,
+.partnership-card,
+.enquiry-card-form,
+.enquiry-card-channels {
+  box-shadow: 0 12px 30px rgba(43, 59, 35, .10);
+}
+
+@media (min-width: 961px) {
+  .enquiry-layout {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr);
+  }
+}
+.enquiry-card-form,
+.enquiry-card-channels {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
