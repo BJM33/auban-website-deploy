@@ -1,6 +1,6 @@
 /*
  * Light olive page palette.
- * Dark cards, consoles and photography remain dark to preserve their contrast.
+ * Technical consoles and photography retain their dark treatment for contrast.
  */
 :root {
   --olive-page: #e4ead4;
@@ -168,7 +168,7 @@ body {
   color: #385c31;
 }
 
-/* Dark feature cards stay legible against the new page background. */
+/* Cards are raised gently above the olive page background. */
 .division-card,
 .bridge-step-card,
 .insight-card,
