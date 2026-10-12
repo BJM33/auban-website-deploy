@@ -393,3 +393,29 @@ body {
 .package-card .btn-outline-phosphor:hover {
   background: #e0eadb;
 }
+
+/* Auban Technology is the primary platform; Advisory is its specialist division. */
+.hero-dual-cards,
+.dual-division-grid {
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr);
+}
+.hero-subcard-tech {
+  border-left: 4px solid #34829a;
+  box-shadow: 0 8px 22px rgba(37, 70, 66, .08);
+}
+.card-tech {
+  border: 2px solid #8cae9e;
+  box-shadow: 0 20px 48px rgba(43, 76, 55, .15);
+}
+.card-advisory {
+  border: 1px solid var(--olive-rule);
+}
+.brand-text-sub {
+  letter-spacing: .035em;
+}
+@media (max-width: 768px) {
+  .hero-dual-cards,
+  .dual-division-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
