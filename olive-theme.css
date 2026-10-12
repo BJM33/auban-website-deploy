@@ -196,3 +196,200 @@ body {
   min-width: 0;
   overflow-wrap: anywhere;
 }
+
+/* Light olive cards and readable dark type */
+.hero-dual-cards {
+  background: rgba(231, 238, 215, .94);
+  border-color: var(--olive-rule);
+}
+.hero-subcard,
+.division-card,
+.bridge-step-card,
+.insight-card,
+.stem-card,
+.package-card,
+.product-card,
+.visual-story,
+.field-story,
+.scoper-box,
+.faq-card,
+.career-card,
+.career-spontaneous-banner,
+.partnership-card,
+.partnership-cta-box,
+.enquiry-card-form,
+.enquiry-card-channels {
+  background: #f2f5e9;
+  color: var(--olive-ink);
+  border-color: rgba(77, 100, 60, .25);
+  box-shadow: 0 12px 30px rgba(43, 59, 35, .10);
+}
+.card-advisory,
+.card-tech {
+  background: linear-gradient(145deg, #f5f7ed, #e9efdc);
+}
+.hero-subcard:hover,
+.bridge-step-card:hover,
+.stem-card:hover,
+.package-card:hover,
+.career-card:hover {
+  background: #f9faf3;
+  box-shadow: 0 17px 38px rgba(43, 59, 35, .16);
+}
+
+.hero-subcard strong,
+.division-card h3,
+.division-card .pillar-item strong,
+.bridge-step-card h3,
+.insight-card h3,
+.stem-card h3,
+.package-card h3,
+.product-card h3,
+.visual-story strong,
+.field-story h3,
+.faq-card h4,
+.career-card h3,
+.career-spontaneous-banner h4,
+.partnership-card h3,
+.partnership-cta-box h4,
+.enquiry-card-channels h3,
+.summary-text-block strong {
+  color: var(--olive-ink);
+}
+.hero-subcard p,
+.division-desc,
+.division-card .pillar-item p,
+.bridge-step-card p,
+.insight-card p,
+.stem-card p,
+.package-card p,
+.product-card p,
+.visual-story p,
+.field-story p,
+.faq-card p,
+.career-desc,
+.career-spontaneous-banner p,
+.partnership-desc,
+.partnership-cta-box p,
+.enquiry-card-channels p,
+.summary-text-block p {
+  color: var(--olive-copy);
+}
+
+.hero-subcard-kicker,
+.card-advisory .division-tagline,
+.card-tech .division-tagline,
+.bridge-num,
+.insight-card .insight-code,
+.visual-story .story-kicker,
+.field-story .field-index,
+.product-card-kicker,
+.partnership-icon-badge,
+.partnership-benefit span {
+  color: #3d6540;
+}
+.bridge-meta,
+.insight-card a,
+.stem-trigger,
+.mandate-adv,
+.mandate-tech,
+.career-tags li,
+.partnership-benefit {
+  color: #2e647d;
+}
+.stem-code,
+.pkg-band,
+.product-status,
+.career-tags li {
+  background: #e4ebd7;
+  color: var(--olive-ink);
+  border-color: var(--olive-rule);
+}
+.pkg-dur,
+.career-location,
+.buyers-label,
+.channel-label,
+.form-group label {
+  color: var(--olive-muted);
+}
+.pkg-deliv-item,
+.channel-val {
+  color: var(--olive-ink);
+}
+.bridge-output {
+  color: var(--olive-ink);
+  background: #e5ecda;
+}
+.service-pillars-list,
+.division-card-footer,
+.bridge-meta,
+.stem-mandate-split,
+.pkg-deliverables,
+.channel-item {
+  border-color: var(--olive-rule);
+}
+.badge-brass,
+.badge-phosphor,
+.card-advisory .pillar-bullet,
+.card-tech .pillar-bullet {
+  background: #e2ebda;
+  color: #356482;
+  border-color: #a9bdad;
+}
+
+.pkg-tab-btn,
+.scoper-btn,
+.scoper-summary-tray {
+  background: #edf2e3;
+  color: var(--olive-ink);
+  border-color: var(--olive-rule);
+}
+.pkg-tab-btn:hover,
+.scoper-btn:hover,
+.scoper-btn.active,
+.pkg-tab-btn.active {
+  background: #dce8cf;
+  color: var(--olive-ink);
+  border-color: #8da77e;
+  box-shadow: 0 6px 18px rgba(43, 59, 35, .11);
+}
+.pkg-tab-btn.active.tab-pkg-adv,
+.pkg-tab-btn.active.tab-pkg-tech,
+.scoper-btn.active strong {
+  color: #315f73;
+}
+.scoper-step-title,
+.scoper-btn strong,
+.scoper-btn.active span {
+  color: var(--olive-ink);
+}
+.scoper-btn span { color: var(--olive-copy); }
+.partnership-benefit {
+  background: #e7eee0;
+  border-left-color: #56816b;
+}
+.career-tags li { color: #315f73; }
+
+.form-group input,
+.form-group select,
+.form-group textarea,
+.hub-pill,
+.outlook-quick-triggers {
+  background: #e8eedc;
+  color: var(--olive-ink);
+  border-color: var(--olive-rule);
+}
+.hub-pill span { color: #2e647d; }
+.hero-subcard-kicker.text-brass,
+.hero-subcard-kicker.text-phosphor {
+  color: #356482 !important;
+}
+.package-card .btn-outline-brass,
+.package-card .btn-outline-phosphor {
+  color: #2d6177;
+  border-color: #7198a1;
+}
+.package-card .btn-outline-brass:hover,
+.package-card .btn-outline-phosphor:hover {
+  background: #e0eadb;
+}
