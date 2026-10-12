@@ -1,11 +1,16 @@
 /*
- * Light olive page palette.
- * Technical consoles and photography retain their dark treatment for contrast.
+ * Olive system palette.
+ * Medium olive treatment for technical consoles, command ribbon, header, footer, banners, and modals.
  */
 :root {
   --olive-page: #e4ead4;
   --olive-page-alt: #dbe4c8;
   --olive-page-soft: #eef1e4;
+  --olive-medium-primary: #4d5d36;
+  --olive-medium-mid: #43532f;
+  --olive-medium-dark: #364426;
+  --olive-medium-deep: #2d391e;
+  --olive-medium-card: #3c4b2b;
   --olive-ink: #25351f;
   --olive-copy: #35452e;
   --olive-muted: #536347;
@@ -520,3 +525,206 @@ body {
 .enquiry-card-channels .channel-val.text-phosphor {
   color: #315f73 !important;
 }
+
+/* =========================================================================
+   MEDIUM OLIVE SYSTEM: ALL PREVIOUSLY DARK SECTIONS, RIBBONS, BANNERS & CONSOLES
+   ========================================================================= */
+
+/* Top Command Ribbon */
+.top-command-ribbon {
+  background: var(--olive-medium-dark) !important;
+  border-bottom: 1px solid rgba(138, 168, 106, 0.35) !important;
+  color: #cad5ce !important;
+}
+.top-command-ribbon .ribbon-desc {
+  color: #d6e0d3 !important;
+}
+.top-command-ribbon .ribbon-sep {
+  color: #829a70 !important;
+}
+
+/* Sticky Header & Navigation */
+.site-header {
+  background: rgba(54, 68, 38, 0.97) !important;
+  border-bottom: 1px solid rgba(138, 168, 106, 0.35) !important;
+}
+.site-header .brand-text-title {
+  color: #ffffff !important;
+}
+.site-header .brand-text-sub {
+  color: #cad5ce !important;
+}
+.site-header .nav-link {
+  color: #f1f5f2 !important;
+}
+.site-header .nav-link:hover {
+  color: #93c5fd !important;
+}
+.lang-switcher {
+  background: rgba(45, 57, 30, 0.95) !important;
+  border: 1px solid rgba(138, 168, 106, 0.4) !important;
+}
+.lang-switcher .lang-btn {
+  color: #cad5ce !important;
+}
+.lang-switcher .lang-btn.active {
+  background: var(--olive-medium-primary) !important;
+  color: #ffffff !important;
+}
+.mobile-nav-panel {
+  background: var(--olive-medium-dark) !important;
+  border: 1px solid rgba(138, 168, 106, 0.4) !important;
+}
+.mobile-nav-panel a {
+  color: #f1f5f2 !important;
+}
+
+/* Tactical & Radar Interactive Execution Visual */
+.execution-visual-box {
+  background: var(--olive-medium-dark) !important;
+  border: 1px solid rgba(138, 168, 106, 0.4) !important;
+}
+.visual-topbar,
+.visual-mode-tabs,
+.visual-footer-bar {
+  background: var(--olive-medium-deep) !important;
+  border-color: rgba(138, 168, 106, 0.3) !important;
+}
+.visual-mode-tabs button {
+  color: #cad5ce !important;
+}
+.visual-mode-tabs button.active {
+  background: var(--olive-medium-mid) !important;
+  color: #ffffff !important;
+}
+
+/* Aude Platform Verification Console */
+.aude-console-card {
+  background: var(--olive-medium-dark) !important;
+  border: 1px solid rgba(138, 168, 106, 0.4) !important;
+}
+.console-header {
+  background: var(--olive-medium-deep) !important;
+  border-color: rgba(138, 168, 106, 0.3) !important;
+}
+.console-terminal-col {
+  background: var(--olive-medium-deep) !important;
+  border-color: rgba(138, 168, 106, 0.25) !important;
+}
+
+/* Technical Blueprint Banners & Section Showcases */
+.blueprint-media-banner,
+.section-showcase-wrap {
+  background: var(--olive-medium-dark) !important;
+  border: 1px solid rgba(138, 168, 106, 0.4) !important;
+}
+.blueprint-picture-caption,
+.section-showcase-hud {
+  background: linear-gradient(180deg, transparent 0%, rgba(45, 57, 30, 0.88) 35%, rgba(45, 57, 30, 0.98) 100%) !important;
+}
+
+/* Network Topology Visual Box */
+.topology-visual-wrap {
+  background: var(--olive-medium-dark) !important;
+  border: 1px solid rgba(138, 168, 106, 0.35) !important;
+}
+.topology-visual-hud {
+  background: rgba(45, 57, 30, 0.92) !important;
+}
+
+/* Contact Band */
+.contact-band {
+  background: linear-gradient(135deg, #44542f 0%, #364426 100%) !important;
+  border-bottom: 1px solid rgba(138, 168, 106, 0.35) !important;
+  color: #ffffff !important;
+}
+.contact-band-copy h2 {
+  color: #ffffff !important;
+}
+.contact-band-copy p {
+  color: #d6e0d3 !important;
+}
+
+/* Site Footer */
+.site-footer {
+  background: var(--olive-medium-dark) !important;
+  border-top: 1px solid rgba(138, 168, 106, 0.35) !important;
+  color: #cad5ce !important;
+}
+.site-footer .footer-brand h4,
+.site-footer .footer-col h5 {
+  color: #ffffff !important;
+}
+.site-footer .footer-brand p {
+  color: #d6e0d3 !important;
+}
+.site-footer .footer-links a {
+  color: #cad5ce !important;
+}
+.site-footer .footer-links a:hover {
+  color: #93c5fd !important;
+}
+.footer-bottom-strip {
+  border-top: 1px solid rgba(138, 168, 106, 0.25) !important;
+  color: #a1b29a !important;
+}
+.footer-eu-compliance-bar {
+  background: var(--olive-medium-deep) !important;
+  border: 1px solid rgba(138, 168, 106, 0.35) !important;
+}
+.eu-compliance-badge {
+  color: #93c5fd !important;
+}
+.footer-legal-links a {
+  color: #cad5ce !important;
+}
+.footer-legal-links a:hover {
+  color: #93c5fd !important;
+}
+
+/* Outlook & Regulatory Modals */
+.outlook-modal-box,
+.eu-modal-box {
+  background: var(--olive-medium-dark) !important;
+  border: 1.5px solid rgba(138, 168, 106, 0.5) !important;
+  color: #f1f5f2 !important;
+}
+.outlook-modal-header h3,
+.eu-modal-header h3,
+.eu-modal-body h4 {
+  color: #ffffff !important;
+}
+.outlook-modal-header p,
+.eu-modal-body p {
+  color: #d6e0d3 !important;
+}
+.modal-readonly-input,
+.modal-body-textarea {
+  background: var(--olive-medium-deep) !important;
+  border: 1px solid rgba(138, 168, 106, 0.35) !important;
+  color: #f1f5f2 !important;
+}
+.eu-modal-overlay {
+  background: rgba(35, 45, 25, 0.85) !important;
+}
+.cookie-pref-item {
+  background: var(--olive-medium-deep) !important;
+  border: 1px solid rgba(138, 168, 106, 0.3) !important;
+}
+.cookie-pref-item strong {
+  color: #f1f5f2 !important;
+}
+.cookie-pref-item p {
+  color: #cad5ce !important;
+}
+
+/* EU Cookie Banner */
+.eu-cookie-banner {
+  background: rgba(54, 68, 38, 0.97) !important;
+  border-top: 1px solid rgba(138, 168, 106, 0.4) !important;
+  color: #f1f5f2 !important;
+}
+.eu-cookie-text {
+  color: #d6e0d3 !important;
+}
+
